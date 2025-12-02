@@ -106,68 +106,73 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
-      {/* Navigation */}
-      <nav className="fixed w-full bg-white/95 backdrop-blur-lg z-50 shadow-sm border-b border-gray-100">
+      {/* Navigation - Dark Version */}
+      <nav className="fixed w-full bg-gray-900/95 backdrop-blur-lg z-50 shadow-xl border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
+            {/* Left Logo */}
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                 <Code2 className="text-white" size={24} />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">MOHAMED</h1>
-                <p className="text-xs text-gray-500 font-medium tracking-widest">FULL STACK DEVELOPER</p>
+                <h1 className="text-2xl font-bold text-white">MOHAMED</h1>
+                <p className="text-xs text-gray-400 font-medium tracking-widest">FULL STACK DEVELOPER</p>
               </div>
             </div>
             
+            {/* Desktop Navigation */}
             <div className="hidden md:flex gap-10">
               {['Accueil', 'Profil', 'Compétences', 'Projets', 'Expériences', 'Contact'].map((item) => (
                 <a 
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group text-sm tracking-wide"
+                  className="text-gray-300 hover:text-blue-400 transition-all duration-300 font-medium relative group text-sm tracking-wide"
                 >
                   {item}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300" />
                 </a>
               ))}
             </div>
             
+            {/* Contact Button */}
             <div className="hidden md:flex items-center gap-4">
               <a 
                 href="#contact"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 rounded-lg hover:shadow-lg hover:shadow-blue-100 transition-all duration-300 font-medium text-sm"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 rounded-lg hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 font-medium text-sm hover:scale-105"
               >
                 Me Contacter
               </a>
             </div>
             
+            {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition"
+              className="md:hidden p-2 rounded-lg hover:bg-gray-800 transition"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X size={24} className="text-gray-700" /> : <Menu size={24} className="text-gray-700" />}
+              {isMenuOpen ? <X size={24} className="text-white" /> : <Menu size={24} className="text-white" />}
             </button>
           </div>
         </div>
         
+        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 shadow-lg">
+          <div className="md:hidden bg-gray-800 border-t border-gray-700 shadow-lg">
             <div className="px-4 py-3 space-y-1">
               {['Accueil', 'Profil', 'Compétences', 'Projets', 'Expériences', 'Contact'].map((item) => (
                 <a 
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="block py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg px-4 transition font-medium"
+                  className="block py-3 text-gray-300 hover:text-blue-400 hover:bg-gray-700 rounded-lg px-4 transition font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item}
                 </a>
               ))}
-              <div className="pt-4 border-t border-gray-100">
+              <div className="pt-4 border-t border-gray-700">
                 <a 
                   href="#contact"
-                  className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-medium"
+                  className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-medium hover:bg-gradient-to-r hover:from-blue-700 hover:to-purple-700 transition"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Me Contacter

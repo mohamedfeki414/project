@@ -1,8 +1,25 @@
-import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code2, Briefcase, User, GraduationCap, Globe, Smartphone, Database, Users, Clock, Target, Brain, Phone, MapPin, Award, Layers, Sparkles, FileText } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code2, Briefcase, User, GraduationCap, Globe, Smartphone, Database, Users, Clock, Target, Brain, Phone, MapPin, Award, Layers, Sparkles, Download } from 'lucide-react';
 import { useState } from 'react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Fonction pour télécharger le CV
+  const handleDownloadCV = () => {
+    // Créer un lien de téléchargement
+    const link = document.createElement('a');
+    
+    // Si vous avez le fichier dans le dossier public
+    link.href = '/CV_Feki_Mohamed.pdf';
+    
+    // Ou si vous voulez utiliser un lien externe
+    // link.href = 'https://votre-domaine.com/CV_Feki_Mohamed(dernier_version).pdf';
+    
+    link.download = 'CV_Mohamed_Feki.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   // Stats data for Hero section
   const stats = [
@@ -242,13 +259,15 @@ function App() {
                   <span>Voir mes Projets</span>
                   <ExternalLink size={18} />
                 </a>
-                <a 
-                  href="#contact"
+                
+                {/* Bouton de téléchargement du CV */}
+                <button
+                  onClick={handleDownloadCV}
                   className="border-2 border-gray-600 text-gray-300 px-8 py-3.5 rounded-lg hover:border-blue-500 hover:text-blue-400 hover:shadow-sm transition-all duration-300 font-medium flex items-center gap-2"
                 >
-                  <FileText size={18} />
+                  <Download size={18} />
                   <span>Télécharger CV</span>
-                </a>
+                </button>
               </div>
             </div>
             
@@ -616,12 +635,14 @@ function App() {
             >
               <Github size={20} /> GitHub
             </a>
-            <a 
-              href="mailto:medfeki33@gmail.com" 
+            
+            {/* Bouton de téléchargement du CV dans la section Contact */}
+            <button
+              onClick={handleDownloadCV}
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-medium flex items-center gap-2 hover:scale-105 w-full sm:w-auto justify-center"
             >
-              <Mail size={20} /> Envoyer un email
-            </a>
+              <Download size={20} /> Télécharger CV
+            </button>
           </div>
         </div>
       </section>

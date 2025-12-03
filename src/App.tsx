@@ -1,4 +1,4 @@
-import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code2, Briefcase, User, GraduationCap, Globe, Smartphone, Database, Users, Clock, Target, Brain, Phone, MapPin, Award, Layers, Sparkles, Download, ChevronRight, Zap, Coffee, Gamepad2 } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code2, Briefcase, GraduationCap, Globe, Smartphone, Database, Users, Clock, Target, Brain, Phone, MapPin, Award, Layers, Sparkles, Download, ChevronRight, Zap, Coffee, Gamepad2, Trophy } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -169,7 +169,7 @@ function App() {
   const interests = [
     { name: "Technologie & Innovation", icon: <Zap className="text-blue-400" /> },
     { name: "Jeux Vidéo", icon: <Gamepad2 className="text-purple-400" /> },
-    
+    { name: "Sports", icon: <Trophy className="text-green-400" /> },
     { name: "Café & Code", icon: <Coffee className="text-orange-400" /> }
   ];
 
@@ -618,8 +618,8 @@ function App() {
                 className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 group hover:scale-105"
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <div className={`p-2 bg-gradient-to-br from-${skillGroup.color}-500/20 to-purple-500/20 rounded-lg`}>
-                    <div className={`text-${skillGroup.color}-400`}>
+                  <div className="p-2 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
+                    <div className="text-blue-400">
                       {skillGroup.icon}
                     </div>
                   </div>
@@ -634,7 +634,7 @@ function App() {
                       </div>
                       <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
                         <div 
-                          className={`h-full bg-gradient-to-r from-${skillGroup.color}-400 to-purple-400 rounded-full transition-all duration-1000`}
+                          className="h-full bg-gradient-to-r from-blue-400 to-purple-400 rounded-full transition-all duration-1000"
                           style={{ width: `${skill.level}%` }}
                         />
                       </div>

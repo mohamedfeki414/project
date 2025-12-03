@@ -1,5 +1,94 @@
-import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code2, Briefcase, GraduationCap, Globe, Smartphone, Database, Users, Clock, Target, Brain, Phone, MapPin, Award, Layers, Sparkles, Download, ChevronRight, Zap, Coffee, Gamepad2, Trophy, Home, User as UserIcon, Briefcase as BriefcaseIcon, Folder, Wrench, Eye } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code2, Briefcase, GraduationCap, Globe, Smartphone, Database, Users, Clock, Target, Brain, Phone, MapPin, Award, Layers, Sparkles, Download, ChevronRight, Zap, Coffee, Gamepad2, Trophy, Home, User as UserIcon, Briefcase as BriefcaseIcon, Folder, Wrench, Eye, Palette, Cpu } from 'lucide-react';
 import { useState, useEffect } from 'react';
+
+// Composant TechCarousel pour les logos de technologies tournantes
+const TechCarousel = () => {
+  const [currentTech, setCurrentTech] = useState(0);
+  
+  const technologies = [
+    { 
+      name: "HTML5", 
+      percentage: 100,
+      color: "text-orange-500",
+      bg: "bg-orange-900/30",
+      border: "border-orange-700/50",
+      icon: <Code2 size={32} className="text-orange-500" />
+    },
+    { 
+      name: "CSS3", 
+      percentage: 95,
+      color: "text-blue-500",
+      bg: "bg-blue-900/30",
+      border: "border-blue-700/50",
+      icon: <Palette size={32} className="text-blue-500" />
+    },
+    { 
+      name: "JavaScript", 
+      percentage: 90,
+      color: "text-yellow-500",
+      bg: "bg-yellow-900/30",
+      border: "border-yellow-700/50",
+      icon: <Zap size={32} className="text-yellow-500" />
+    },
+    { 
+      name: "React", 
+      percentage: 85,
+      color: "text-cyan-500",
+      bg: "bg-cyan-900/30",
+      border: "border-cyan-700/50",
+      icon: <Layers size={32} className="text-cyan-500" />
+    },
+    { 
+      name: "Python", 
+      percentage: 92,
+      color: "text-emerald-500",
+      bg: "bg-emerald-900/30",
+      border: "border-emerald-700/50",
+      icon: <Cpu size={32} className="text-emerald-500" />
+    },
+    { 
+      name: "Java", 
+      percentage: 87,
+      color: "text-red-500",
+      bg: "bg-red-900/30",
+      border: "border-red-700/50",
+      icon: <Coffee size={32} className="text-red-500" />
+    },
+  ];
+
+  // Rotation automatique toutes les 2 secondes
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTech((prev) => (prev + 1) % technologies.length);
+    }, 2000);
+    
+    return () => clearInterval(interval);
+  }, [technologies.length]);
+
+  return (
+    <div className="absolute -top-8 -right-8 z-30 tech-simple-carousel hero-tech-animation">
+      <div className={`tech-simple-card backdrop-blur-sm transition-all duration-500 ${technologies[currentTech].bg} ${technologies[currentTech].border}`}>
+        <div className="flex flex-col items-center justify-center">
+          <div className="mb-2">
+            {technologies[currentTech].icon}
+          </div>
+          <div className={`tech-percentage ${technologies[currentTech].color} font-bold`}>
+            {technologies[currentTech].percentage}%
+          </div>
+          <div className="tech-name">
+            {technologies[currentTech].name}
+          </div>
+        </div>
+        
+        {/* Anneau animé */}
+        <div className="absolute -inset-2 rounded-2xl border-2 border-transparent border-t-gray-500/30 animate-spin-slow"></div>
+        
+        {/* Effet de halo */}
+        <div className="absolute -inset-3 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-xl -z-10"></div>
+      </div>
+    </div>
+  );
+};
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -312,7 +401,7 @@ function App() {
         )}
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section avec Carousel de Technologies */}
       <section id="accueil" className="pt-28 lg:pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900/20" />
@@ -402,7 +491,7 @@ function App() {
               </div>
             </div>
             
-            {/* Creative Profile Photo Section */}
+            {/* Creative Profile Photo Section avec Carousel */}
             <div className="relative">
               {/* Floating Elements */}
               <div className="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl backdrop-blur-sm border border-gray-700/50 flex items-center justify-center animate-float">
@@ -418,6 +507,9 @@ function App() {
               <div className="relative mx-auto">
                 {/* Outer Glow */}
                 <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-xl opacity-20 animate-pulse-glow" />
+                
+                {/* Carousel de Technologies */}
+                <TechCarousel />
                 
                 {/* Profile Image Container */}
                 <div className="relative w-80 h-80 mx-auto rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl group hover-lift">
@@ -775,428 +867,428 @@ function App() {
         </div>
       </section>
 
-    {/* Compétences Section avec Barres de Progression */}
-<section id="compétences" className="py-20 px-4 sm:px-6 lg:px-8">
-  <div className="max-w-7xl mx-auto">
-    <div className="flex items-center gap-3 mb-12">
-      <div className="p-3 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
-        <Wrench size={32} className="text-blue-400" />
-      </div>
-      <h2 className="text-4xl font-bold text-white">
-        Compétences <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">Techniques</span>
-      </h2>
-    </div>
+      {/* Compétences Section avec Barres de Progression */}
+      <section id="compétences" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center gap-3 mb-12">
+            <div className="p-3 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
+              <Wrench size={32} className="text-blue-400" />
+            </div>
+            <h2 className="text-4xl font-bold text-white">
+              Compétences <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">Techniques</span>
+            </h2>
+          </div>
 
-    {/* Grille de compétences avec barres de progression */}
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {/* Catégorie 1: Languages & Programmation */}
-      <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 group hover:scale-[1.02]">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="p-3 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-lg">
-            <Code2 size={24} className="text-blue-400" />
-          </div>
-          <h3 className="text-xl font-bold text-white">Languages & Programmation</h3>
-        </div>
-        <div className="space-y-4">
-          {/* HTML5 */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">HTML5</span>
-              <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">95%</span>
+          {/* Grille de compétences avec barres de progression */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Catégorie 1: Languages & Programmation */}
+            <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 group hover:scale-[1.02]">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-lg">
+                  <Code2 size={24} className="text-blue-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Languages & Programmation</h3>
+              </div>
+              <div className="space-y-4">
+                {/* HTML5 */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">HTML5</span>
+                    <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">95%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '95%' }}></div>
+                  </div>
+                </div>
+                
+                {/* PHP */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">PHP</span>
+                    <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">85%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out delay-75" style={{ width: '85%' }}></div>
+                  </div>
+                </div>
+                
+                {/* JavaScript */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">JavaScript</span>
+                    <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">90%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out delay-100" style={{ width: '90%' }}></div>
+                  </div>
+                </div>
+                
+                {/* CSS3 */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">CSS3</span>
+                    <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">92%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out delay-150" style={{ width: '92%' }}></div>
+                  </div>
+                </div>
+                
+                {/* TypeScript */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">TypeScript</span>
+                    <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">80%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out delay-200" style={{ width: '80%' }}></div>
+                  </div>
+                </div>
+                
+                {/* Java */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">Java</span>
+                    <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">88%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out delay-250" style={{ width: '88%' }}></div>
+                  </div>
+                </div>
+                
+                {/* Python */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">Python</span>
+                    <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">82%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out delay-300" style={{ width: '82%' }}></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '95%' }}></div>
-            </div>
-          </div>
-          
-          {/* PHP */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">PHP</span>
-              <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">85%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out delay-75" style={{ width: '85%' }}></div>
-            </div>
-          </div>
-          
-          {/* JavaScript */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">JavaScript</span>
-              <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">90%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out delay-100" style={{ width: '90%' }}></div>
-            </div>
-          </div>
-          
-          {/* CSS3 */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">CSS3</span>
-              <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">92%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out delay-150" style={{ width: '92%' }}></div>
-            </div>
-          </div>
-          
-          {/* TypeScript */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">TypeScript</span>
-              <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">80%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out delay-200" style={{ width: '80%' }}></div>
-            </div>
-          </div>
-          
-          {/* Java */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">Java</span>
-              <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">88%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out delay-250" style={{ width: '88%' }}></div>
-            </div>
-          </div>
-          
-          {/* Python */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">Python</span>
-              <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">82%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out delay-300" style={{ width: '82%' }}></div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Catégorie 2: Frameworks & Bibliothèques */}
-      <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-green-500/50 transition-all duration-300 group hover:scale-[1.02]">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="p-3 bg-gradient-to-br from-green-500/20 to-emerald-600/20 rounded-lg">
-            <Layers size={24} className="text-green-400" />
-          </div>
-          <h3 className="text-xl font-bold text-white">Frameworks & Bibliothèques</h3>
-        </div>
-        <div className="space-y-4">
-          {/* Symfony */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">Symfony</span>
-              <span className="text-green-400 text-xs font-bold bg-green-900/30 px-2 py-1 rounded">78%</span>
+            {/* Catégorie 2: Frameworks & Bibliothèques */}
+            <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-green-500/50 transition-all duration-300 group hover:scale-[1.02]">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 bg-gradient-to-br from-green-500/20 to-emerald-600/20 rounded-lg">
+                  <Layers size={24} className="text-green-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Frameworks & Bibliothèques</h3>
+              </div>
+              <div className="space-y-4">
+                {/* Symfony */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">Symfony</span>
+                    <span className="text-green-400 text-xs font-bold bg-green-900/30 px-2 py-1 rounded">78%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '78%' }}></div>
+                  </div>
+                </div>
+                
+                {/* React */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">React</span>
+                    <span className="text-green-400 text-xs font-bold bg-green-900/30 px-2 py-1 rounded">85%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transition-all duration-1000 ease-out delay-75" style={{ width: '85%' }}></div>
+                  </div>
+                </div>
+                
+                {/* Tailwind CSS */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">Tailwind CSS</span>
+                    <span className="text-green-400 text-xs font-bold bg-green-900/30 px-2 py-1 rounded">95%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transition-all duration-1000 ease-out delay-100" style={{ width: '95%' }}></div>
+                  </div>
+                </div>
+                
+                {/* Bootstrap */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">Bootstrap</span>
+                    <span className="text-green-400 text-xs font-bold bg-green-900/30 px-2 py-1 rounded">88%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transition-all duration-1000 ease-out delay-150" style={{ width: '88%' }}></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '78%' }}></div>
-            </div>
-          </div>
-          
-          {/* React */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">React</span>
-              <span className="text-green-400 text-xs font-bold bg-green-900/30 px-2 py-1 rounded">85%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transition-all duration-1000 ease-out delay-75" style={{ width: '85%' }}></div>
-            </div>
-          </div>
-          
-          {/* Tailwind CSS */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">Tailwind CSS</span>
-              <span className="text-green-400 text-xs font-bold bg-green-900/30 px-2 py-1 rounded">95%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transition-all duration-1000 ease-out delay-100" style={{ width: '95%' }}></div>
-            </div>
-          </div>
-          
-          {/* Bootstrap */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">Bootstrap</span>
-              <span className="text-green-400 text-xs font-bold bg-green-900/30 px-2 py-1 rounded">88%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transition-all duration-1000 ease-out delay-150" style={{ width: '88%' }}></div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Catégorie 3: Bases de données */}
-      <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-yellow-500/50 transition-all duration-300 group hover:scale-[1.02]">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="p-3 bg-gradient-to-br from-yellow-500/20 to-orange-600/20 rounded-lg">
-            <Database size={24} className="text-yellow-400" />
-          </div>
-          <h3 className="text-xl font-bold text-white">Bases de données</h3>
-        </div>
-        <div className="space-y-4">
-          {/* MySQL */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">MySQL</span>
-              <span className="text-yellow-400 text-xs font-bold bg-yellow-900/30 px-2 py-1 rounded">90%</span>
+            {/* Catégorie 3: Bases de données */}
+            <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-yellow-500/50 transition-all duration-300 group hover:scale-[1.02]">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 bg-gradient-to-br from-yellow-500/20 to-orange-600/20 rounded-lg">
+                  <Database size={24} className="text-yellow-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Bases de données</h3>
+              </div>
+              <div className="space-y-4">
+                {/* MySQL */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">MySQL</span>
+                    <span className="text-yellow-400 text-xs font-bold bg-yellow-900/30 px-2 py-1 rounded">90%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '90%' }}></div>
+                  </div>
+                </div>
+                
+                {/* MongoDB */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">MongoDB</span>
+                    <span className="text-yellow-400 text-xs font-bold bg-yellow-900/30 px-2 py-1 rounded">75%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full transition-all duration-1000 ease-out delay-75" style={{ width: '75%' }}></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '90%' }}></div>
-            </div>
-          </div>
-          
-          {/* MongoDB */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">MongoDB</span>
-              <span className="text-yellow-400 text-xs font-bold bg-yellow-900/30 px-2 py-1 rounded">75%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full transition-all duration-1000 ease-out delay-75" style={{ width: '75%' }}></div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Catégorie 4: Outils & DevOps */}
-      <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-red-500/50 transition-all duration-300 group hover:scale-[1.02]">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="p-3 bg-gradient-to-br from-red-500/20 to-pink-600/20 rounded-lg">
-            <Zap size={24} className="text-red-400" />
-          </div>
-          <h3 className="text-xl font-bold text-white">Outils & DevOps</h3>
-        </div>
-        <div className="space-y-4">
-          {/* Git */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">Git</span>
-              <span className="text-red-400 text-xs font-bold bg-red-900/30 px-2 py-1 rounded">92%</span>
+            {/* Catégorie 4: Outils & DevOps */}
+            <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-red-500/50 transition-all duration-300 group hover:scale-[1.02]">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 bg-gradient-to-br from-red-500/20 to-pink-600/20 rounded-lg">
+                  <Zap size={24} className="text-red-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Outils & DevOps</h3>
+              </div>
+              <div className="space-y-4">
+                {/* Git */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">Git</span>
+                    <span className="text-red-400 text-xs font-bold bg-red-900/30 px-2 py-1 rounded">92%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-red-400 to-pink-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '92%' }}></div>
+                  </div>
+                </div>
+                
+                {/* Docker */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">Docker</span>
+                    <span className="text-red-400 text-xs font-bold bg-red-900/30 px-2 py-1 rounded">70%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-red-400 to-pink-500 rounded-full transition-all duration-1000 ease-out delay-75" style={{ width: '70%' }}></div>
+                  </div>
+                </div>
+                
+                {/* Webpack */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">Webpack</span>
+                    <span className="text-red-400 text-xs font-bold bg-red-900/30 px-2 py-1 rounded">65%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-red-400 to-pink-500 rounded-full transition-all duration-1000 ease-out delay-100" style={{ width: '65%' }}></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-red-400 to-pink-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '92%' }}></div>
-            </div>
-          </div>
-          
-          {/* Docker */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">Docker</span>
-              <span className="text-red-400 text-xs font-bold bg-red-900/30 px-2 py-1 rounded">70%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-red-400 to-pink-500 rounded-full transition-all duration-1000 ease-out delay-75" style={{ width: '70%' }}></div>
-            </div>
-          </div>
-          
-          {/* Webpack */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">Webpack</span>
-              <span className="text-red-400 text-xs font-bold bg-red-900/30 px-2 py-1 rounded">65%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-red-400 to-pink-500 rounded-full transition-all duration-1000 ease-out delay-100" style={{ width: '65%' }}></div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Catégorie 5: Graphisme & Multimédia */}
-      <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 group hover:scale-[1.02]">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="p-3 bg-gradient-to-br from-purple-500/20 to-violet-600/20 rounded-lg">
-            <Sparkles size={24} className="text-purple-400" />
-          </div>
-          <h3 className="text-xl font-bold text-white">Graphisme & Multimédia</h3>
-        </div>
-        <div className="space-y-4">
-          {/* Adobe Suite */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">Adobe Suite</span>
-              <span className="text-purple-400 text-xs font-bold bg-purple-900/30 px-2 py-1 rounded">85%</span>
+            {/* Catégorie 5: Graphisme & Multimédia */}
+            <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 group hover:scale-[1.02]">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 bg-gradient-to-br from-purple-500/20 to-violet-600/20 rounded-lg">
+                  <Sparkles size={24} className="text-purple-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Graphisme & Multimédia</h3>
+              </div>
+              <div className="space-y-4">
+                {/* Adobe Suite */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">Adobe Suite</span>
+                    <span className="text-purple-400 text-xs font-bold bg-purple-900/30 px-2 py-1 rounded">85%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '85%' }}></div>
+                  </div>
+                </div>
+                
+                {/* Montage multimédia */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">Montage multimédia</span>
+                    <span className="text-purple-400 text-xs font-bold bg-purple-900/30 px-2 py-1 rounded">80%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transition-all duration-1000 ease-out delay-75" style={{ width: '80%' }}></div>
+                  </div>
+                </div>
+                
+                {/* Figma */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">Figma</span>
+                    <span className="text-purple-400 text-xs font-bold bg-purple-900/30 px-2 py-1 rounded">88%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transition-all duration-1000 ease-out delay-100" style={{ width: '88%' }}></div>
+                  </div>
+                </div>
+                
+                {/* Vidéo professionnelle */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">Vidéo professionnelle</span>
+                    <span className="text-purple-400 text-xs font-bold bg-purple-900/30 px-2 py-1 rounded">75%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transition-all duration-1000 ease-out delay-150" style={{ width: '75%' }}></div>
+                  </div>
+                </div>
+                
+                {/* Édition vidéo */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">Édition vidéo</span>
+                    <span className="text-purple-400 text-xs font-bold bg-purple-900/30 px-2 py-1 rounded">82%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transition-all duration-1000 ease-out delay-200" style={{ width: '82%' }}></div>
+                  </div>
+                </div>
+                
+                {/* Anglais technique */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">Anglais technique</span>
+                    <span className="text-purple-400 text-xs font-bold bg-purple-900/30 px-2 py-1 rounded">78%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transition-all duration-1000 ease-out delay-250" style={{ width: '78%' }}></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '85%' }}></div>
-            </div>
-          </div>
-          
-          {/* Montage multimédia */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">Montage multimédia</span>
-              <span className="text-purple-400 text-xs font-bold bg-purple-900/30 px-2 py-1 rounded">80%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transition-all duration-1000 ease-out delay-75" style={{ width: '80%' }}></div>
-            </div>
-          </div>
-          
-          {/* Figma */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">Figma</span>
-              <span className="text-purple-400 text-xs font-bold bg-purple-900/30 px-2 py-1 rounded">88%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transition-all duration-1000 ease-out delay-100" style={{ width: '88%' }}></div>
-            </div>
-          </div>
-          
-          {/* Vidéo professionnelle */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">Vidéo professionnelle</span>
-              <span className="text-purple-400 text-xs font-bold bg-purple-900/30 px-2 py-1 rounded">75%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transition-all duration-1000 ease-out delay-150" style={{ width: '75%' }}></div>
-            </div>
-          </div>
-          
-          {/* Édition vidéo */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">Édition vidéo</span>
-              <span className="text-purple-400 text-xs font-bold bg-purple-900/30 px-2 py-1 rounded">82%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transition-all duration-1000 ease-out delay-200" style={{ width: '82%' }}></div>
-            </div>
-          </div>
-          
-          {/* Anglais technique */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">Anglais technique</span>
-              <span className="text-purple-400 text-xs font-bold bg-purple-900/30 px-2 py-1 rounded">78%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transition-all duration-1000 ease-out delay-250" style={{ width: '78%' }}></div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Catégorie 6: Compétences transversales */}
-      <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 group hover:scale-[1.02]">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="p-3 bg-gradient-to-br from-cyan-500/20 to-teal-600/20 rounded-lg">
-            <Users size={24} className="text-cyan-400" />
+            {/* Catégorie 6: Compétences transversales */}
+            <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 group hover:scale-[1.02]">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 bg-gradient-to-br from-cyan-500/20 to-teal-600/20 rounded-lg">
+                  <Users size={24} className="text-cyan-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Compétences transversales</h3>
+              </div>
+              <div className="space-y-4">
+                {/* Travail d'équipe */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">Travail d'équipe</span>
+                    <span className="text-cyan-400 text-xs font-bold bg-cyan-900/30 px-2 py-1 rounded">95%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '95%' }}></div>
+                  </div>
+                </div>
+                
+                {/* Communication */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">Communication</span>
+                    <span className="text-cyan-400 text-xs font-bold bg-cyan-900/30 px-2 py-1 rounded">90%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full transition-all duration-1000 ease-out delay-75" style={{ width: '90%' }}></div>
+                  </div>
+                </div>
+                
+                {/* Gestion de projet */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 text-sm font-medium">Gestion de projet</span>
+                    <span className="text-cyan-400 text-xs font-bold bg-cyan-900/30 px-2 py-1 rounded">85%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full transition-all duration-1000 ease-out delay-100" style={{ width: '85%' }}></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <h3 className="text-xl font-bold text-white">Compétences transversales</h3>
-        </div>
-        <div className="space-y-4">
-          {/* Travail d'équipe */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">Travail d'équipe</span>
-              <span className="text-cyan-400 text-xs font-bold bg-cyan-900/30 px-2 py-1 rounded">95%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '95%' }}></div>
-            </div>
-          </div>
-          
-          {/* Communication */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">Communication</span>
-              <span className="text-cyan-400 text-xs font-bold bg-cyan-900/30 px-2 py-1 rounded">90%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full transition-all duration-1000 ease-out delay-75" style={{ width: '90%' }}></div>
-            </div>
-          </div>
-          
-          {/* Gestion de projet */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm font-medium">Gestion de projet</span>
-              <span className="text-cyan-400 text-xs font-bold bg-cyan-900/30 px-2 py-1 rounded">85%</span>
-            </div>
-            <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full transition-all duration-1000 ease-out delay-100" style={{ width: '85%' }}></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    {/* Section des statistiques */}
-    <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div className="relative group overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:scale-105">
-        <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-blue-700 rounded-xl blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
-        <div className="relative text-center">
-          <div className="text-3xl font-bold text-blue-400 mb-2 animate-count">7+</div>
-          <div className="text-sm text-gray-400 font-medium">Langages</div>
-        </div>
-      </div>
-      
-      <div className="relative group overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-green-500/50 transition-all duration-300 hover:scale-105">
-        <div className="absolute -inset-1 bg-gradient-to-r from-green-500 to-emerald-700 rounded-xl blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
-        <div className="relative text-center">
-          <div className="text-3xl font-bold text-green-400 mb-2 animate-count">5+</div>
-          <div className="text-sm text-gray-400 font-medium">Frameworks</div>
-        </div>
-      </div>
-      
-      <div className="relative group overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-yellow-500/50 transition-all duration-300 hover:scale-105">
-        <div className="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-orange-700 rounded-xl blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
-        <div className="relative text-center">
-          <div className="text-3xl font-bold text-yellow-400 mb-2 animate-count">2+</div>
-          <div className="text-sm text-gray-400 font-medium">Bases de données</div>
-        </div>
-      </div>
-      
-      <div className="relative group overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:scale-105">
-        <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-violet-700 rounded-xl blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
-        <div className="relative text-center">
-          <div className="text-3xl font-bold text-purple-400 mb-2 animate-count">10+</div>
-          <div className="text-sm text-gray-400 font-medium">Projets réalisés</div>
-        </div>
-      </div>
-    </div>
+          {/* Section des statistiques */}
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="relative group overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:scale-105">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-blue-700 rounded-xl blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
+              <div className="relative text-center">
+                <div className="text-3xl font-bold text-blue-400 mb-2">7+</div>
+                <div className="text-sm text-gray-400 font-medium">Langages</div>
+              </div>
+            </div>
+            
+            <div className="relative group overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-green-500/50 transition-all duration-300 hover:scale-105">
+              <div className="absolute -inset-1 bg-gradient-to-r from-green-500 to-emerald-700 rounded-xl blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
+              <div className="relative text-center">
+                <div className="text-3xl font-bold text-green-400 mb-2">5+</div>
+                <div className="text-sm text-gray-400 font-medium">Frameworks</div>
+              </div>
+            </div>
+            
+            <div className="relative group overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-yellow-500/50 transition-all duration-300 hover:scale-105">
+              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-orange-700 rounded-xl blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
+              <div className="relative text-center">
+                <div className="text-3xl font-bold text-yellow-400 mb-2">2+</div>
+                <div className="text-sm text-gray-400 font-medium">Bases de données</div>
+              </div>
+            </div>
+            
+            <div className="relative group overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:scale-105">
+              <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-violet-700 rounded-xl blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
+              <div className="relative text-center">
+                <div className="text-3xl font-bold text-purple-400 mb-2">10+</div>
+                <div className="text-sm text-gray-400 font-medium">Projets réalisés</div>
+              </div>
+            </div>
+          </div>
 
-    {/* Légende des niveaux */}
-    <div className="mt-12 p-6 bg-gray-800/20 backdrop-blur-sm rounded-xl border border-gray-700/30">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="text-center md:text-left">
-          <h4 className="text-lg font-bold text-white mb-2">Échelle de maîtrise</h4>
-          <p className="text-gray-400 text-sm max-w-md">
-            Les pourcentages représentent mon niveau de confiance et d'expertise dans chaque technologie.
-          </p>
+          {/* Légende des niveaux */}
+          <div className="mt-12 p-6 bg-gray-800/20 backdrop-blur-sm rounded-xl border border-gray-700/30">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="text-center md:text-left">
+                <h4 className="text-lg font-bold text-white mb-2">Échelle de maîtrise</h4>
+                <p className="text-gray-400 text-sm max-w-md">
+                  Les pourcentages représentent mon niveau de confiance et d'expertise dans chaque technologie.
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center gap-4">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-400 to-blue-500"></div>
+                  <span className="text-sm text-gray-300">0-60% : Débutant</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-400 to-emerald-500"></div>
+                  <span className="text-sm text-gray-300">61-80% : Intermédiaire</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-gradient-to-r from-purple-400 to-violet-500"></div>
+                  <span className="text-sm text-gray-300">81-95% : Avancé</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div>
+                  <span className="text-sm text-gray-300">96-100% : Expert</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-wrap justify-center gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-400 to-blue-500"></div>
-            <span className="text-sm text-gray-300">0-60% : Débutant</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-400 to-emerald-500"></div>
-            <span className="text-sm text-gray-300">61-80% : Intermédiaire</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-gradient-to-r from-purple-400 to-violet-500"></div>
-            <span className="text-sm text-gray-300">81-95% : Avancé</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div>
-            <span className="text-sm text-gray-300">96-100% : Expert</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Veille Tech Section */}
       <section id="veille" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">

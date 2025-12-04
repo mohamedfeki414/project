@@ -105,15 +105,51 @@ function App() {
     document.body.removeChild(link);
   };
 
-  // Navigation items with icons based on your image
-  const navItems = [
-    { id: 'accueil', label: 'Accueil', icon: <Home size={18} />, symbol: '@' },
-    { id: 'profil', label: 'Apropos', icon: <UserIcon size={18} />, symbol: '&' },
-    { id: 'experiences', label: 'Experiences', icon: <BriefcaseIcon size={18} />, symbol: '售' },
-    { id: 'projets', label: 'Projets', icon: <Folder size={18} />, symbol: '<P' },
-    { id: 'compétences', label: 'Compétences', icon: <Wrench size={18} />, symbol: '人' },
-    { id: 'veille', label: 'Veille Tech', icon: <Eye size={18} />, symbol: '®' },
-  ];
+  // Navigation items with creative dynamic icons
+const navItems = [
+  { 
+    id: 'accueil', 
+    label: 'Accueil', 
+    icon: '🏠',
+    color: 'from-blue-400 to-cyan-400',
+    animation: 'animate-float'
+  },
+  { 
+    id: 'profil', 
+    label: 'Apropos', 
+    icon: '👤',
+    color: 'from-purple-400 to-pink-400',
+    animation: 'animate-pulse'
+  },
+  { 
+    id: 'experiences', 
+    label: 'Experiences', 
+    icon: '💼',
+    color: 'from-green-400 to-emerald-400',
+    animation: 'animate-bounce-slow'
+  },
+  { 
+    id: 'projets', 
+    label: 'Projets', 
+    icon: '📁',
+    color: 'from-yellow-400 to-orange-400',
+    animation: 'animate-spin-slow'
+  },
+  { 
+    id: 'compétences', 
+    label: 'Compétences', 
+    icon: '⚙️',
+    color: 'from-red-400 to-rose-400',
+    animation: 'animate-ping-slow'
+  },
+  { 
+    id: 'veille', 
+    label: 'Veille Tech', 
+    icon: '👁️',
+    color: 'from-indigo-400 to-violet-400',
+    animation: 'animate-pulse-glow'
+  },
+];
 
   // Détection de la section active
   useEffect(() => {
@@ -274,132 +310,219 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100">
-      {/* Navigation - Style exact comme sur l'image */}
-      <nav className="fixed w-full bg-gray-900/95 backdrop-blur-xl z-50 border-b border-gray-700/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between py-3">
-            {/* Logo Section - Style avec les traits */}
-            <div className="flex items-center gap-4 mb-3 lg:mb-0 w-full lg:w-auto justify-center lg:justify-start">
-              {/* Cercle avec initiales */}
-              <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-lg">MF</span>
-                </div>
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur opacity-30 -z-10" />
-              </div>
-              
-              {/* Nom et titre avec séparateurs */}
-              <div className="text-center lg:text-left">
-                <div className="flex items-center justify-center lg:justify-start gap-3">
-                  <div className="w-8 h-0.5 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
-                  <h1 className="text-xl font-bold text-white tracking-wider">MOHAMED</h1>
-                  <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-purple-500 rounded-full" />
-                </div>
-                <div className="flex items-center justify-center lg:justify-start gap-2 mt-1">
-                  <div className="w-4 h-0.5 bg-blue-500 rounded-full" />
-                  <p className="text-xs text-gray-300 font-medium tracking-[0.3em]">FULL STACK DEVELOPER</p>
-                  <div className="w-4 h-0.5 bg-purple-500 rounded-full" />
-                </div>
-              </div>
-            </div>
-            
-            {/* Desktop Navigation - Style avec symboles et texte comme sur l'image */}
-            <div className="hidden lg:flex items-center gap-1 bg-gray-800/60 backdrop-blur-sm rounded-full px-1 py-1 border border-gray-700/50 shadow-lg">
-              {navItems.map((item) => {
-                const isActive = activeSection === item.id;
-                return (
-                  <a 
-                    key={item.id}
-                    href={`#${item.id}`}
-                    className={`flex items-center gap-2 px-5 py-2.5 rounded-full transition-all duration-300 relative group ${
-                      isActive 
-                        ? 'bg-gradient-to-r from-blue-900/40 to-purple-900/40 text-white shadow-inner' 
-                        : 'text-gray-300 hover:text-white hover:bg-gray-700/30'
-                    }`}
-                  >
-                    {/* Symbole comme sur l'image */}
-                    <span className={`text-sm font-bold ${isActive ? 'text-blue-400' : 'text-gray-400 group-hover:text-blue-300'}`}>
-                      {item.symbol}
-                    </span>
-                    
-                    {/* Texte */}
-                    <span className="text-sm font-medium tracking-wide">{item.label}</span>
-                    
-                    {/* Indicateur d'activité */}
-                    {isActive && (
-                      <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse" />
-                    )}
-                    
-                    {/* Effet de hover */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-all duration-300" />
-                  </a>
-                );
-              })}
-            </div>
-            
-            {/* Bouton Contact - Style minimaliste */}
-            <div className="hidden lg:flex items-center">
-              <a 
-                href="#contact"
-                className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105"
-              >
-                <Mail size={16} />
-                <span className="text-sm font-medium">Contact</span>
-              </a>
-            </div>
-            
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden absolute right-4 top-1/2 transform -translate-y-1/2 p-2 rounded-lg hover:bg-gray-800/50 transition"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? (
-                <X size={24} className="text-blue-400" />
-              ) : (
-                <Menu size={24} className="text-gray-300" />
-              )}
-            </button>
+      {/* Navigation avec logos créatifs dynamiques */}
+<nav className="fixed w-full bg-gray-900/95 backdrop-blur-xl z-50 border-b border-gray-700/50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col lg:flex-row items-center justify-between py-3">
+      {/* Logo Section */}
+      <div className="flex items-center gap-4 mb-3 lg:mb-0 w-full lg:w-auto justify-center lg:justify-start">
+        {/* Cercle avec initiales animé */}
+        <div className="relative">
+          <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg animate-spin-slow">
+            <span className="text-white font-bold text-lg">MF</span>
           </div>
+          <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur opacity-30 -z-10 animate-pulse" />
         </div>
         
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden bg-gray-800/95 backdrop-blur-xl border-t border-gray-700/50">
-            <div className="px-4 py-3">
-              {navItems.map((item) => {
-                const isActive = activeSection === item.id;
-                return (
-                  <a 
-                    key={item.id}
-                    href={`#${item.id}`}
-                    className={`flex items-center gap-3 py-3 px-4 rounded-lg transition font-medium ${
-                      isActive
-                        ? 'bg-gradient-to-r from-blue-900/30 to-purple-900/30 text-white'
-                        : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <span className={`text-sm font-bold ${isActive ? 'text-blue-400' : 'text-gray-400'}`}>
-                      {item.symbol}
-                    </span>
-                    <span>{item.label}</span>
-                  </a>
-                );
-              })}
-              <div className="pt-4 border-t border-gray-700/50">
-                <a 
-                  href="#contact"
-                  className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <Mail size={16} />
-                  <span>Contact</span>
-                </a>
-              </div>
-            </div>
+        {/* Nom et titre avec séparateurs */}
+        <div className="text-center lg:text-left">
+          <div className="flex items-center justify-center lg:justify-start gap-3">
+            <div className="w-8 h-0.5 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
+            <h1 className="text-xl font-bold text-white tracking-wider">MOHAMED</h1>
+            <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-purple-500 rounded-full" />
           </div>
-        )}
-      </nav>
+          <div className="flex items-center justify-center lg:justify-start gap-2 mt-1">
+            <div className="w-4 h-0.5 bg-blue-500 rounded-full animate-pulse" />
+            <p className="text-xs text-gray-300 font-medium tracking-[0.3em]">FULL STACK DEVELOPER</p>
+            <div className="w-4 h-0.5 bg-purple-500 rounded-full animate-pulse delay-300" />
+          </div>
+        </div>
+      </div>
+      
+      {/* Desktop Navigation - Logos créatifs dynamiques */}
+      <div className="hidden lg:flex items-center gap-1 bg-gray-800/60 backdrop-blur-sm rounded-full px-1 py-1 border border-gray-700/50 shadow-lg">
+        {navItems.map((item) => {
+          const isActive = activeSection === item.id;
+          return (
+            <a 
+              key={item.id}
+              href={`#${item.id}`}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-full transition-all duration-300 relative group ${
+                isActive 
+                  ? 'bg-gradient-to-r from-blue-900/40 to-purple-900/40 text-white shadow-inner' 
+                  : 'text-gray-300 hover:text-white hover:bg-gray-700/30'
+              }`}
+            >
+              {/* Logo créatif avec animation circulaire */}
+              <div className="relative">
+                {/* Cercle extérieur qui tourne */}
+                <div className={`absolute -inset-2 bg-gradient-to-r ${item.color} rounded-full blur opacity-0 group-hover:opacity-20 transition-all duration-500 ${isActive ? 'opacity-20' : ''} ${item.animation}`}></div>
+                
+                {/* Cercle intérieur avec effet de halo */}
+                <div className={`relative w-8 h-8 rounded-full flex items-center justify-center bg-gradient-to-br ${item.color} bg-opacity-10 border ${
+                  isActive 
+                    ? 'border-blue-400/50 shadow-lg shadow-blue-500/20' 
+                    : 'border-gray-600/50 group-hover:border-blue-400/30'
+                } transition-all duration-300`}>
+                  {/* Émoji/Logo principal */}
+                  <span className={`text-lg ${item.animation} ${isActive ? 'scale-110' : ''} group-hover:scale-110 transition-transform duration-300`}>
+                    {item.icon}
+                  </span>
+                  
+                  {/* Points orbitaux (seulement au hover ou actif) */}
+                  <div className="absolute inset-0">
+                    {[...Array(3)].map((_, i) => (
+                      <div 
+                        key={i}
+                        className={`absolute w-1.5 h-1.5 bg-gradient-to-r ${item.color} rounded-full opacity-0 ${
+                          isActive ? 'opacity-70' : 'group-hover:opacity-70'
+                        } transition-opacity duration-300`}
+                        style={{
+                          top: '50%',
+                          left: '50%',
+                          transform: `rotate(${i * 120}deg) translateX(16px) rotate(-${i * 120}deg)`,
+                          animation: `orbit 2s linear infinite`,
+                          animationDelay: `${i * 0.3}s`,
+                          animationPlayState: isActive ? 'running' : 'paused'
+                        }}
+                      ></div>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Traînée lumineuse circulaire */}
+                <div className={`absolute -inset-3 rounded-full border-2 border-transparent border-t-gray-500/30 opacity-0 ${
+                  isActive ? 'opacity-100 animate-spin-slow' : 'group-hover:opacity-100'
+                } transition-opacity duration-300`}></div>
+              </div>
+              
+              {/* Texte */}
+              <span className="text-sm font-medium tracking-wide">{item.label}</span>
+              
+              {/* Indicateur d'activité animé */}
+              {isActive && (
+                <>
+                  <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-ping" />
+                  <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse" />
+                </>
+              )}
+              
+              {/* Effet de hover avec particules */}
+              <div className="absolute inset-0 rounded-full overflow-hidden">
+                {/* Particules volantes */}
+                {[...Array(5)].map((_, i) => (
+                  <div 
+                    key={i}
+                    className={`absolute w-0.5 h-0.5 bg-white rounded-full opacity-0 group-hover:opacity-40`}
+                    style={{
+                      top: `${Math.random() * 100}%`,
+                      left: `${Math.random() * 100}%`,
+                      animation: `floatParticle 3s ease-in-out infinite`,
+                      animationDelay: `${i * 0.6}s`,
+                      animationPlayState: 'paused'
+                    }}
+                  ></div>
+                ))}
+              </div>
+            </a>
+          );
+        })}
+      </div>
+      
+      {/* Boutons droite */}
+      <div className="hidden lg:flex items-center gap-3">
+        {/* Bouton Contact - Style amélioré */}
+        <a 
+          href="#contact"
+          className="relative group"
+        >
+          <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+          <div className="relative flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105">
+            <Mail size={16} className="group-hover:animate-bounce" />
+            <span className="text-sm font-medium">Contact</span>
+          </div>
+        </a>
+      </div>
+      
+      {/* Mobile Menu Button */}
+      <button
+        className="lg:hidden absolute right-4 top-1/2 transform -translate-y-1/2 p-2 rounded-lg hover:bg-gray-800/50 transition group"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        <div className="relative">
+          {isMenuOpen ? (
+            <>
+              <X size={24} className="text-blue-400 animate-spin-once" />
+              <div className="absolute -inset-2 bg-blue-500/20 rounded-full blur animate-pulse"></div>
+            </>
+          ) : (
+            <>
+              <Menu size={24} className="text-gray-300 group-hover:text-blue-400 transition-colors" />
+              <div className="absolute -inset-2 bg-gray-500/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </>
+          )}
+        </div>
+      </button>
+    </div>
+  </div>
+  
+  {/* Mobile Menu avec logos créatifs */}
+  {isMenuOpen && (
+    <div className="lg:hidden bg-gray-800/95 backdrop-blur-xl border-t border-gray-700/50">
+      <div className="px-4 py-3">
+        {navItems.map((item) => {
+          const isActive = activeSection === item.id;
+          return (
+            <a 
+              key={item.id}
+              href={`#${item.id}`}
+              className={`flex items-center gap-3 py-3 px-4 rounded-lg transition font-medium group ${
+                isActive
+                  ? 'bg-gradient-to-r from-blue-900/30 to-purple-900/30 text-white'
+                  : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {/* Logo mobile animé */}
+              <div className="relative">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-br ${item.color} bg-opacity-10 ${
+                  isActive ? 'animate-pulse' : ''
+                }`}>
+                  <span className={`text-lg ${isActive ? 'scale-110' : ''} transition-transform duration-300`}>
+                    {item.icon}
+                  </span>
+                </div>
+                
+                {/* Animation circulaire pour item actif */}
+                {isActive && (
+                  <div className="absolute -inset-2 border-2 border-blue-500/30 rounded-full animate-ping"></div>
+                )}
+              </div>
+              
+              <span className="flex-1">{item.label}</span>
+              
+              {/* Indicateur de page actuelle */}
+              {isActive && (
+                <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"></div>
+              )}
+            </a>
+          );
+        })}
+        
+        <div className="pt-4 border-t border-gray-700/50">
+          <a 
+            href="#contact"
+            className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition group"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <Mail size={16} className="group-hover:animate-bounce" />
+            <span>Contact</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  )}
+</nav>
 
       {/* Hero Section avec Carousel de Technologies */}
       <section id="accueil" className="pt-28 lg:pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">

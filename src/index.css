@@ -907,3 +907,111 @@ html {
   z-index: -1;
   animation: pulse-glow 3s ease-in-out infinite;
 }
+/* Animations personnalisées pour la navigation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ping-slow {
+  75%, 100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(16px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(16px) rotate(-360deg);
+  }
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    transform: translate(calc(var(--x) * 20px), calc(var(--y) * 20px));
+    opacity: 0;
+  }
+}
+
+@keyframes spin-once {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Classes Tailwind pour les animations */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-ping-slow {
+  animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-spin-once {
+  animation: spin-once 0.3s ease-out;
+}
+
+/* Pour les particules volantes */
+.group:hover .group-hover\:animate-float-particle {
+  animation: floatParticle 3s ease-in-out infinite;
+}

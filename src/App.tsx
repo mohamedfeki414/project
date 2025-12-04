@@ -301,12 +301,40 @@ const navItems = [
     { title: "PYTHON/SQL", date: "Juin 2020", issuer: "EDU SPAZIO", icon: "🐍" }
   ];
 
-  const interests = [
-    { name: "Technologie & Innovation", icon: <Zap className="text-blue-400" /> },
-    { name: "Jeux Vidéo", icon: <Gamepad2 className="text-purple-400" /> },
-    { name: "Sports", icon: <Trophy className="text-green-400" /> },
-    { name: "Café & Code", icon: <Coffee className="text-orange-400" /> }
+  // Fonction pour obtenir les couleurs des centres d'intérêt
+const getInterestColor = (index: number): string => {
+  const colors = [
+    'from-blue-400 to-cyan-400',
+    'from-purple-400 to-pink-400',
+    'from-green-400 to-emerald-400',
+    'from-orange-400 to-yellow-400'
   ];
+  return colors[index % colors.length];
+};
+
+// Mettez à jour le tableau des centres d'intérêt pour inclure des couleurs
+const interests = [
+  { 
+    name: "Technologie & Innovation", 
+    icon: <Zap className="text-blue-400" />,
+    color: "from-blue-400 to-cyan-400"
+  },
+  { 
+    name: "Jeux Vidéo", 
+    icon: <Gamepad2 className="text-purple-400" />,
+    color: "from-purple-400 to-pink-400"
+  },
+  { 
+    name: "Sports", 
+    icon: <Trophy className="text-green-400" />,
+    color: "from-green-400 to-emerald-400"
+  },
+  { 
+    name: "Café & Code", 
+    icon: <Coffee className="text-orange-400" />,
+    color: "from-orange-400 to-yellow-400"
+  }
+];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100">
@@ -815,127 +843,432 @@ const navItems = [
           </div>
         </div>
       </section>
-
-      {/* Profil Section (Apropos) */}
-      <section id="profil" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center gap-3 mb-12">
-            <div className="p-3 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
-              <UserIcon size={32} className="text-blue-400" />
+{/* Profil Section (Apropos) - DESIGN CRÉATIF ET DYNAMIQUE */}
+<section id="profil" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+  {/* Arrière-plan animé */}
+  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900/10 to-purple-900/10"></div>
+  <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
+  <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+  
+  <div className="max-w-7xl mx-auto relative">
+    {/* En-tête créatif */}
+    <div className="flex flex-col items-center mb-16">
+      <div className="relative mb-8">
+        {/* Cercle animé */}
+        <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-xl opacity-20 animate-pulse-glow"></div>
+        <div className="relative p-6 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl border border-blue-500/30 backdrop-blur-sm">
+          <UserIcon size={48} className="text-blue-400 animate-float" />
+        </div>
+        {/* Particules flottantes */}
+        <div className="absolute -top-4 -right-4 w-8 h-8 bg-cyan-500/20 rounded-full blur-sm animate-bounce"></div>
+        <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-purple-500/20 rounded-full blur-sm animate-bounce delay-500"></div>
+      </div>
+      
+      <div className="text-center">
+        <h2 className="text-5xl font-bold text-white mb-4">
+          À <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text animate-gradient">Propos</span>
+        </h2>
+        <div className="flex items-center justify-center gap-4 mb-6">
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
+          <div className="w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-transparent to-purple-500 rounded-full"></div>
+        </div>
+        
+        {/* Paragraphe d'introduction créatif */}
+        <div className="relative max-w-3xl mx-auto">
+          <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-50"></div>
+          <div className="relative bg-gray-800/30 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50">
+            <div className="flex items-start gap-4">
+              <div className="mt-1">
+                <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-pulse"></div>
+              </div>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                <span className="text-blue-400 font-semibold">Passionné par l'innovation</span> et la création de solutions technologiques 
+                depuis toujours, je mets mon expertise en développement full-stack au service de projets 
+                ambitieux. Mon parcours académique en <span className="text-purple-400 font-semibold">Génie Logiciel</span> et mes 
+                multiples expériences pratiques m'ont forgé une vision holistique du développement, 
+                alliant <span className="text-green-400 font-semibold">rigueur technique</span> et <span className="text-yellow-400 font-semibold">créativité</span>.
+              </p>
             </div>
-            <h2 className="text-4xl font-bold text-white">
-              À <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">Propos</span>
-            </h2>
+            
+            <div className="mt-6 flex items-start gap-4">
+              <div className="mt-1">
+                <div className="w-3 h-3 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-pulse delay-300"></div>
+              </div>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                J'aime relever des défis complexes et transformer des idées en 
+                <span className="text-pink-400 font-semibold"> applications performantes</span>. Mon approche combine 
+                <span className="text-orange-400 font-semibold"> méthodologie Agile</span>, <span className="text-emerald-400 font-semibold">bonnes pratiques de code</span> 
+                et une veille technologique constante pour toujours proposer des solutions 
+                modernes et efficaces.
+              </p>
+            </div>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Education & Certifications */}
-            <div className="space-y-6">
-              <div className="bg-gray-800/30 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 group">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-2 bg-blue-900/30 rounded-lg">
-                    <GraduationCap size={24} className="text-blue-400" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white">Formation & Certifications</h3>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="p-4 bg-gray-900/30 rounded-xl hover:bg-gray-900/50 transition-colors">
-                    <h4 className="text-xl font-semibold text-blue-400">Licence en Génie Logiciel et SI</h4>
-                    <p className="text-gray-400">Institut International de Technologie</p>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    {certifications.map((cert, index) => (
-                      <div 
-                        key={index} 
-                        className="flex items-center gap-4 p-3 bg-gray-900/20 rounded-lg hover:bg-gray-900/40 transition-colors group/item"
-                      >
-                        <span className="text-2xl">{cert.icon}</span>
-                        <div className="flex-1">
-                          <span className="text-gray-300 group-hover/item:text-blue-300 transition-colors">
-                            {cert.title}
-                          </span>
-                          <p className="text-sm text-gray-500">{cert.issuer}</p>
-                        </div>
-                        <span className="text-blue-400 text-sm">{cert.date}</span>
-                      </div>
-                    ))}
-                  </div>
+          {/* Éléments décoratifs */}
+          <div className="absolute -top-3 -left-3 w-6 h-6 border-2 border-blue-500/30 rounded-full animate-spin-slow"></div>
+          <div className="absolute -bottom-3 -right-3 w-6 h-6 border-2 border-purple-500/30 rounded-full animate-spin-slow reverse"></div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Grille créative */}
+    <div className="grid lg:grid-cols-2 gap-8">
+      {/* Colonne gauche - Formation & Centres d'intérêt */}
+      <div className="space-y-8">
+        {/* Formation - Carte créative */}
+        <div className="relative group">
+          {/* Effet de fond animé */}
+          <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          
+          <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500 group-hover:scale-[1.02]">
+            {/* En-tête animé */}
+            <div className="flex items-center gap-4 mb-8">
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur opacity-20 animate-pulse"></div>
+                <div className="relative p-3 bg-gradient-to-br from-blue-900/30 to-cyan-900/30 rounded-xl">
+                  <GraduationCap size={28} className="text-cyan-400 animate-float-slow" />
                 </div>
               </div>
-              
-              {/* Interests */}
-              <div className="bg-gray-800/30 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300">
-                <h3 className="text-2xl font-bold text-white mb-6">Centres d'intérêt</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {interests.map((interest, index) => (
-                    <div 
-                      key={index}
-                      className="flex items-center gap-3 p-4 bg-gray-900/20 rounded-xl hover:bg-gray-900/40 transition-colors group"
-                    >
-                      {interest.icon}
-                      <span className="text-gray-300 group-hover:text-white transition-colors">
-                        {interest.name}
-                      </span>
+              <div>
+                <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+                  Formation & 
+                  <span className="text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text">
+                    Certifications
+                  </span>
+                </h3>
+                <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-2"></div>
+              </div>
+            </div>
+            
+            {/* Diplôme principal */}
+            <div className="relative mb-8">
+              <div className="absolute -inset-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative p-6 bg-gradient-to-br from-gray-900/50 to-gray-800/50 rounded-xl border border-gray-700/50 hover:border-blue-500/30 transition-colors">
+                <div className="flex items-start gap-4">
+                  <div className="mt-1">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
+                      Licence en Génie Logiciel et SI
+                    </h4>
+                    <p className="text-gray-400 mt-2">Institut International de Technologie</p>
+                    <div className="flex items-center gap-2 mt-3">
+                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-sm text-green-400 font-medium">Diplôme obtenu avec mention</span>
                     </div>
-                  ))}
+                  </div>
                 </div>
               </div>
             </div>
             
-            {/* Skills & Languages */}
-            <div className="space-y-6">
-              {/* Soft Skills */}
-              <div className="bg-gray-800/30 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-green-500/50 transition-all duration-300">
-                <h3 className="text-2xl font-bold text-white mb-6">Soft Skills</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {softSkills.map((skill, index) => (
-                    <div key={index} className="relative group">
-                      <div className="p-4 bg-gray-900/20 rounded-xl hover:bg-gray-900/40 transition-colors">
-                        <div className="flex items-center gap-3 mb-2">
-                          <div className="text-blue-400">
-                            {skill.icon}
-                          </div>
-                          <span className="text-gray-300">{skill.name}</span>
-                        </div>
-                        <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                          <div 
-                            className="h-full bg-gradient-to-r from-green-400 to-emerald-400 rounded-full transition-all duration-1000"
-                            style={{ width: `${skill.level}%` }}
-                          />
-                        </div>
+            {/* Liste des certifications avec animation */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-gray-300 mb-4">Certifications obtenues :</h4>
+              {certifications.map((cert, index) => (
+                <div 
+                  key={index} 
+                  className="relative group/item"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover/item:opacity-100 transition-opacity"></div>
+                  <div className="relative flex items-center gap-4 p-4 bg-gray-900/30 rounded-xl hover:bg-gray-900/50 transition-all duration-300 group-hover/item:translate-x-2">
+                    {/* Icône animée */}
+                    <div className="relative">
+                      <div className="absolute -inset-2 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-sm opacity-0 group-hover/item:opacity-100"></div>
+                      <div className="relative w-12 h-12 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center group-hover/item:scale-110 transition-transform">
+                        <span className="text-2xl">{cert.icon}</span>
                       </div>
                     </div>
-                  ))}
+                    
+                    {/* Contenu */}
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <span className="text-gray-300 group-hover/item:text-blue-300 transition-colors font-medium">
+                          {cert.title}
+                        </span>
+                        <span className="text-sm bg-gradient-to-r from-blue-900/30 to-purple-900/30 text-blue-300 px-3 py-1 rounded-full">
+                          {cert.date}
+                        </span>
+                      </div>
+                      <p className="text-sm text-gray-500 mt-1">{cert.issuer}</p>
+                    </div>
+                    
+                    {/* Flèche indicatrice */}
+                    <ChevronRight size={16} className="text-gray-500 group-hover/item:text-blue-400 group-hover/item:translate-x-1 transition-all" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        
+        {/* Centres d'intérêt - Design créatif */}
+        <div className="relative group">
+          <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-rose-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          
+          <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-500 group-hover:scale-[1.02]">
+            {/* En-tête */}
+            <div className="flex items-center gap-4 mb-8">
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur opacity-20 animate-pulse delay-500"></div>
+                <div className="relative p-3 bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-xl">
+                  <Sparkles size={28} className="text-pink-400 animate-pulse-slow" />
                 </div>
               </div>
-              
-              {/* Languages */}
-              <div className="bg-gray-800/30 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-yellow-500/50 transition-all duration-300">
-                <h3 className="text-2xl font-bold text-white mb-6">Langues</h3>
-                <div className="space-y-6">
-                  {languages.map((lang, index) => (
-                    <div key={index}>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-300">{lang.name}</span>
-                        <span className="text-blue-400 text-sm">{lang.level}</span>
+              <div>
+                <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+                  Centres d'
+                  <span className="text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text">
+                    intérêt
+                  </span>
+                </h3>
+                <div className="w-16 h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mt-2"></div>
+              </div>
+            </div>
+            
+            {/* Grille d'intérêts animée */}
+            <div className="grid grid-cols-2 gap-4">
+              {interests.map((interest, index) => (
+                <div 
+                  key={index}
+                  className="relative group/item"
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
+                  <div className="absolute -inset-2 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover/item:opacity-100 transition-opacity"></div>
+                  <div className="relative p-4 bg-gray-900/30 rounded-xl hover:bg-gray-900/50 transition-all duration-300 group-hover/item:scale-105">
+                    <div className="flex flex-col items-center text-center gap-3">
+                      {/* Icône animée */}
+                      <div className="relative">
+                        <div className="absolute -inset-3 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur opacity-0 group-hover/item:opacity-50 transition-opacity"></div>
+                        <div className={`p-3 rounded-full bg-gradient-to-br ${getInterestColor(index)} bg-opacity-20 group-hover/item:bg-opacity-30 transition-all duration-300`}>
+                          {interest.icon}
+                        </div>
                       </div>
-                      <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                        <div 
-                          className="h-full bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full transition-all duration-1000"
-                          style={{ width: `${lang.percentage}%` }}
-                        />
+                      
+                      {/* Nom */}
+                      <span className="text-gray-300 group-hover/item:text-white font-medium transition-colors">
+                        {interest.name}
+                      </span>
+                      
+                      {/* Points décoratifs */}
+                      <div className="flex gap-1 mt-2">
+                        {[...Array(3)].map((_, i) => (
+                          <div 
+                            key={i}
+                            className="w-1 h-1 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 opacity-0 group-hover/item:opacity-70"
+                            style={{ 
+                              animation: `pulse 1.5s ease-in-out infinite ${i * 0.2}s`,
+                              animationPlayState: 'paused'
+                            }}
+                          ></div>
+                        ))}
                       </div>
                     </div>
-                  ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Barre décorative */}
+            <div className="mt-8 pt-6 border-t border-gray-700/50">
+              <div className="flex items-center justify-center gap-2">
+                {[...Array(5)].map((_, i) => (
+                  <div 
+                    key={i}
+                    className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 animate-pulse"
+                    style={{ animationDelay: `${i * 0.2}s` }}
+                  ></div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Colonne droite - Compétences & Langues */}
+      <div className="space-y-8">
+        {/* Soft Skills - Design moderne */}
+        <div className="relative group">
+          <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/10 via-green-500/10 to-cyan-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          
+          <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-emerald-500/50 transition-all duration-500 group-hover:scale-[1.02]">
+            {/* En-tête */}
+            <div className="flex items-center gap-4 mb-8">
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full blur opacity-20 animate-pulse delay-300"></div>
+                <div className="relative p-3 bg-gradient-to-br from-emerald-900/30 to-green-900/30 rounded-xl">
+                  <Brain size={28} className="text-emerald-400 animate-bounce-slow" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+                  Soft 
+                  <span className="text-transparent bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text">
+                    Skills
+                  </span>
+                </h3>
+                <div className="w-16 h-1 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full mt-2"></div>
+              </div>
+            </div>
+            
+            {/* Grille de compétences avec barres créatives */}
+            <div className="grid grid-cols-2 gap-4">
+              {softSkills.map((skill, index) => (
+                <div 
+                  key={index}
+                  className="relative group/item"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="absolute -inset-2 bg-gradient-to-r from-emerald-500/10 to-green-500/10 rounded-xl opacity-0 group-hover/item:opacity-100 transition-opacity"></div>
+                  <div className="relative p-4 bg-gray-900/30 rounded-xl hover:bg-gray-900/50 transition-all duration-300">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-2 bg-gradient-to-br from-emerald-900/20 to-green-900/20 rounded-lg">
+                        {skill.icon}
+                      </div>
+                      <span className="text-gray-300 font-medium">{skill.name}</span>
+                    </div>
+                    
+                    {/* Barre de progression créative */}
+                    <div className="relative">
+                      <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                        <div 
+                          className="h-full bg-gradient-to-r from-emerald-400 via-green-400 to-cyan-400 rounded-full transition-all duration-1000 ease-out"
+                          style={{ width: `${skill.level}%` }}
+                        ></div>
+                      </div>
+                      
+                      {/* Points d'éclairage */}
+                      <div className="absolute top-0 left-0 w-1 h-2 bg-white rounded-full blur-sm opacity-0 group-hover/item:opacity-100 animate-shine"></div>
+                    </div>
+                    
+                    {/* Pourcentage animé */}
+                    <div className="flex justify-between items-center mt-2">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                      <span className="text-sm font-bold text-transparent bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text">
+                        {skill.level}%
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Légende */}
+            <div className="mt-8 pt-6 border-t border-gray-700/50">
+              <div className="flex items-center justify-center gap-4 text-sm">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-gray-400">Niveau de maîtrise</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-
+        
+        {/* Langues - Design élégant */}
+        <div className="relative group">
+          <div className="absolute -inset-4 bg-gradient-to-r from-amber-500/10 via-yellow-500/10 to-orange-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          
+          <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-amber-500/50 transition-all duration-500 group-hover:scale-[1.02]">
+            {/* En-tête */}
+            <div className="flex items-center gap-4 mb-8">
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full blur opacity-20 animate-pulse delay-700"></div>
+                <div className="relative p-3 bg-gradient-to-br from-amber-900/30 to-yellow-900/30 rounded-xl">
+                  <Globe size={28} className="text-amber-400 animate-spin-slow" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+                  <span className="text-transparent bg-gradient-to-r from-amber-400 to-yellow-400 bg-clip-text">
+                    Langues
+                  </span>
+                </h3>
+                <div className="w-16 h-1 bg-gradient-to-r from-amber-400 to-yellow-400 rounded-full mt-2"></div>
+              </div>
+            </div>
+            
+            {/* Liste des langues avec barres créatives */}
+            <div className="space-y-8">
+              {languages.map((lang, index) => (
+                <div 
+                  key={index}
+                  className="relative group/item"
+                  style={{ animationDelay: `${index * 200}ms` }}
+                >
+                  <div className="absolute -inset-2 bg-gradient-to-r from-amber-500/10 to-yellow-500/10 rounded-xl opacity-0 group-hover/item:opacity-100 transition-opacity"></div>
+                  <div className="relative">
+                    <div className="flex justify-between items-center mb-3">
+                      <div className="flex items-center gap-3">
+                        <div className="w-2 h-2 bg-gradient-to-r from-amber-400 to-yellow-400 rounded-full animate-pulse"></div>
+                        <span className="text-gray-300 font-semibold text-lg">{lang.name}</span>
+                      </div>
+                      <span className="text-sm bg-gradient-to-r from-amber-900/30 to-yellow-900/30 text-amber-300 px-3 py-1 rounded-full">
+                        {lang.level}
+                      </span>
+                    </div>
+                    
+                    {/* Barre de progression stylée */}
+                    <div className="relative h-4">
+                      <div className="absolute inset-0 bg-gray-700/30 rounded-full overflow-hidden">
+                        <div 
+                          className="absolute inset-0 bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-400 rounded-full transition-all duration-1000 ease-out"
+                          style={{ width: `${lang.percentage}%` }}
+                        >
+                          {/* Effet de brillance */}
+                          <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-r from-white/30 to-transparent rounded-full"></div>
+                        </div>
+                      </div>
+                      
+                      {/* Marqueurs de pourcentage */}
+                      <div className="absolute top-1/2 transform -translate-y-1/2 w-full flex justify-between px-2">
+                        {[0, 25, 50, 75, 100].map((mark) => (
+                          <div 
+                            key={mark}
+                            className={`w-0.5 h-3 rounded-full ${
+                              mark <= lang.percentage 
+                                ? 'bg-amber-200/50' 
+                                : 'bg-gray-600/30'
+                            }`}
+                          ></div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {/* Étoiles d'évaluation */}
+                    <div className="flex justify-end gap-1 mt-3">
+                      {[...Array(5)].map((_, i) => (
+                        <div 
+                          key={i}
+                          className={`w-3 h-3 rounded-full ${
+                            i < Math.floor(lang.percentage / 20)
+                              ? 'bg-gradient-to-r from-amber-400 to-yellow-400'
+                              : 'bg-gray-600/50'
+                          }`}
+                        ></div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Élément décoratif */}
+            <div className="mt-8 flex justify-center">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-amber-400 rounded-full animate-ping"></div>
+                <span className="text-sm text-gray-400">Maîtrise linguistique</span>
+                <div className="w-2 h-2 bg-yellow-400 rounded-full animate-ping delay-300"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
       {/* Experiences Section */}
       <section id="experiences" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">

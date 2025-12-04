@@ -545,17 +545,102 @@ function App() {
                   </div>
                 </div>
                 
-                {/* Tech Stack Badges */}
-                <div className="flex justify-center gap-2 mt-6">
-                  {["React", "Spring", ".NET", "Flutter"].map((tech, index) => (
-                    <span 
-                      key={index}
-                      className="px-3 py-1 bg-gray-800/50 backdrop-blur-sm rounded-full text-xs text-gray-300 border border-gray-700 hover:border-blue-500 hover:text-blue-400 transition-all duration-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+     {/* Tech Stack Badges - Version dynamique avec rotation */}
+<div className="flex justify-center gap-3 mt-8">
+  {[
+    { 
+      icon: <Layers size={18} className="text-cyan-400" />, 
+      name: "React",
+      color: "from-cyan-400 to-blue-500",
+      bg: "hover:bg-gradient-to-br hover:from-cyan-900/40 hover:to-blue-900/40",
+      rotation: "group-hover:rotate-12"
+    },
+    { 
+      icon: <Coffee size={18} className="text-green-400" />, 
+      name: "Spring",
+      color: "from-green-400 to-emerald-500",
+      bg: "hover:bg-gradient-to-br hover:from-green-900/40 hover:to-emerald-900/40",
+      rotation: "group-hover:-rotate-12"
+    },
+    { 
+      icon: <Code2 size={18} className="text-purple-400" />, 
+      name: ".NET",
+      color: "from-purple-400 to-violet-500",
+      bg: "hover:bg-gradient-to-br hover:from-purple-900/40 hover:to-violet-900/40",
+      rotation: "group-hover:rotate-12"
+    },
+    { 
+      icon: <Smartphone size={18} className="text-blue-400" />, 
+      name: "Flutter",
+      color: "from-blue-400 to-cyan-500",
+      bg: "hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-cyan-900/40",
+      rotation: "group-hover:-rotate-12"
+    },
+    { 
+      icon: <Cpu size={18} className="text-yellow-400" />, 
+      name: "Python",
+      color: "from-yellow-400 to-orange-500",
+      bg: "hover:bg-gradient-to-br hover:from-yellow-900/40 hover:to-orange-900/40",
+      rotation: "group-hover:rotate-12"
+    },
+    { 
+      icon: <Coffee size={18} className="text-red-400" />, 
+      name: "Java",
+      color: "from-red-400 to-pink-500",
+      bg: "hover:bg-gradient-to-br hover:from-red-900/40 hover:to-pink-900/40",
+      rotation: "group-hover:-rotate-12"
+    }
+  ].map((tech, index) => (
+    <div 
+      key={index}
+      className="relative group"
+    >
+      {/* Cercle extérieur qui tourne */}
+      <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${tech.color} opacity-0 group-hover:opacity-30 blur-sm transition-all duration-500 group-hover:animate-spin-slow`}></div>
+      
+      {/* Badge principal */}
+      <div 
+        className={`relative p-3 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/50 ${tech.bg} transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl ${tech.rotation}`}
+        title={tech.name}
+      >
+        {/* Icône avec halo */}
+        <div className="relative">
+          <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${tech.color} blur opacity-0 group-hover:opacity-30 animate-pulse`}></div>
+          {tech.icon}
+        </div>
+        
+        {/* Effet de particules */}
+        <div className="absolute inset-0 overflow-hidden rounded-xl">
+          <div className="absolute top-0 left-0 w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-30 group-hover:animate-bounce" style={{ animationDelay: `${index * 0.1}s` }}></div>
+          <div className="absolute bottom-0 right-0 w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-30 group-hover:animate-bounce" style={{ animationDelay: `${index * 0.1 + 0.2}s` }}></div>
+        </div>
+        
+        {/* Tooltip élégant avec animation */}
+        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 px-3 py-1.5 bg-gray-900/90 backdrop-blur-sm text-white text-xs font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap z-10 shadow-xl scale-0 group-hover:scale-100 origin-bottom">
+          {tech.name}
+          <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900/90 rotate-45"></div>
+        </div>
+      </div>
+      
+      {/* Points orbitaux */}
+      <div className="absolute -inset-2">
+        {[...Array(3)].map((_, i) => (
+          <div 
+            key={i}
+            className={`absolute w-1 h-1 bg-gradient-to-br ${tech.color} rounded-full opacity-0 group-hover:opacity-60`}
+            style={{
+              top: '50%',
+              left: '50%',
+              transform: `rotate(${i * 120}deg) translateX(20px) rotate(-${i * 120}deg)`,
+              animation: `orbit 3s linear infinite`,
+              animationDelay: `${i * 1}s`
+            }}
+          ></div>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
               </div>
               
               {/* Contact Info Cards */}

@@ -1269,67 +1269,313 @@ const interests = [
     </div>
   </div>
 </section>
-      {/* Experiences Section */}
-      <section id="experiences" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center gap-3 mb-12">
-            <div className="p-3 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
-              <BriefcaseIcon size={32} className="text-blue-400" />
-            </div>
-            <h2 className="text-4xl font-bold text-white">
-              Expériences <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">Professionnelles</span>
-            </h2>
-          </div>
-          
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <div 
-                key={index}
-                className="relative group"
-              >
-                {/* Timeline */}
-                <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500 lg:left-1/2 lg:transform lg:-translate-x-1/2" />
-                <div className="absolute left-6 top-8 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full lg:left-1/2 lg:transform lg:-translate-x-1/2" />
-                
-                <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 ml-12 lg:ml-0 lg:w-5/6 lg:mx-auto lg:hover:scale-105">
-                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
-                    <div>
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className="text-2xl">{exp.logo}</span>
-                        <h3 className="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">
-                          {exp.position}
-                        </h3>
-                      </div>
-                      <p className="text-xl text-blue-400">{exp.company}</p>
-                    </div>
-                    <div className="flex flex-col items-start lg:items-end">
-                      <span className="px-4 py-2 bg-gradient-to-r from-blue-900/30 to-purple-900/30 text-blue-300 rounded-full text-sm">
-                        {exp.period}
-                      </span>
-                      <span className="text-gray-400 text-sm mt-2">{exp.location}</span>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-400 mb-6 leading-relaxed">
-                    {exp.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-3">
-                    {exp.tech.map((tech, i) => (
-                      <span 
-                        key={i}
-                        className="px-4 py-2 bg-gray-900/30 text-gray-300 rounded-lg text-sm border border-gray-700/50 hover:border-purple-500/50 transition-colors"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
+  {/* Experiences Section - DESIGN CRÉATIF ET DYNAMIQUE */}
+<section id="experiences" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+  {/* Arrière-plan animé */}
+  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900/10 to-blue-900/10"></div>
+  <div className="absolute top-1/4 -left-32 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse"></div>
+  <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+  
+  <div className="max-w-6xl mx-auto relative">
+    {/* En-tête créatif */}
+    <div className="text-center mb-16">
+      <div className="inline-flex items-center justify-center relative mb-8">
+        {/* Effet de halo */}
+        <div className="absolute -inset-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-2xl opacity-20 animate-pulse-glow"></div>
+        
+        <div className="relative p-5 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl border border-blue-500/30 backdrop-blur-sm">
+          <div className="relative">
+            <BriefcaseIcon size={48} className="text-blue-400 animate-float" />
+            {/* Étoiles tournantes */}
+            <div className="absolute -top-3 -right-3 w-4 h-4 bg-yellow-400 rounded-full blur-sm animate-spin-slow"></div>
+            <div className="absolute -bottom-3 -left-3 w-4 h-4 bg-cyan-400 rounded-full blur-sm animate-spin-slow reverse"></div>
           </div>
         </div>
-      </section>
+        
+        {/* Points décoratifs */}
+        <div className="absolute -top-2 -left-2 w-3 h-3 bg-purple-500 rounded-full animate-ping"></div>
+        <div className="absolute -bottom-2 -right-2 w-3 h-3 bg-blue-500 rounded-full animate-ping delay-300"></div>
+      </div>
+      
+      <h2 className="text-5xl font-bold text-white mb-4">
+        Expériences 
+        <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text animate-gradient">
+          Professionnelles
+        </span>
+      </h2>
+      
+      <div className="flex items-center justify-center gap-4 mb-6">
+        <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
+        <div className="flex gap-2">
+          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+          <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse delay-150"></div>
+          <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse delay-300"></div>
+        </div>
+        <div className="w-24 h-1 bg-gradient-to-r from-transparent to-purple-500 rounded-full"></div>
+      </div>
+      
+      {/* Paragraphe d'introduction */}
+      <div className="max-w-3xl mx-auto mb-12">
+        <div className="relative">
+          <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl blur-xl"></div>
+          <div className="relative bg-gray-800/30 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50">
+            <p className="text-gray-300 text-lg text-center leading-relaxed">
+              Mon parcours professionnel reflète ma <span className="text-blue-400 font-semibold">passion pour l'innovation</span> et mon 
+              engagement à <span className="text-purple-400 font-semibold">relever des défis techniques</span>. Chaque expérience 
+              a contribué à forger mon expertise et ma vision du développement moderne.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Timeline créative */}
+    <div className="relative">
+      {/* Ligne de timeline principale avec animation */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 hidden lg:block">
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full animate-pulse"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full animate-shimmer" style={{ animationDuration: '3s' }}></div>
+        
+        {/* Points animés sur la timeline */}
+        {experiences.map((_, index) => {
+          const position = (index / (experiences.length - 1)) * 100;
+          return (
+            <div 
+              key={index}
+              className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-gray-900 bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse"
+              style={{ top: `${position}%` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-ping"></div>
+            </div>
+          );
+        })}
+      </div>
+      
+      {/* Conteneur des expériences */}
+      <div className="space-y-16 lg:space-y-24">
+        {experiences.map((exp, index) => {
+          const isEven = index % 2 === 0;
+          
+          return (
+            <div 
+              key={index}
+              className="relative group"
+              style={{ animationDelay: `${index * 200}ms` }}
+            >
+              {/* Carte d'expérience - Design créatif */}
+              <div className={`lg:w-5/6 mx-auto relative ${
+                isEven ? 'lg:ml-auto' : 'lg:mr-auto'
+              }`}>
+                {/* Effet de fond animé */}
+                <div className={`absolute -inset-6 bg-gradient-to-r ${
+                  isEven 
+                    ? 'from-blue-500/10 via-cyan-500/10 to-purple-500/10' 
+                    : 'from-purple-500/10 via-pink-500/10 to-blue-500/10'
+                } rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700`}></div>
+                
+                {/* Carte principale */}
+                <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-3xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+                  {/* En-tête avec gradient animé */}
+                  <div className={`relative p-8 border-b border-gray-700/50 ${
+                    isEven 
+                      ? 'bg-gradient-to-r from-blue-900/20 to-purple-900/20' 
+                      : 'bg-gradient-to-r from-purple-900/20 to-pink-900/20'
+                  }`}>
+                    <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                      <div className="flex-1">
+                        {/* Logo et titre */}
+                        <div className="flex items-center gap-4 mb-4">
+                          <div className="relative">
+                            <div className="absolute -inset-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur opacity-20 animate-pulse"></div>
+                            <div className="relative w-14 h-14 bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl flex items-center justify-center border border-gray-700/50 group-hover:border-blue-500/50 transition-colors">
+                              <span className="text-3xl">{exp.logo}</span>
+                            </div>
+                          </div>
+                          
+                          <div>
+                            <h3 className="text-2xl lg:text-3xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text transition-all duration-300">
+                              {exp.position}
+                            </h3>
+                            <p className="text-xl text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text font-semibold mt-1">
+                              {exp.company}
+                            </p>
+                          </div>
+                        </div>
+                        
+                        {/* Description */}
+                        <p className="text-gray-300 leading-relaxed">
+                          {exp.description}
+                        </p>
+                      </div>
+                      
+                      {/* Date et localisation */}
+                      <div className="flex flex-col items-start lg:items-end gap-3">
+                        <div className="relative">
+                          <div className="absolute -inset-3 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-full blur opacity-0 group-hover:opacity-50 transition-opacity"></div>
+                          <span className="relative px-5 py-2.5 bg-gradient-to-r from-blue-900/40 to-purple-900/40 text-blue-300 rounded-full text-sm font-semibold border border-blue-700/30">
+                            {exp.period}
+                          </span>
+                        </div>
+                        
+                        <div className="flex items-center gap-2 text-gray-400">
+                          <MapPin size={16} className="text-purple-400" />
+                          <span className="text-sm">{exp.location}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Contenu principal */}
+                  <div className="p-8">
+                    {/* Technologies utilisées */}
+                    <div className="mb-8">
+                      <div className="flex items-center gap-3 mb-6">
+                        <Code2 size={24} className="text-cyan-400" />
+                        <h4 className="text-xl font-bold text-gray-300">Technologies utilisées :</h4>
+                      </div>
+                      
+                      <div className="flex flex-wrap gap-3">
+                        {exp.tech.map((tech, i) => (
+                          <div 
+                            key={i}
+                            className="relative group/tech"
+                            style={{ animationDelay: `${i * 100}ms` }}
+                          >
+                            <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover/tech:opacity-100 transition-opacity"></div>
+                            <span className="relative px-5 py-2.5 bg-gray-900/50 text-gray-300 rounded-xl text-sm font-medium border border-gray-700/50 group-hover/tech:border-purple-500/50 group-hover/tech:text-purple-300 transition-all duration-300 group-hover/tech:scale-105">
+                              {tech}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {/* Points clés (ajout dynamique) */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                          <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full animate-pulse"></div>
+                          <span className="text-gray-300 font-medium">Développement Full Stack</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse delay-200"></div>
+                          <span className="text-gray-300 font-medium">Architecture moderne</span>
+                        </div>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                          <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-pulse delay-400"></div>
+                          <span className="text-gray-300 font-medium">Méthodologie Agile</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-pulse delay-600"></div>
+                          <span className="text-gray-300 font-medium">Collaboration d'équipe</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Barre de progression animée */}
+                  <div className="px-8 pb-8">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-sm text-gray-400">Niveau d'implication</span>
+                      <span className="text-sm font-bold text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
+                        {index === 0 ? '100%' : '95%'}
+                      </span>
+                    </div>
+                    <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full transition-all duration-1000 ease-out"
+                        style={{ width: index === 0 ? '100%' : '95%' }}
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" style={{ animationDuration: '2s' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Éléments décoratifs */}
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="w-8 h-8 border-2 border-purple-500/30 rounded-full animate-spin-slow"></div>
+                  </div>
+                  
+                  <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300">
+                    <div className="w-6 h-6 border-2 border-blue-500/30 rounded-full animate-spin-slow reverse"></div>
+                  </div>
+                </div>
+                
+                {/* Connecteur de timeline pour mobile */}
+                <div className="lg:hidden absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center border-4 border-gray-900">
+                    <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                  </div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 border-2 border-blue-500/30 rounded-full animate-ping"></div>
+                </div>
+              </div>
+              
+              {/* Année décorative */}
+              <div className={`hidden lg:flex absolute top-1/2 transform -translate-y-1/2 items-center gap-4 ${
+                isEven ? 'left-0 -translate-x-full' : 'right-0 translate-x-full'
+              }`}>
+                {isEven ? (
+                  <>
+                    <div className="text-6xl font-bold text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text opacity-20">
+                      {exp.period.split(' ')[2]}
+                    </div>
+                    <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
+                  </>
+                ) : (
+                  <>
+                    <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                    <div className="text-6xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text opacity-20">
+                      {exp.period.split(' ')[2]}
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+    
+    {/* Statistiques en bas de section */}
+    <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-6">
+      {[
+        { value: "2+", label: "Années d'expérience", color: "from-blue-400 to-cyan-400" },
+        { value: "10+", label: "Projets réalisés", color: "from-purple-400 to-pink-400" },
+        { value: "15+", label: "Technologies maîtrisées", color: "from-green-400 to-emerald-400" },
+        { value: "100%", label: "Satisfaction", color: "from-yellow-400 to-orange-400" },
+      ].map((stat, index) => (
+        <div 
+          key={index}
+          className="relative group"
+          style={{ animationDelay: `${index * 150}ms` }}
+        >
+          <div className={`absolute -inset-3 bg-gradient-to-r ${stat.color} rounded-xl blur opacity-0 group-hover:opacity-20 transition-opacity`}></div>
+          <div className="relative bg-gray-800/40 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50 text-center group-hover:border-transparent transition-all duration-300 group-hover:scale-105">
+            <div className={`text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
+              {stat.value}
+            </div>
+            <div className="text-sm text-gray-400 font-medium">
+              {stat.label}
+            </div>
+            
+            {/* Points décoratifs */}
+            <div className="flex justify-center gap-1 mt-4">
+              {[...Array(3)].map((_, i) => (
+                <div 
+                  key={i}
+                  className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-70"
+                  style={{ animationDelay: `${i * 0.2}s` }}
+                ></div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Projets Section */}
       <section id="projets" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">

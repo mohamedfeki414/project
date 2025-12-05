@@ -1654,428 +1654,696 @@ const interests = [
         </div>
       </section>
 
-      {/* Compétences Section avec Barres de Progression */}
-      <section id="compétences" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-3 mb-12">
-            <div className="p-3 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
-              <Wrench size={32} className="text-blue-400" />
-            </div>
-            <h2 className="text-4xl font-bold text-white">
-              Compétences <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">Techniques</span>
-            </h2>
+    {/* Compétences Section - DESIGN CRÉATIF ET DYNAMIQUE */}
+<section id="compétences" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+  {/* Arrière-plan animé */}
+  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900/10 via-purple-900/10 to-cyan-900/10"></div>
+  <div className="absolute top-0 -left-64 w-[800px] h-[800px] bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-cyan-500/5 rounded-full blur-3xl animate-spin-slow"></div>
+  <div className="absolute -bottom-64 -right-64 w-[800px] h-[800px] bg-gradient-to-r from-green-500/5 via-yellow-500/5 to-orange-500/5 rounded-full blur-3xl animate-spin-slow reverse"></div>
+  
+  <div className="max-w-7xl mx-auto relative">
+    {/* En-tête créatif */}
+    <div className="text-center mb-16 relative">
+      <div className="inline-flex items-center justify-center relative mb-8">
+        {/* Effets de particules */}
+        <div className="absolute -inset-12">
+          {[...Array(8)].map((_, i) => (
+            <div 
+              key={i}
+              className="absolute w-1 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-ping"
+              style={{
+                top: `${Math.sin(i * 0.785) * 50 + 50}%`,
+                left: `${Math.cos(i * 0.785) * 50 + 50}%`,
+                animationDelay: `${i * 0.2}s`
+              }}
+            ></div>
+          ))}
+        </div>
+        
+        {/* Icône centrale animée */}
+        <div className="relative">
+          <div className="absolute -inset-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-xl opacity-20 animate-pulse-glow"></div>
+          <div className="relative p-6 bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-3xl border border-gray-700/50">
+            <Wrench size={52} className="text-blue-400 animate-spin-once" />
           </div>
-
-          {/* Grille de compétences avec barres de progression */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Catégorie 1: Languages & Programmation */}
-            <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 group hover:scale-[1.02]">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-lg">
-                  <Code2 size={24} className="text-blue-400" />
-                </div>
-                <h3 className="text-xl font-bold text-white">Languages & Programmation</h3>
-              </div>
-              <div className="space-y-4">
-                {/* HTML5 */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">HTML5</span>
-                    <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">95%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '95%' }}></div>
-                  </div>
-                </div>
-                
-                {/* PHP */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">PHP</span>
-                    <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">85%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out delay-75" style={{ width: '85%' }}></div>
-                  </div>
-                </div>
-                
-                {/* JavaScript */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">JavaScript</span>
-                    <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">90%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out delay-100" style={{ width: '90%' }}></div>
-                  </div>
-                </div>
-                
-                {/* CSS3 */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">CSS3</span>
-                    <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">92%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out delay-150" style={{ width: '92%' }}></div>
-                  </div>
-                </div>
-                
-                {/* TypeScript */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">TypeScript</span>
-                    <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">80%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out delay-200" style={{ width: '80%' }}></div>
-                  </div>
-                </div>
-                
-                {/* Java */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">Java</span>
-                    <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">88%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out delay-250" style={{ width: '88%' }}></div>
-                  </div>
-                </div>
-                
-                {/* Python */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">Python</span>
-                    <span className="text-blue-400 text-xs font-bold bg-blue-900/30 px-2 py-1 rounded">82%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-blue-400 to-blue-500 rounded-full transition-all duration-1000 ease-out delay-300" style={{ width: '82%' }}></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Catégorie 2: Frameworks & Bibliothèques */}
-            <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-green-500/50 transition-all duration-300 group hover:scale-[1.02]">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-gradient-to-br from-green-500/20 to-emerald-600/20 rounded-lg">
-                  <Layers size={24} className="text-green-400" />
-                </div>
-                <h3 className="text-xl font-bold text-white">Frameworks & Bibliothèques</h3>
-              </div>
-              <div className="space-y-4">
-                {/* Symfony */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">Symfony</span>
-                    <span className="text-green-400 text-xs font-bold bg-green-900/30 px-2 py-1 rounded">78%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '78%' }}></div>
-                  </div>
-                </div>
-                
-                {/* React */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">React</span>
-                    <span className="text-green-400 text-xs font-bold bg-green-900/30 px-2 py-1 rounded">85%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transition-all duration-1000 ease-out delay-75" style={{ width: '85%' }}></div>
-                  </div>
-                </div>
-                
-                {/* Tailwind CSS */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">Tailwind CSS</span>
-                    <span className="text-green-400 text-xs font-bold bg-green-900/30 px-2 py-1 rounded">95%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transition-all duration-1000 ease-out delay-100" style={{ width: '95%' }}></div>
-                  </div>
-                </div>
-                
-                {/* Bootstrap */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">Bootstrap</span>
-                    <span className="text-green-400 text-xs font-bold bg-green-900/30 px-2 py-1 rounded">88%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transition-all duration-1000 ease-out delay-150" style={{ width: '88%' }}></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Catégorie 3: Bases de données */}
-            <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-yellow-500/50 transition-all duration-300 group hover:scale-[1.02]">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-gradient-to-br from-yellow-500/20 to-orange-600/20 rounded-lg">
-                  <Database size={24} className="text-yellow-400" />
-                </div>
-                <h3 className="text-xl font-bold text-white">Bases de données</h3>
-              </div>
-              <div className="space-y-4">
-                {/* MySQL */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">MySQL</span>
-                    <span className="text-yellow-400 text-xs font-bold bg-yellow-900/30 px-2 py-1 rounded">90%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '90%' }}></div>
-                  </div>
-                </div>
-                
-                {/* MongoDB */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">MongoDB</span>
-                    <span className="text-yellow-400 text-xs font-bold bg-yellow-900/30 px-2 py-1 rounded">75%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full transition-all duration-1000 ease-out delay-75" style={{ width: '75%' }}></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Catégorie 4: Outils & DevOps */}
-            <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-red-500/50 transition-all duration-300 group hover:scale-[1.02]">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-gradient-to-br from-red-500/20 to-pink-600/20 rounded-lg">
-                  <Zap size={24} className="text-red-400" />
-                </div>
-                <h3 className="text-xl font-bold text-white">Outils & DevOps</h3>
-              </div>
-              <div className="space-y-4">
-                {/* Git */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">Git</span>
-                    <span className="text-red-400 text-xs font-bold bg-red-900/30 px-2 py-1 rounded">92%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-red-400 to-pink-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '92%' }}></div>
-                  </div>
-                </div>
-                
-                {/* Docker */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">Docker</span>
-                    <span className="text-red-400 text-xs font-bold bg-red-900/30 px-2 py-1 rounded">70%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-red-400 to-pink-500 rounded-full transition-all duration-1000 ease-out delay-75" style={{ width: '70%' }}></div>
-                  </div>
-                </div>
-                
-                {/* Webpack */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">Webpack</span>
-                    <span className="text-red-400 text-xs font-bold bg-red-900/30 px-2 py-1 rounded">65%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-red-400 to-pink-500 rounded-full transition-all duration-1000 ease-out delay-100" style={{ width: '65%' }}></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Catégorie 5: Graphisme & Multimédia */}
-            <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 group hover:scale-[1.02]">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-gradient-to-br from-purple-500/20 to-violet-600/20 rounded-lg">
-                  <Sparkles size={24} className="text-purple-400" />
-                </div>
-                <h3 className="text-xl font-bold text-white">Graphisme & Multimédia</h3>
-              </div>
-              <div className="space-y-4">
-                {/* Adobe Suite */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">Adobe Suite</span>
-                    <span className="text-purple-400 text-xs font-bold bg-purple-900/30 px-2 py-1 rounded">85%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '85%' }}></div>
-                  </div>
-                </div>
-                
-                {/* Montage multimédia */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">Montage multimédia</span>
-                    <span className="text-purple-400 text-xs font-bold bg-purple-900/30 px-2 py-1 rounded">80%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transition-all duration-1000 ease-out delay-75" style={{ width: '80%' }}></div>
-                  </div>
-                </div>
-                
-                {/* Figma */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">Figma</span>
-                    <span className="text-purple-400 text-xs font-bold bg-purple-900/30 px-2 py-1 rounded">88%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transition-all duration-1000 ease-out delay-100" style={{ width: '88%' }}></div>
-                  </div>
-                </div>
-                
-                {/* Vidéo professionnelle */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">Vidéo professionnelle</span>
-                    <span className="text-purple-400 text-xs font-bold bg-purple-900/30 px-2 py-1 rounded">75%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transition-all duration-1000 ease-out delay-150" style={{ width: '75%' }}></div>
-                  </div>
-                </div>
-                
-                {/* Édition vidéo */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">Édition vidéo</span>
-                    <span className="text-purple-400 text-xs font-bold bg-purple-900/30 px-2 py-1 rounded">82%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transition-all duration-1000 ease-out delay-200" style={{ width: '82%' }}></div>
-                  </div>
-                </div>
-                
-                {/* Anglais technique */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">Anglais technique</span>
-                    <span className="text-purple-400 text-xs font-bold bg-purple-900/30 px-2 py-1 rounded">78%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transition-all duration-1000 ease-out delay-250" style={{ width: '78%' }}></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Catégorie 6: Compétences transversales */}
-            <div className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 group hover:scale-[1.02]">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-gradient-to-br from-cyan-500/20 to-teal-600/20 rounded-lg">
-                  <Users size={24} className="text-cyan-400" />
-                </div>
-                <h3 className="text-xl font-bold text-white">Compétences transversales</h3>
-              </div>
-              <div className="space-y-4">
-                {/* Travail d'équipe */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">Travail d'équipe</span>
-                    <span className="text-cyan-400 text-xs font-bold bg-cyan-900/30 px-2 py-1 rounded">95%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '95%' }}></div>
-                  </div>
-                </div>
-                
-                {/* Communication */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">Communication</span>
-                    <span className="text-cyan-400 text-xs font-bold bg-cyan-900/30 px-2 py-1 rounded">90%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full transition-all duration-1000 ease-out delay-75" style={{ width: '90%' }}></div>
-                  </div>
-                </div>
-                
-                {/* Gestion de projet */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300 text-sm font-medium">Gestion de projet</span>
-                    <span className="text-cyan-400 text-xs font-bold bg-cyan-900/30 px-2 py-1 rounded">85%</span>
-                  </div>
-                  <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full transition-all duration-1000 ease-out delay-100" style={{ width: '85%' }}></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          
+          {/* Éléments orbitaux */}
+          <div className="absolute -inset-6">
+            {[...Array(6)].map((_, i) => (
+              <div 
+                key={i}
+                className="absolute w-3 h-3 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-0 animate-pulse"
+                style={{
+                  top: '50%',
+                  left: '50%',
+                  transform: `rotate(${i * 60}deg) translateX(40px) rotate(-${i * 60}deg)`,
+                  animationDelay: `${i * 0.1}s`,
+                  animationDuration: '2s'
+                }}
+              ></div>
+            ))}
           </div>
-
-          {/* Section des statistiques */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="relative group overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:scale-105">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-blue-700 rounded-xl blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
-              <div className="relative text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-2">7+</div>
-                <div className="text-sm text-gray-400 font-medium">Langages</div>
+        </div>
+      </div>
+      
+      <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+        Mes <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text animate-gradient">Compétences</span>
+      </h2>
+      
+      <div className="flex items-center justify-center gap-6 mb-8">
+        <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full animate-pulse"></div>
+          <div className="w-3 h-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse delay-150"></div>
+          <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-pulse delay-300"></div>
+        </div>
+        <div className="w-32 h-1 bg-gradient-to-r from-transparent to-purple-500 rounded-full"></div>
+      </div>
+      
+      {/* Introduction créative */}
+      <div className="max-w-4xl mx-auto mb-16">
+        <div className="relative">
+          <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-cyan-500/5 rounded-2xl blur-xl opacity-50"></div>
+          <div className="relative bg-gray-800/30 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50">
+            <div className="flex flex-col md:flex-row items-start gap-6">
+              <div className="md:w-1/3">
+                <div className="inline-flex items-center gap-3 p-3 bg-gradient-to-br from-blue-900/20 to-purple-900/20 rounded-xl">
+                  <Zap size={24} className="text-yellow-400 animate-pulse" />
+                  <span className="text-gray-300 font-semibold">Expertise polyvalente</span>
+                </div>
               </div>
-            </div>
-            
-            <div className="relative group overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-green-500/50 transition-all duration-300 hover:scale-105">
-              <div className="absolute -inset-1 bg-gradient-to-r from-green-500 to-emerald-700 rounded-xl blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
-              <div className="relative text-center">
-                <div className="text-3xl font-bold text-green-400 mb-2">5+</div>
-                <div className="text-sm text-gray-400 font-medium">Frameworks</div>
-              </div>
-            </div>
-            
-            <div className="relative group overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-yellow-500/50 transition-all duration-300 hover:scale-105">
-              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-orange-700 rounded-xl blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
-              <div className="relative text-center">
-                <div className="text-3xl font-bold text-yellow-400 mb-2">2+</div>
-                <div className="text-sm text-gray-400 font-medium">Bases de données</div>
-              </div>
-            </div>
-            
-            <div className="relative group overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:scale-105">
-              <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-violet-700 rounded-xl blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
-              <div className="relative text-center">
-                <div className="text-3xl font-bold text-purple-400 mb-2">10+</div>
-                <div className="text-sm text-gray-400 font-medium">Projets réalisés</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Légende des niveaux */}
-          <div className="mt-12 p-6 bg-gray-800/20 backdrop-blur-sm rounded-xl border border-gray-700/30">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="text-center md:text-left">
-                <h4 className="text-lg font-bold text-white mb-2">Échelle de maîtrise</h4>
-                <p className="text-gray-400 text-sm max-w-md">
-                  Les pourcentages représentent mon niveau de confiance et d'expertise dans chaque technologie.
+              <div className="md:w-2/3">
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  Je maîtrise un éventail complet de technologies modernes, allant du 
+                  <span className="text-blue-400 font-semibold"> développement frontend </span>
+                  au <span className="text-purple-400 font-semibold">backend</span>, en passant par 
+                  <span className="text-green-400 font-semibold"> les bases de données </span>
+                  et <span className="text-yellow-400 font-semibold"> les outils DevOps</span>. 
+                  Mon approche combine <span className="text-cyan-400 font-semibold">rigueur technique</span> et 
+                  <span className="text-pink-400 font-semibold"> créativité</span> pour créer des solutions innovantes.
                 </p>
-              </div>
-              <div className="flex flex-wrap justify-center gap-4">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-400 to-blue-500"></div>
-                  <span className="text-sm text-gray-300">0-60% : Débutant</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-400 to-emerald-500"></div>
-                  <span className="text-sm text-gray-300">61-80% : Intermédiaire</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-gradient-to-r from-purple-400 to-violet-500"></div>
-                  <span className="text-sm text-gray-300">81-95% : Avancé</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div>
-                  <span className="text-sm text-gray-300">96-100% : Expert</span>
-                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+    
+    {/* Grille de compétences interactive */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+      {/* Catégorie 1: Langages & Programmation */}
+      <div className="relative group" data-category="programming">
+        <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-blue-600/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+          {/* En-tête animé */}
+          <div className="p-6 border-b border-gray-700/50 bg-gradient-to-r from-blue-900/20 to-cyan-900/20">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur opacity-20 animate-pulse"></div>
+                <div className="relative p-3 bg-gradient-to-br from-blue-900/30 to-cyan-900/30 rounded-xl">
+                  <Code2 size={28} className="text-cyan-400 animate-float-slow" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white">
+                Langages & <span className="text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text">Programmation</span>
+              </h3>
+            </div>
+            <div className="w-full h-0.5 bg-gradient-to-r from-blue-400/30 to-cyan-400/30 rounded-full"></div>
+          </div>
+          
+          {/* Liste des compétences avec barres créatives */}
+          <div className="p-6">
+            {[
+              { name: "HTML5", level: 95, color: "from-orange-400 to-red-400" },
+              { name: "PHP", level: 85, color: "from-indigo-400 to-purple-400" },
+              { name: "JavaScript", level: 90, color: "from-yellow-400 to-orange-400" },
+              { name: "CSS3", level: 92, color: "from-blue-400 to-cyan-400" },
+              { name: "TypeScript", level: 80, color: "from-cyan-400 to-blue-400" },
+              { name: "Java", level: 88, color: "from-red-400 to-orange-400" },
+              { name: "Python", level: 82, color: "from-emerald-400 to-green-400" },
+            ].map((skill, index) => (
+              <div key={index} className="mb-5 last:mb-0">
+                <div className="flex justify-between items-center mb-2">
+                  <div className="flex items-center gap-3">
+                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${skill.color} animate-pulse`}></div>
+                    <span className="text-gray-300 font-medium">{skill.name}</span>
+                  </div>
+                  <div className="relative">
+                    <div className="absolute -inset-2 bg-gradient-to-r ${skill.color} rounded-full blur opacity-0 group-hover:opacity-10"></div>
+                    <span className={`relative text-sm font-bold px-3 py-1 rounded-full bg-gradient-to-r ${skill.color} bg-opacity-10 text-transparent bg-clip-text`}>
+                      {skill.level}%
+                    </span>
+                  </div>
+                </div>
+                
+                {/* Barre de progression créative */}
+                <div className="relative h-3">
+                  <div className="absolute inset-0 bg-gray-700/30 rounded-full overflow-hidden">
+                    <div 
+                      className={`absolute inset-0 bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out`}
+                      style={{ width: `${skill.level}%` }}
+                    >
+                      {/* Effet de brillance */}
+                      <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-r from-white/20 to-transparent rounded-full"></div>
+                      {/* Particules volantes */}
+                      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-white rounded-full blur-sm animate-ping" style={{ animationDelay: `${index * 0.1}s` }}></div>
+                    </div>
+                  </div>
+                  
+                  {/* Points de repère */}
+                  <div className="absolute inset-0 flex justify-between px-1">
+                    {[0, 25, 50, 75, 100].map((point) => (
+                      <div 
+                        key={point}
+                        className={`w-0.5 h-3 rounded-full ${
+                          point <= skill.level 
+                            ? 'bg-white/30' 
+                            : 'bg-gray-600/20'
+                        }`}
+                      ></div>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Étoiles de notation */}
+                <div className="flex justify-end gap-1 mt-2">
+                  {[...Array(5)].map((_, starIndex) => (
+                    <div 
+                      key={starIndex}
+                      className={`w-2 h-2 rounded-full ${
+                        starIndex < Math.floor(skill.level / 20)
+                          ? `bg-gradient-to-r ${skill.color}`
+                          : 'bg-gray-600/40'
+                      }`}
+                    ></div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Effet de particules au hover */}
+          <div className="absolute inset-0 pointer-events-none">
+            {[...Array(5)].map((_, i) => (
+              <div 
+                key={i}
+                className="absolute w-1 h-1 bg-white rounded-full opacity-0 group-hover:opacity-40"
+                style={{
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                  animation: `floatParticle 3s ease-in-out infinite ${i * 0.3}s`,
+                  animationPlayState: 'paused'
+                }}
+              ></div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Catégorie 2: Frameworks & Bibliothèques */}
+      <div className="relative group" data-category="frameworks">
+        <div className="absolute -inset-4 bg-gradient-to-r from-green-500/10 via-emerald-500/10 to-green-600/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-green-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+          <div className="p-6 border-b border-gray-700/50 bg-gradient-to-r from-green-900/20 to-emerald-900/20">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full blur opacity-20 animate-pulse delay-300"></div>
+                <div className="relative p-3 bg-gradient-to-br from-green-900/30 to-emerald-900/30 rounded-xl">
+                  <Layers size={28} className="text-emerald-400 animate-spin-slow" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white">
+                Frameworks & <span className="text-transparent bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text">Bibliothèques</span>
+              </h3>
+            </div>
+            <div className="w-full h-0.5 bg-gradient-to-r from-green-400/30 to-emerald-400/30 rounded-full"></div>
+          </div>
+          
+          <div className="p-6">
+            {[
+              { name: "Symfony", level: 78, color: "from-gray-400 to-black-400" },
+              { name: "React", level: 85, color: "from-cyan-400 to-blue-400" },
+              { name: "Tailwind CSS", level: 95, color: "from-cyan-400 to-teal-400" },
+              { name: "Bootstrap", level: 88, color: "from-purple-400 to-pink-400" },
+            ].map((skill, index) => (
+              <div key={index} className="mb-6 last:mb-0">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-gradient-to-br from-green-900/20 to-emerald-900/20 rounded-lg">
+                      {index === 0 && "⚙️"}
+                      {index === 1 && "⚛️"}
+                      {index === 2 && "🎨"}
+                      {index === 3 && "📱"}
+                    </div>
+                    <span className="text-gray-300 font-medium">{skill.name}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className={`text-sm font-bold bg-gradient-to-r ${skill.color} bg-clip-text text-transparent`}>
+                      {skill.level}%
+                    </div>
+                    <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-pulse"></div>
+                  </div>
+                </div>
+                
+                {/* Barre avec effets */}
+                <div className="relative h-4 rounded-full overflow-hidden bg-gray-700/30">
+                  <div 
+                    className={`absolute inset-0 bg-gradient-to-r ${skill.color} transition-all duration-1000 ease-out`}
+                    style={{ width: `${skill.level}%` }}
+                  >
+                    {/* Effet de vague */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer" style={{ animationDuration: '3s' }}></div>
+                  </div>
+                  
+                  {/* Marqueurs */}
+                  <div className="absolute inset-0 flex">
+                    {Array.from({ length: 10 }).map((_, i) => (
+                      <div 
+                        key={i}
+                        className={`flex-1 h-full border-r ${
+                          (i + 1) * 10 <= skill.level 
+                            ? 'border-green-500/20' 
+                            : 'border-gray-600/10'
+                        }`}
+                      ></div>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Badge de niveau */}
+                <div className="flex justify-between items-center mt-2">
+                  <div className="text-xs text-gray-500">
+                    {skill.level >= 90 ? 'Expert' : skill.level >= 75 ? 'Avancé' : 'Intermédiaire'}
+                  </div>
+                  <div className="flex gap-1">
+                    {[...Array(3)].map((_, i) => (
+                      <div 
+                        key={i}
+                        className={`w-1.5 h-1.5 rounded-full ${
+                          i < Math.floor(skill.level / 33.33)
+                            ? 'bg-gradient-to-r from-green-400 to-emerald-400'
+                            : 'bg-gray-600/40'
+                        }`}
+                      ></div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Catégorie 3: Bases de données */}
+      <div className="relative group" data-category="databases">
+        <div className="absolute -inset-4 bg-gradient-to-r from-yellow-500/10 via-orange-500/10 to-yellow-600/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-yellow-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+          <div className="p-6 border-b border-gray-700/50 bg-gradient-to-r from-yellow-900/20 to-orange-900/20">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full blur opacity-20 animate-pulse delay-600"></div>
+                <div className="relative p-3 bg-gradient-to-br from-yellow-900/30 to-orange-900/30 rounded-xl">
+                  <Database size={28} className="text-yellow-400 animate-bounce-slow" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white">
+                Bases de <span className="text-transparent bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text">Données</span>
+              </h3>
+            </div>
+            <div className="w-full h-0.5 bg-gradient-to-r from-yellow-400/30 to-orange-400/30 rounded-full"></div>
+          </div>
+          
+          <div className="p-6">
+            {[
+              { name: "MySQL", level: 90, color: "from-blue-400 to-cyan-400", icon: "🐬" },
+              { name: "MongoDB", level: 75, color: "from-green-400 to-emerald-400", icon: "🍃" },
+            ].map((skill, index) => (
+              <div key={index} className="mb-8 last:mb-0">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="text-2xl">{skill.icon}</div>
+                    <div>
+                      <span className="text-gray-300 font-medium text-lg">{skill.name}</span>
+                      <div className="text-xs text-gray-500">
+                        {skill.name === "MySQL" ? "Relationnel" : "NoSQL"}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <div className="absolute -inset-3 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-full blur"></div>
+                    <div className={`relative text-lg font-bold bg-gradient-to-r ${skill.color} bg-clip-text text-transparent`}>
+                      {skill.level}%
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Barre circulaire */}
+                <div className="relative w-32 h-32 mx-auto mb-4">
+                  <svg className="w-full h-full transform -rotate-90">
+                    <circle 
+                      cx="64" 
+                      cy="64" 
+                      r="60" 
+                      stroke="url(#gradient)"
+                      strokeWidth="8" 
+                      fill="transparent"
+                      strokeDasharray="376.8"
+                      strokeDashoffset={376.8 - (376.8 * skill.level / 100)}
+                      className="transition-all duration-1000 ease-out"
+                    />
+                    <defs>
+                      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#fbbf24" />
+                        <stop offset="100%" stopColor="#f97316" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className={`text-3xl font-bold bg-gradient-to-r ${skill.color} bg-clip-text text-transparent`}>
+                        {skill.level}%
+                      </div>
+                      <div className="text-sm text-gray-400">maîtrise</div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Points forts */}
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-pulse"></div>
+                    <span className="text-sm text-gray-300">Requêtes complexes</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-pulse delay-200"></div>
+                    <span className="text-sm text-gray-300">Optimisation</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Catégorie 4: Outils & DevOps */}
+      <div className="relative group" data-category="devops">
+        <div className="absolute -inset-4 bg-gradient-to-r from-red-500/10 via-pink-500/10 to-red-600/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-red-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+          <div className="p-6 border-b border-gray-700/50 bg-gradient-to-r from-red-900/20 to-pink-900/20">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gradient-to-r from-red-500 to-pink-500 rounded-full blur opacity-20 animate-pulse delay-900"></div>
+                <div className="relative p-3 bg-gradient-to-br from-red-900/30 to-pink-900/30 rounded-xl">
+                  <Zap size={28} className="text-pink-400 animate-pulse-slow" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white">
+                Outils & <span className="text-transparent bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text">DevOps</span>
+              </h3>
+            </div>
+            <div className="w-full h-0.5 bg-gradient-to-r from-red-400/30 to-pink-400/30 rounded-full"></div>
+          </div>
+          
+          <div className="p-6">
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { name: "Git", level: 92, icon: "🐙", color: "from-orange-500 to-red-500" },
+                { name: "Docker", level: 70, icon: "🐳", color: "from-blue-400 to-cyan-400" },
+                { name: "Webpack", level: 65, icon: "📦", color: "from-yellow-400 to-orange-400" },
+                { name: "CI/CD", level: 80, icon: "⚡", color: "from-green-400 to-emerald-400" },
+              ].map((skill, index) => (
+                <div key={index} className="group/item">
+                  <div className="bg-gray-900/30 p-4 rounded-xl hover:bg-gray-900/50 transition-all duration-300 group-hover/item:scale-105">
+                    <div className="flex flex-col items-center text-center">
+                      <div className="text-3xl mb-2">{skill.icon}</div>
+                      <span className="text-gray-300 font-medium mb-2">{skill.name}</span>
+                      
+                      {/* Mini barre */}
+                      <div className="w-full h-2 bg-gray-700/50 rounded-full overflow-hidden mb-2">
+                        <div 
+                          className={`h-full bg-gradient-to-r ${skill.color} transition-all duration-1000 ease-out`}
+                          style={{ width: `${skill.level}%` }}
+                        ></div>
+                      </div>
+                      
+                      <span className="text-xs font-bold bg-gradient-to-r ${skill.color} bg-clip-text text-transparent">
+                        {skill.level}%
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Catégorie 5: Graphisme & Multimédia */}
+      <div className="relative group" data-category="design">
+        <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/10 via-violet-500/10 to-purple-600/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+          <div className="p-6 border-b border-gray-700/50 bg-gradient-to-r from-purple-900/20 to-violet-900/20">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gradient-to-r from-purple-500 to-violet-500 rounded-full blur opacity-20 animate-pulse delay-1200"></div>
+                <div className="relative p-3 bg-gradient-to-br from-purple-900/30 to-violet-900/30 rounded-xl">
+                  <Sparkles size={28} className="text-purple-400 animate-pulse-glow" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white">
+                Graphisme & <span className="text-transparent bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text">Multimédia</span>
+              </h3>
+            </div>
+            <div className="w-full h-0.5 bg-gradient-to-r from-purple-400/30 to-violet-400/30 rounded-full"></div>
+          </div>
+          
+          <div className="p-6">
+            <div className="space-y-4">
+              {[
+                { name: "Adobe Suite", level: 85, tools: ["Photoshop", "Illustrator", "Premiere"] },
+                { name: "Montage multimédia", level: 80, tools: ["Audio", "Vidéo", "Effets"] },
+                { name: "Figma", level: 88, tools: ["UI/UX", "Prototypage", "Design"] },
+                { name: "Vidéo professionnelle", level: 75, tools: ["Tournage", "Éclairage", "Cadrage"] },
+                { name: "Édition vidéo", level: 82, tools: ["After Effects", "Premiere Pro", "Effets"] },
+                { name: "Anglais technique", level: 78, tools: ["Documentation", "Communication", "Recherche"] },
+              ].map((skill, index) => (
+                <div key={index} className="group/item">
+                  <div className="flex items-center justify-between p-3 bg-gray-900/20 rounded-lg hover:bg-gray-900/40 transition-all duration-300">
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full animate-pulse"></div>
+                        <span className="text-gray-300 font-medium">{skill.name}</span>
+                      </div>
+                      <div className="flex gap-2">
+                        {skill.tools.map((tool, i) => (
+                          <span key={i} className="text-xs text-gray-500 bg-gray-800/50 px-2 py-1 rounded">
+                            {tool}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="text-lg font-bold bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent">
+                      {skill.level}%
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Catégorie 6: Compétences transversales */}
+      <div className="relative group" data-category="soft-skills">
+        <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/10 via-teal-500/10 to-cyan-600/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+          <div className="p-6 border-b border-gray-700/50 bg-gradient-to-r from-cyan-900/20 to-teal-900/20">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-full blur opacity-20 animate-pulse delay-1500"></div>
+                <div className="relative p-3 bg-gradient-to-br from-cyan-900/30 to-teal-900/30 rounded-xl">
+                  <Users size={28} className="text-cyan-400 animate-float" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white">
+                Compétences <span className="text-transparent bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text">Transversales</span>
+              </h3>
+            </div>
+            <div className="w-full h-0.5 bg-gradient-to-r from-cyan-400/30 to-teal-400/30 rounded-full"></div>
+          </div>
+          
+          <div className="p-6">
+            {[
+              { name: "Travail d'équipe", level: 95, description: "Collaboration efficace" },
+              { name: "Communication", level: 90, description: "Clarté et précision" },
+              { name: "Gestion de projet", level: 85, description: "Organisation Agile" },
+            ].map((skill, index) => (
+              <div key={index} className="mb-6 last:mb-0">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-3">
+                    {index === 0 && "🤝"}
+                    {index === 1 && "💬"}
+                    {index === 2 && "📊"}
+                    <div>
+                      <span className="text-gray-300 font-medium text-lg">{skill.name}</span>
+                      <div className="text-sm text-gray-500">{skill.description}</div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <div className="absolute -inset-3 bg-gradient-to-r from-cyan-500/20 to-teal-500/20 rounded-full blur"></div>
+                    <div className="relative text-2xl font-bold bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
+                      {skill.level}%
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Barre radiale */}
+                <div className="relative h-20 flex items-center justify-center">
+                  <div className="absolute w-20 h-20">
+                    <div className="absolute inset-0 border-4 border-gray-700/30 rounded-full"></div>
+                    <div 
+                      className="absolute inset-0 border-4 border-transparent border-t-cyan-400 border-r-teal-400 rounded-full animate-spin-slow"
+                      style={{ 
+                        clipPath: `inset(0 ${100 - skill.level}% 0 0)`,
+                        animationDuration: '4s'
+                      }}
+                    ></div>
+                  </div>
+                  <div className="relative z-10 text-center">
+                    <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
+                      {skill.level}%
+                    </div>
+                    <div className="text-xs text-gray-400">compétence</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Radar des compétences - Visualisation créative */}
+    <div className="mt-20">
+      <div className="relative bg-gradient-to-br from-gray-800/30 to-gray-900/30 backdrop-blur-sm rounded-3xl border border-gray-700/50 p-8">
+        <h3 className="text-3xl font-bold text-white text-center mb-8">
+          <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
+            Radar des Compétences
+          </span>
+        </h3>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { category: "Langages", level: 88, color: "blue", skills: 7 },
+            { category: "Frameworks", level: 85, color: "green", skills: 5 },
+            { category: "Bases de données", level: 83, color: "yellow", skills: 2 },
+            { category: "DevOps", level: 77, color: "red", skills: 4 },
+            { category: "Design", level: 81, color: "purple", skills: 6 },
+            { category: "Soft Skills", level: 90, color: "cyan", skills: 3 },
+          ].map((item, index) => (
+            <div key={index} className="relative group">
+              <div className="bg-gray-900/40 p-6 rounded-xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 group-hover:scale-105">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className={`w-3 h-3 rounded-full bg-${item.color}-400 animate-pulse`}></div>
+                    <span className="text-gray-300 font-semibold">{item.category}</span>
+                  </div>
+                  <span className="text-sm text-gray-400">{item.skills} comp.</span>
+                </div>
+                
+                {/* Jauge circulaire */}
+                <div className="relative w-24 h-24 mx-auto mb-4">
+                  <svg className="w-full h-full transform -rotate-90">
+                    <circle 
+                      cx="48" 
+                      cy="48" 
+                      r="42" 
+                      stroke={`url(#${item.color}Gradient)`}
+                      strokeWidth="6" 
+                      fill="transparent"
+                      strokeDasharray="263.76"
+                      strokeDashoffset={263.76 - (263.76 * item.level / 100)}
+                      className="transition-all duration-1000 ease-out"
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className={`text-2xl font-bold text-${item.color}-400`}>
+                      {item.level}%
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="text-center">
+                  <div className="text-sm text-gray-400">Niveau moyen</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+    
+    {/* Légende créative */}
+    <div className="mt-12 relative">
+      <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-cyan-500/5 rounded-3xl blur-xl"></div>
+      <div className="relative bg-gray-800/30 backdrop-blur-sm p-8 rounded-3xl border border-gray-700/50">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="text-center md:text-left">
+            <h4 className="text-2xl font-bold text-white mb-4">
+              <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
+                Échelle de Maîtrise
+              </span>
+            </h4>
+            <p className="text-gray-300 max-w-md">
+              Les pourcentages reflètent ma confiance et mon expertise pratique dans chaque technologie, 
+              basée sur des projets réels et une formation continue.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { level: "Débutant", range: "0-60%", color: "from-blue-400 to-cyan-400", icon: "🌱" },
+              { level: "Intermédiaire", range: "61-80%", color: "from-green-400 to-emerald-400", icon: "🚀" },
+              { level: "Avancé", range: "81-95%", color: "from-purple-400 to-violet-400", icon: "⭐" },
+              { level: "Expert", range: "96-100%", color: "from-yellow-400 to-orange-400", icon: "🏆" },
+            ].map((item, index) => (
+              <div key={index} className="flex items-center gap-3 p-3 bg-gray-900/30 rounded-lg">
+                <div className="text-2xl">{item.icon}</div>
+                <div>
+                  <div className={`text-sm font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
+                    {item.level}
+                  </div>
+                  <div className="text-xs text-gray-400">{item.range}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Barre de progression globale */}
+        <div className="mt-8 pt-8 border-t border-gray-700/50">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-gray-300 font-semibold">Niveau global de compétences</span>
+            <span className="text-lg font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              85%
+            </span>
+          </div>
+          <div className="h-3 bg-gray-700/30 rounded-full overflow-hidden">
+            <div className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '85%' }}>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Veille Tech Section */}
       <section id="veille" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">

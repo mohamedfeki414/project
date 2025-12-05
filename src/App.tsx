@@ -1,4 +1,4 @@
-import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code2, Briefcase, GraduationCap, Globe, Smartphone, Database, Users, Clock, Target, Brain, Phone, MapPin, Award, Layers, Sparkles, Download, ChevronRight, Zap, Coffee, Gamepad2, Trophy, Home, User as UserIcon, Briefcase as BriefcaseIcon, Folder, Wrench, Eye, Palette, Cpu } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code2, Briefcase, GraduationCap, Globe, Smartphone, Database, Users, Clock, Target, Brain, Phone, MapPin, Award, Layers, Sparkles, Download, ChevronRight, Zap, Coffee, Gamepad2, Trophy, Home, User as UserIcon, Briefcase as BriefcaseIcon, Folder, Wrench, Eye, Palette, Cpu ,Bell} from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 // Composant TechCarousel pour les logos de technologies tournantes
@@ -2877,163 +2877,776 @@ const interests = [
   </div>
 </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center gap-3 mb-12">
-            <div className="p-3 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
-              <Mail size={32} className="text-blue-400" />
+  {/* Contact Section - DESIGN CRÉATIF ET DYNAMIQUE */}
+<section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+  {/* Arrière-plan animé avec effet de particules */}
+  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900/10 via-purple-900/10 to-pink-900/10"></div>
+  
+  {/* Éléments de fond décoratifs */}
+  <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-full blur-3xl animate-pulse"></div>
+  <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+  
+  {/* Particules flottantes */}
+  <div className="absolute inset-0">
+    {[...Array(15)].map((_, i) => (
+      <div 
+        key={i}
+        className="absolute w-1 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-float"
+        style={{
+          top: `${Math.random() * 100}%`,
+          left: `${Math.random() * 100}%`,
+          animationDelay: `${i * 0.5}s`,
+          animationDuration: `${3 + Math.random() * 4}s`
+        }}
+      ></div>
+    ))}
+  </div>
+  
+  <div className="max-w-6xl mx-auto relative">
+    {/* En-tête créatif */}
+    <div className="text-center mb-20">
+      <div className="inline-flex items-center justify-center relative mb-10">
+        {/* Animation de cercle concentrique */}
+        <div className="absolute -inset-12">
+          <div className="absolute inset-0 border-2 border-blue-500/20 rounded-full animate-ping"></div>
+          <div className="absolute inset-4 border-2 border-purple-500/20 rounded-full animate-ping delay-300"></div>
+          <div className="absolute inset-8 border-2 border-pink-500/20 rounded-full animate-ping delay-600"></div>
+        </div>
+        
+        {/* Icône centrale interactive */}
+        <div className="relative">
+          <div className="absolute -inset-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-2xl opacity-20 animate-pulse-glow"></div>
+          
+          <div className="relative p-6 bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-3xl border border-blue-500/30 group hover:border-purple-500/50 transition-all duration-500 cursor-pointer">
+            <Mail size={52} className="text-blue-400 group-hover:text-purple-400 transition-colors duration-300" />
+            
+            {/* Animation de notification */}
+            <div className="absolute -top-2 -right-2">
+              <div className="relative">
+                <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur opacity-0 group-hover:opacity-50 transition-opacity"></div>
+                <div className="relative w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center animate-pulse">
+                  <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
+                </div>
+              </div>
             </div>
-            <h2 className="text-4xl font-bold text-white">
-              Contactez-<span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">moi</span>
-            </h2>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {[
-              {
-                icon: <Mail size={32} className="text-blue-400" />,
-                title: "Email",
-                content: "medfeki33@gmail.com",
-                href: "mailto:medfeki33@gmail.com",
-                color: "hover:border-blue-500/50"
-              },
-              {
-                icon: <Smartphone size={32} className="text-purple-400" />,
-                title: "Téléphone",
-                content: "+216 27 752 903",
-                href: "tel:+21627752903",
-                color: "hover:border-purple-500/50"
-              },
-              {
-                icon: <MapPin size={32} className="text-green-400" />,
-                title: "Localisation",
-                content: "Sfax, Tunisie",
-                href: "#",
-                color: "hover:border-green-500/50"
-              }
-            ].map((contact, index) => (
-              <a
-                key={index}
-                href={contact.href}
-                className={`bg-gray-800/30 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 ${contact.color} transition-all duration-300 hover:scale-105 text-center`}
-              >
-                <div className="inline-flex p-3 bg-gray-900/30 rounded-full mb-4">
-                  {contact.icon}
+          {/* Points orbitaux */}
+          <div className="absolute -inset-6">
+            {[...Array(8)].map((_, i) => (
+              <div 
+                key={i}
+                className="absolute w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                style={{
+                  top: '50%',
+                  left: '50%',
+                  transform: `rotate(${i * 45}deg) translateX(40px) rotate(-${i * 45}deg)`,
+                  animation: `orbit 3s linear infinite ${i * 0.2}s`,
+                  animationPlayState: 'paused'
+                }}
+              ></div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+        Travaillons <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text animate-gradient">Ensemble</span>
+      </h2>
+      
+      <div className="flex items-center justify-center gap-6 mb-8">
+        <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+          <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse delay-150"></div>
+          <div className="w-3 h-3 bg-pink-400 rounded-full animate-pulse delay-300"></div>
+        </div>
+        <div className="w-32 h-1 bg-gradient-to-r from-transparent to-purple-500 rounded-full"></div>
+      </div>
+      
+      {/* Message d'introduction */}
+      <div className="max-w-3xl mx-auto mb-16">
+        <div className="relative">
+          <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-2xl blur-xl opacity-50"></div>
+          
+          <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50">
+            <p className="text-xl text-gray-300 text-center leading-relaxed">
+              Vous avez un projet passionnant en tête ? Je suis disponible pour discuter de 
+              <span className="text-blue-400 font-semibold"> vos idées</span>, 
+              <span className="text-purple-400 font-semibold"> collaborer sur des défis techniques</span> ou 
+              <span className="text-pink-400 font-semibold"> rejoindre votre équipe</span>. 
+              N'hésitez pas à me contacter !
+            </p>
+            
+            {/* Indicateur de disponibilité */}
+            <div className="flex items-center justify-center gap-3 mt-6">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-sm text-green-400 font-medium">Disponible immédiatement</span>
+              </div>
+              <div className="text-gray-500">•</div>
+              <div className="text-sm text-gray-400">Réponse sous 24h</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Cartes de contact créatives */}
+    <div className="grid md:grid-cols-3 gap-8 mb-16">
+      {/* Carte Email */}
+      <a
+        href="mailto:medfeki33@gmail.com"
+        className="relative group"
+      >
+        <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-blue-600/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+          <div className="p-8">
+            {/* Icône animée */}
+            <div className="relative inline-flex mb-6">
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur opacity-20 animate-pulse"></div>
+              <div className="relative p-4 bg-gradient-to-br from-blue-900/30 to-cyan-900/30 rounded-xl group-hover:rotate-12 transition-transform duration-300">
+                <Mail size={32} className="text-cyan-400" />
+              </div>
+              
+              {/* Animation de notification */}
+              <div className="absolute -top-2 -right-2">
+                <div className="relative">
+                  <div className="absolute -inset-2 bg-blue-500/30 rounded-full animate-ping"></div>
+                  <div className="relative w-5 h-5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+                    <div className="w-1 h-1 bg-white rounded-full"></div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{contact.title}</h3>
-                <p className="text-gray-400 hover:text-blue-400 transition-colors">
-                  {contact.content}
-                </p>
-              </a>
+              </div>
+            </div>
+            
+            <h3 className="text-2xl font-bold text-white mb-3">Email</h3>
+            <p className="text-gray-400 mb-6">Pour les discussions détaillées et collaborations</p>
+            
+            {/* Adresse email avec effet */}
+            <div className="relative group/email">
+              <div className="absolute -inset-3 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-xl blur opacity-0 group-hover/email:opacity-100 transition-opacity"></div>
+              <div className="relative p-4 bg-gray-900/30 rounded-xl border border-gray-700/50 group-hover/email:border-cyan-500/50 transition-colors">
+                <div className="flex items-center justify-between">
+                  <span className="text-lg font-mono text-gray-300 group-hover/email:text-cyan-300 transition-colors">
+                    medfeki33@gmail.com
+                  </span>
+                  <ChevronRight size={18} className="text-gray-500 group-hover/email:text-cyan-400 group-hover/email:translate-x-1 transition-all" />
+                </div>
+              </div>
+            </div>
+            
+            {/* Statistique */}
+            <div className="mt-6 pt-6 border-t border-gray-700/50">
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-400">Temps de réponse moyen</span>
+                <span className="text-sm font-bold text-cyan-400">2-4 heures</span>
+              </div>
+            </div>
+          </div>
+          
+          {/* Effet de particules */}
+          <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div className="w-8 h-8 border-2 border-cyan-500/30 rounded-full animate-spin-slow"></div>
+          </div>
+        </div>
+      </a>
+
+      {/* Carte Téléphone */}
+      <a
+        href="tel:+21627752903"
+        className="relative group"
+      >
+        <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/10 via-violet-500/10 to-purple-600/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+          <div className="p-8">
+            <div className="relative inline-flex mb-6">
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 to-violet-500 rounded-full blur opacity-20 animate-pulse delay-300"></div>
+              <div className="relative p-4 bg-gradient-to-br from-purple-900/30 to-violet-900/30 rounded-xl group-hover:rotate-12 transition-transform duration-300">
+                <Smartphone size={32} className="text-purple-400" />
+              </div>
+              
+              {/* Animation d'appel */}
+              <div className="absolute -top-2 -right-2">
+                <div className="relative">
+                  <div className="absolute -inset-2 bg-purple-500/30 rounded-full animate-ping delay-200"></div>
+                  <div className="relative w-5 h-5 bg-gradient-to-r from-purple-500 to-violet-500 rounded-full flex items-center justify-center animate-pulse">
+                    <Phone size={10} className="text-white" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <h3 className="text-2xl font-bold text-white mb-3">Téléphone</h3>
+            <p className="text-gray-400 mb-6">Pour les échanges directs et urgents</p>
+            
+            <div className="relative group/phone">
+              <div className="absolute -inset-3 bg-gradient-to-r from-purple-500/10 to-violet-500/10 rounded-xl blur opacity-0 group-hover/phone:opacity-100 transition-opacity"></div>
+              <div className="relative p-4 bg-gray-900/30 rounded-xl border border-gray-700/50 group-hover/phone:border-purple-500/50 transition-colors">
+                <div className="flex items-center justify-between">
+                  <span className="text-lg font-mono text-gray-300 group-hover/phone:text-purple-300 transition-colors">
+                    +216 27 752 903
+                  </span>
+                  <ChevronRight size={18} className="text-gray-500 group-hover/phone:text-purple-400 group-hover/phone:translate-x-1 transition-all" />
+                </div>
+              </div>
+            </div>
+            
+            {/* Disponibilité */}
+            <div className="mt-6 pt-6 border-t border-gray-700/50">
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-400">Disponibilité</span>
+                  <span className="text-sm font-bold text-green-400">✅ Maintenant</span>
+                </div>
+                <div className="text-xs text-gray-500">Lun-Ven: 9h-18h</div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300">
+            <div className="w-8 h-8 border-2 border-purple-500/30 rounded-full animate-spin-slow reverse"></div>
+          </div>
+        </div>
+      </a>
+
+      {/* Carte Localisation */}
+      <div className="relative group">
+        <div className="absolute -inset-4 bg-gradient-to-r from-green-500/10 via-emerald-500/10 to-green-600/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-green-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+          <div className="p-8">
+            <div className="relative inline-flex mb-6">
+              <div className="absolute -inset-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full blur opacity-20 animate-pulse delay-600"></div>
+              <div className="relative p-4 bg-gradient-to-br from-green-900/30 to-emerald-900/30 rounded-xl group-hover:rotate-12 transition-transform duration-300">
+                <MapPin size={32} className="text-emerald-400" />
+              </div>
+              
+              {/* Animation de localisation */}
+              <div className="absolute -top-2 -right-2">
+                <div className="relative">
+                  <div className="absolute -inset-2 bg-green-500/30 rounded-full animate-ping delay-400"></div>
+                  <div className="relative w-5 h-5 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <h3 className="text-2xl font-bold text-white mb-3">Localisation</h3>
+            <p className="text-gray-400 mb-6">Zone géographique et déplacements</p>
+            
+            <div className="relative group/location">
+              <div className="absolute -inset-3 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-xl blur opacity-0 group-hover/location:opacity-100 transition-opacity"></div>
+              <div className="relative p-4 bg-gray-900/30 rounded-xl border border-gray-700/50 group-hover/location:border-emerald-500/50 transition-colors">
+                <div className="text-center">
+                  <span className="text-xl font-bold text-gray-300 group-hover/location:text-emerald-300 transition-colors">
+                    Sfax, Tunisie
+                  </span>
+                  <div className="text-sm text-gray-500 mt-2">Disponible pour déplacement</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Options de travail */}
+            <div className="mt-6 pt-6 border-t border-gray-700/50">
+              <div className="grid grid-cols-2 gap-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                  <span className="text-sm text-gray-300">Présentiel</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                  <span className="text-sm text-gray-300">Hybride</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                  <span className="text-sm text-gray-300">Full Remote</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                  <span className="text-sm text-gray-300">Freelance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-600">
+            <div className="w-8 h-8 border-2 border-emerald-500/30 rounded-full animate-spin-slow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Boutons d'action - Design amélioré */}
+    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+      {/* Bouton LinkedIn */}
+      <a 
+        href="https://linkedin.com/in/mohamed-feki-486918309"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative group w-full sm:w-auto"
+      >
+        <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-700"></div>
+        
+        <div className="relative px-10 py-4 bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl font-medium flex items-center gap-3 justify-center group-hover:from-blue-900 group-hover:to-blue-800 transition-all duration-500 group-hover:scale-105 overflow-hidden">
+          {/* Effet de brillance */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          
+          <Linkedin size={24} className="text-blue-400 group-hover:animate-bounce" />
+          <span className="text-lg font-semibold text-white">Connectons-nous sur LinkedIn</span>
+          
+          {/* Flèche animée */}
+          <ExternalLink size={18} className="text-blue-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+        </div>
+        
+        {/* Points décoratifs */}
+        <div className="absolute -top-2 -left-2 w-4 h-4 bg-blue-400 rounded-full blur-sm opacity-0 group-hover:opacity-70 animate-pulse"></div>
+        <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-blue-400 rounded-full blur-sm opacity-0 group-hover:opacity-70 animate-pulse delay-300"></div>
+      </a>
+      
+      {/* Bouton GitHub */}
+      <a 
+        href="https://github.com/mohamedfeki414"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative group w-full sm:w-auto"
+      >
+        <div className="absolute -inset-4 bg-gradient-to-r from-gray-600 to-gray-800 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-700"></div>
+        
+        <div className="relative px-10 py-4 bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl font-medium flex items-center gap-3 justify-center group-hover:from-gray-700 group-hover:to-gray-800 transition-all duration-500 group-hover:scale-105 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          
+          <Github size={24} className="text-gray-300 group-hover:text-white group-hover:animate-pulse-slow" />
+          <span className="text-lg font-semibold text-white">Découvrez mes projets GitHub</span>
+          <ExternalLink size={18} className="text-gray-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+        </div>
+      </a>
+    </div>
+    
+    {/* Bouton Télécharger CV - Design premium */}
+    <div className="text-center">
+      <button
+        onClick={handleDownloadCV}
+        className="relative group mx-auto"
+      >
+        <div className="absolute -inset-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-1000"></div>
+        
+        <div className="relative px-12 py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-2xl font-bold flex items-center gap-3 justify-center group-hover:from-blue-700 group-hover:via-purple-700 group-hover:to-pink-700 transition-all duration-500 group-hover:scale-105 overflow-hidden">
+          {/* Effet de particules */}
+          <div className="absolute inset-0">
+            {[...Array(8)].map((_, i) => (
+              <div 
+                key={i}
+                className="absolute w-1 h-1 bg-white rounded-full opacity-0 group-hover:opacity-40 animate-float"
+                style={{
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                  animationDelay: `${i * 0.2}s`,
+                  animationDuration: `${2 + Math.random() * 2}s`
+                }}
+              ></div>
             ))}
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a 
-              href="https://linkedin.com/in/mohamed-feki-486918309"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative group w-full sm:w-auto"
-            >
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg blur opacity-30 group-hover:opacity-50 transition-opacity" />
-              <div className="relative px-8 py-3 bg-gray-800 text-white rounded-lg font-medium flex items-center gap-2 justify-center group-hover:bg-blue-900 transition-colors">
-                <Linkedin size={20} /> LinkedIn
-              </div>
-            </a>
-            
-            <a 
-              href="https://github.com/mohamedfeki414"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative group w-full sm:w-auto"
-            >
-              <div className="absolute -inset-1 bg-gradient-to-r from-gray-600 to-gray-800 rounded-lg blur opacity-30 group-hover:opacity-50 transition-opacity" />
-              <div className="relative px-8 py-3 bg-gray-800 text-white rounded-lg font-medium flex items-center gap-2 justify-center group-hover:bg-gray-700 transition-colors">
-                <Github size={20} /> GitHub
-              </div>
-            </a>
-            
-            <button
-              onClick={handleDownloadCV}
-              className="relative group w-full sm:w-auto"
-            >
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-50 transition-opacity" />
-              <div className="relative px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium flex items-center gap-2 justify-center group-hover:from-blue-700 group-hover:to-purple-700 transition-all">
-                <Download size={20} className="group-hover:animate-bounce" /> Télécharger CV
-              </div>
-            </button>
+          {/* Effet de brillance */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          
+          <Download size={24} className="group-hover:animate-bounce" />
+          <span className="text-xl font-semibold">Télécharger mon CV complet</span>
+          <ChevronRight size={20} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all" />
+        </div>
+        
+        {/* Animation autour du bouton */}
+        <div className="absolute -inset-8">
+          <div className="absolute inset-0 border-2 border-blue-500/30 rounded-3xl animate-ping"></div>
+          <div className="absolute inset-2 border-2 border-purple-500/30 rounded-3xl animate-ping delay-200"></div>
+          <div className="absolute inset-4 border-2 border-pink-500/30 rounded-3xl animate-ping delay-400"></div>
+        </div>
+      </button>
+      
+      <p className="text-gray-400 mt-6 text-sm">
+        PDF détaillé • Mis à jour régulièrement • Disponible en français
+      </p>
+    </div>
+    
+    {/* CTA Final */}
+    <div className="mt-20 pt-12 border-t border-gray-700/50">
+      <div className="text-center">
+        <h3 className="text-3xl font-bold text-white mb-6">
+          Prêt à <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">collaborer</span> ?
+        </h3>
+        
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+          <div className="flex items-center gap-3">
+            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-gray-300">Disponible immédiatement</span>
+          </div>
+          
+          <div className="flex items-center gap-3">
+            <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse delay-200"></div>
+            <span className="text-gray-300">Réponse rapide garantie</span>
+          </div>
+          
+          <div className="flex items-center gap-3">
+            <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse delay-400"></div>
+            <span className="text-gray-300">Première consultation gratuite</span>
           </div>
         </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900/80 backdrop-blur-sm border-t border-gray-700/50 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                  <Code2 className="text-white" size={22} />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">MOHAMED FEKI</h3>
-                  <p className="text-sm text-gray-400">Full Stack Developer</p>
-                </div>
-              </div>
-              <p className="text-gray-400">
-                Passionné par l'innovation et la création de solutions technologiques performantes.
+        
+        {/* Message final */}
+        <div className="mt-10 max-w-2xl mx-auto">
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl blur-xl"></div>
+            <div className="relative bg-gray-800/30 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50">
+              <p className="text-gray-300 text-lg">
+                "Chaque grand projet commence par une simple conversation. 
+                <span className="text-blue-400 font-semibold"> Prenons le temps d'échanger</span> sur vos besoins et 
+                comment je peux vous aider à les réaliser."
               </p>
-            </div>
-            
-            <div>
-              <h3 className="text-xl font-bold text-white mb-4">Navigation</h3>
-              <div className="grid grid-cols-2 gap-2">
-                {navItems.map((item) => (
-                  <a 
-                    key={item.id}
-                    href={`#${item.id}`}
-                    className="text-gray-400 hover:text-blue-400 transition-colors"
-                  >
-                    {item.label}
-                  </a>
-                ))}
+              <div className="flex items-center justify-center gap-2 mt-4">
+                <div className="w-8 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                <span className="text-sm text-gray-400">Mohamed Feki</span>
+                <div className="w-8 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
               </div>
             </div>
-            
-            <div>
-              <h3 className="text-xl font-bold text-white mb-4">Réseaux</h3>
-              <div className="flex gap-4">
-                {[
-                  { icon: <Linkedin size={20} />, href: "https://linkedin.com/in/mohamed-feki-486918309", label: "LinkedIn" },
-                  { icon: <Github size={20} />, href: "https://github.com/mohamedfeki414", label: "GitHub" },
-                  { icon: <Mail size={20} />, href: "mailto:medfeki33@gmail.com", label: "Email" }
-                ].map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors group"
-                    title={social.label}
-                  >
-                    {social.icon}
-                  </a>
-                ))}
-              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{/* Footer - DESIGN CRÉATIF ET DYNAMIQUE */}
+<footer className="relative bg-gradient-to-br from-gray-900 via-blue-900/10 to-purple-900/10 border-t border-gray-700/30 pt-16 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+  {/* Arrière-plan animé */}
+  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+  
+  {/* Éléments décoratifs animés */}
+  <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
+  <div className="absolute -top-32 -right-32 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+  
+  {/* Particules flottantes */}
+  <div className="absolute inset-0">
+    {[...Array(12)].map((_, i) => (
+      <div 
+        key={i}
+        className="absolute w-0.5 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-float"
+        style={{
+          top: `${Math.random() * 100}%`,
+          left: `${Math.random() * 100}%`,
+          animationDelay: `${i * 0.5}s`,
+          animationDuration: `${3 + Math.random() * 3}s`
+        }}
+      ></div>
+    ))}
+  </div>
+  
+  <div className="max-w-7xl mx-auto relative">
+    {/* Section principale du footer */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      {/* Logo et description */}
+      <div className="space-y-6">
+        <div className="flex items-center gap-4">
+          <div className="relative">
+            <div className="absolute -inset-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur opacity-20 animate-pulse"></div>
+            <div className="relative w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+              <Code2 className="text-white" size={28} />
+            </div>
+            {/* Points orbitaux */}
+            <div className="absolute -inset-4">
+              {[...Array(3)].map((_, i) => (
+                <div 
+                  key={i}
+                  className="absolute w-1.5 h-1.5 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-50"
+                  style={{
+                    top: '50%',
+                    left: '50%',
+                    transform: `rotate(${i * 120}deg) translateX(24px) rotate(-${i * 120}deg)`,
+                    animation: `orbit 4s linear infinite ${i * 0.5}s`
+                  }}
+                ></div>
+              ))}
             </div>
           </div>
           
-          <div className="border-t border-gray-700/50 mt-8 pt-8 text-center">
-            <p className="text-gray-500">
-              © {new Date().getFullYear()} Mohamed Feki. Tous droits réservés.
-            </p>
-            <p className="text-gray-600 text-sm mt-2">
-              Licence en Génie Logiciel et Systèmes d'Information
-            </p>
+          <div>
+            <h3 className="text-3xl font-bold text-white tracking-tight">
+              MOHAMED <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">FEKI</span>
+            </h3>
+            <div className="flex items-center gap-2 mt-1">
+              <div className="w-3 h-0.5 bg-blue-400 rounded-full"></div>
+              <p className="text-sm text-gray-300 font-medium">FULL STACK DEVELOPER</p>
+              <div className="w-3 h-0.5 bg-purple-400 rounded-full"></div>
+            </div>
           </div>
         </div>
-      </footer>
+        
+        <p className="text-gray-400 leading-relaxed">
+          Passionné par <span className="text-blue-400 font-semibold">l'innovation</span> et la création 
+          de <span className="text-purple-400 font-semibold">solutions technologiques</span> performantes. 
+          Toujours à la recherche de nouveaux défis et opportunités.
+        </p>
+        
+        {/* Badge de disponibilité */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-full border border-blue-500/30">
+          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+          <span className="text-sm text-green-400 font-medium">Disponible pour nouvelles opportunités</span>
+        </div>
+      </div>
+      
+      {/* Navigation rapide */}
+      <div>
+        <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+          <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full animate-pulse"></div>
+          Navigation
+          <div className="flex-1 h-0.5 bg-gradient-to-r from-blue-500/30 to-transparent rounded-full ml-3"></div>
+        </h3>
+        
+        <div className="grid grid-cols-2 gap-3">
+          {navItems.map((item, index) => (
+            <a 
+              key={item.id}
+              href={`#${item.id}`}
+              className="group flex items-center gap-3 text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-2"
+            >
+              <div className="relative">
+                <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="relative w-8 h-8 bg-gray-800/50 rounded-lg flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-blue-900/30 group-hover:to-purple-900/30 transition-all duration-300">
+                  <span className="text-sm group-hover:scale-110 transition-transform">{item.icon}</span>
+                </div>
+              </div>
+              <span className="font-medium">{item.label}</span>
+            </a>
+          ))}
+        </div>
+        
+        {/* Bouton retour en haut */}
+        <div className="mt-8">
+          <a 
+            href="#accueil"
+            className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-blue-400 transition-colors group/back"
+          >
+            <div className="w-6 h-6 rounded-full border border-gray-700/50 flex items-center justify-center group-hover/back:border-blue-500/50 group-hover/back:bg-blue-900/20 transition-all">
+              <ChevronRight size={14} className="transform -rotate-90 text-gray-500 group-hover/back:text-blue-400" />
+            </div>
+            <span>Retour en haut</span>
+          </a>
+        </div>
+      </div>
+      
+      {/* Liens rapides */}
+      <div>
+        <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+          <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse delay-300"></div>
+          Liens rapides
+          <div className="flex-1 h-0.5 bg-gradient-to-r from-purple-500/30 to-transparent rounded-full ml-3"></div>
+        </h3>
+        
+        <div className="space-y-4">
+          {[
+            { label: "Mon CV complet", icon: <Download size={16} />, action: handleDownloadCV },
+            { label: "Projets GitHub", icon: <Github size={16} />, href: "https://github.com/mohamedfeki414" },
+            { label: "Contact direct", icon: <Mail size={16} />, href: "mailto:medfeki33@gmail.com" },
+            { label: "Portfolio", icon: <Folder size={16} />, href: "#projets" },
+          ].map((link, index) => {
+            const content = link.href ? (
+              <a
+                href={link.href}
+                target={link.href.startsWith('http') ? '_blank' : undefined}
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 p-3 bg-gray-800/30 rounded-xl hover:bg-gray-800/50 transition-all duration-300 hover:scale-[1.02]"
+              >
+                <div className="text-blue-400 group-hover:text-purple-400 transition-colors">
+                  {link.icon}
+                </div>
+                <span className="text-gray-300 group-hover:text-white font-medium flex-1">
+                  {link.label}
+                </span>
+                <ChevronRight size={14} className="text-gray-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
+              </a>
+            ) : (
+              <button
+                onClick={link.action}
+                className="group flex items-center gap-3 p-3 bg-gray-800/30 rounded-xl hover:bg-gray-800/50 transition-all duration-300 hover:scale-[1.02] w-full text-left"
+              >
+                <div className="text-blue-400 group-hover:text-purple-400 transition-colors">
+                  {link.icon}
+                </div>
+                <span className="text-gray-300 group-hover:text-white font-medium flex-1">
+                  {link.label}
+                </span>
+                <ChevronRight size={14} className="text-gray-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
+              </button>
+            );
+            
+            return <div key={index}>{content}</div>;
+          })}
+        </div>
+      </div>
+      
+      {/* Réseaux sociaux */}
+      <div>
+        <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+          <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-pulse delay-600"></div>
+          Connectons-nous
+          <div className="flex-1 h-0.5 bg-gradient-to-r from-cyan-500/30 to-transparent rounded-full ml-3"></div>
+        </h3>
+        
+        <div className="space-y-4 mb-8">
+          {[
+            { 
+              platform: "LinkedIn", 
+              icon: <Linkedin size={20} />, 
+              href: "https://linkedin.com/in/mohamed-feki-486918309",
+              color: "from-blue-500 to-blue-700",
+              hover: "hover:from-blue-600 hover:to-blue-800"
+            },
+            { 
+              platform: "GitHub", 
+              icon: <Github size={20} />, 
+              href: "https://github.com/mohamedfeki414",
+              color: "from-gray-600 to-gray-800",
+              hover: "hover:from-gray-700 hover:to-gray-900"
+            },
+            { 
+              platform: "Email", 
+              icon: <Mail size={20} />, 
+              href: "mailto:medfeki33@gmail.com",
+              color: "from-red-500 to-pink-600",
+              hover: "hover:from-red-600 hover:to-pink-700"
+            },
+          ].map((social, index) => (
+            <a
+              key={index}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-between p-4 bg-gray-800/30 rounded-xl border border-gray-700/50 hover:border-transparent transition-all duration-500 hover:scale-[1.02]"
+            >
+              <div className="flex items-center gap-4">
+                <div className={`relative p-3 bg-gradient-to-br ${social.color} rounded-lg ${social.hover} transition-all duration-300`}>
+                  {social.icon}
+                  <div className="absolute -inset-2 bg-gradient-to-br ${social.color} rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity"></div>
+                </div>
+                <div>
+                  <div className="text-white font-semibold">{social.platform}</div>
+                  <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
+                    {social.platform === "Email" ? "Réponse rapide" : "Profil actif"}
+                  </div>
+                </div>
+              </div>
+              
+              <ExternalLink size={16} className="text-gray-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
+            </a>
+          ))}
+        </div>
+        
+        {/* Abonnement newsletter (optionnel) */}
+        <div className="relative group">
+          <div className="absolute -inset-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div className="relative p-4 bg-gradient-to-br from-gray-800/40 to-gray-900/40 rounded-xl border border-gray-700/50">
+            <div className="text-center">
+              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Bell size={16} className="text-white" />
+              </div>
+              <p className="text-sm text-gray-400">
+                Pour les mises à jour de portfolio
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Séparateur décoratif */}
+    <div className="relative my-12">
+      <div className="absolute inset-0 flex items-center">
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700/50 to-transparent"></div>
+      </div>
+      <div className="relative flex justify-center">
+        <div className="px-6 bg-gradient-to-br from-gray-900 to-gray-800">
+          <div className="flex items-center gap-3">
+            {[...Array(3)].map((_, i) => (
+              <div 
+                key={i}
+                className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-pulse"
+                style={{ animationDelay: `${i * 0.3}s` }}
+              ></div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Bas de footer */}
+    <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div className="text-center md:text-left">
+        <p className="text-gray-500">
+          © {new Date().getFullYear()} <span className="text-gray-400 font-semibold">Mohamed Feki</span>. Tous droits réservés.
+        </p>
+        <p className="text-gray-600 text-sm mt-2">
+          <span className="text-gray-500">Licence en </span>
+          <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text font-medium">
+            Génie Logiciel et Systèmes d'Information
+          </span>
+        </p>
+      </div>
+      
+      {/* Mentions légales */}
+      <div className="flex items-center gap-6">
+        <a href="#" className="text-gray-500 hover:text-blue-400 transition-colors text-sm">
+          Mentions légales
+        </a>
+        <a href="#" className="text-gray-500 hover:text-blue-400 transition-colors text-sm">
+          Politique de confidentialité
+        </a>
+        <div className="flex items-center gap-2">
+          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+          <span className="text-xs text-gray-500">Version 2.0</span>
+        </div>
+      </div>
+      
+      {/* Bouton retour en haut flottant */}
+      <a 
+        href="#accueil"
+        className="fixed bottom-8 right-8 z-40 group/backtop"
+        style={{ display: activeSection !== 'accueil' ? 'block' : 'none' }}
+      >
+        <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur opacity-0 group-hover/backtop:opacity-100 transition-opacity"></div>
+        
+        <div className="relative w-12 h-12 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center border border-gray-700/50 group-hover/backtop:border-blue-500/50 transition-all duration-300 group-hover/backtop:scale-110 shadow-lg">
+          <ChevronRight size={20} className="transform -rotate-90 text-gray-400 group-hover/backtop:text-blue-400 transition-colors" />
+          
+          {/* Animation de cercle */}
+          <div className="absolute -ins-2 border-2 border-blue-500/30 rounded-full animate-ping opacity-0 group-hover/backtop:opacity-100"></div>
+        </div>
+        
+        <div className="absolute -bottom-10 right-0 bg-gray-900/90 backdrop-blur-sm px-3 py-1.5 rounded-lg text-xs text-gray-400 opacity-0 group-hover/backtop:opacity-100 transition-opacity whitespace-nowrap">
+          Retour en haut
+        </div>
+      </a>
+    </div>
+    
+    {/* Message de fin */}
+    <div className="mt-12 pt-8 border-t border-gray-700/30 text-center">
+      <p className="text-gray-600 text-sm">
+        Construit avec <span className="text-red-400">vite</span> et 
+        <span className="text-blue-400 font-semibold mx-1">React</span> + 
+        <span className="text-cyan-400 font-semibold mx-1">Tailwind CSS</span>
+      </p>
+      <div className="flex items-center justify-center gap-3 mt-4">
+        <div className="w-1 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-pulse"></div>
+        <div className="text-xs text-gray-500">Merci de votre visite !</div>
+        <div className="w-1 h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse delay-300"></div>
+      </div>
+    </div>
+  </div>
+  
+  {/* Animation de fond en continu */}
+  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent animate-shimmer"></div>
+</footer>
     </div>
   );
 }

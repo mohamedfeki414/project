@@ -2345,83 +2345,537 @@ const interests = [
   </div>
 </section>
 
-      {/* Veille Tech Section */}
-      <section id="veille" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center gap-3 mb-12">
-            <div className="p-3 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
-              <Eye size={32} className="text-blue-400" />
+   {/* Veille Tech Section - DESIGN CRÉATIF ET DYNAMIQUE */}
+<section id="veille" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+  {/* Arrière-plan animé futuriste */}
+  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-900/10 to-violet-900/10"></div>
+  
+  {/* Éléments de fond animés */}
+  <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl animate-pulse"></div>
+  <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+  
+  {/* Grille de particules */}
+  <div className="absolute inset-0 opacity-20">
+    {[...Array(20)].map((_, i) => (
+      <div 
+        key={i}
+        className="absolute w-1 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full animate-pulse"
+        style={{
+          top: `${Math.random() * 100}%`,
+          left: `${Math.random() * 100}%`,
+          animationDelay: `${i * 0.3}s`,
+          animationDuration: `${2 + Math.random() * 3}s`
+        }}
+      ></div>
+    ))}
+  </div>
+  
+  <div className="max-w-7xl mx-auto relative">
+    {/* En-tête créatif */}
+    <div className="text-center mb-20 relative">
+      <div className="inline-flex items-center justify-center relative mb-10">
+        {/* Effet de halo cybernétique */}
+        <div className="absolute -inset-12">
+          <div className="absolute inset-0 border-2 border-cyan-500/30 rounded-full animate-ping"></div>
+          <div className="absolute inset-4 border-2 border-purple-500/30 rounded-full animate-ping delay-300"></div>
+          <div className="absolute inset-8 border-2 border-blue-500/30 rounded-full animate-ping delay-600"></div>
+        </div>
+        
+        {/* Icône centrale avec animation futuriste */}
+        <div className="relative">
+          <div className="absolute -inset-8 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-full blur-2xl opacity-20 animate-pulse-glow"></div>
+          
+          <div className="relative p-6 bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-3xl border border-cyan-500/30 shadow-lg shadow-cyan-500/10">
+            <div className="relative">
+              <Eye size={52} className="text-cyan-400 animate-pulse-slow" />
+              
+              {/* Animation de balayage */}
+              <div className="absolute -inset-3">
+                <div className="absolute inset-0 border-2 border-cyan-500/20 rounded-full animate-spin-slow"></div>
+                <div className="absolute inset-2 border-2 border-purple-500/20 rounded-full animate-spin-slow reverse"></div>
+              </div>
             </div>
-            <h2 className="text-4xl font-bold text-white">
-              Veille <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">Technologique</span>
-            </h2>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Intelligence Artificielle",
-                description: "Suivi des avancées en IA et machine learning",
-                topics: ["ChatGPT & GPT-4", "AutoML", "Computer Vision"],
-                icon: "🤖"
-              },
-              {
-                title: "Cloud Computing",
-                description: "Évolution des services cloud et serverless",
-                topics: ["AWS/Azure/GCP", "Kubernetes", "Microservices"],
-                icon: "☁️"
-              },
-              {
-                title: "Web 3.0 & Blockchain",
-                description: "Technologies décentralisées et Web3",
-                topics: ["Smart Contracts", "DeFi", "NFTs"],
-                icon: "⛓️"
-              },
-              {
-                title: "DevOps & CI/CD",
-                description: "Automatisation et pratiques DevOps",
-                topics: ["Docker", "GitHub Actions", "Terraform"],
-                icon: "⚙️"
-              },
-              {
-                title: "Mobile & PWA",
-                description: "Développement mobile et applications web progressives",
-                topics: ["Flutter", "React Native", "PWA"],
-                icon: "📱"
-              },
-              {
-                title: "Cybersécurité",
-                description: "Sécurité des applications et données",
-                topics: ["OWASP", "Auth/JWT", "Security Best Practices"],
-                icon: "🔒"
-              }
-            ].map((item, index) => (
+          {/* Points orbitaux */}
+          <div className="absolute -inset-6">
+            {[...Array(6)].map((_, i) => (
               <div 
-                key={index}
-                className="bg-gray-800/30 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 group hover:scale-105"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl">{item.icon}</span>
-                  <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                key={i}
+                className="absolute w-3 h-3 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full opacity-70"
+                style={{
+                  top: '50%',
+                  left: '50%',
+                  transform: `rotate(${i * 60}deg) translateX(48px) rotate(-${i * 60}deg)`,
+                  animation: `orbit 4s linear infinite ${i * 0.5}s`
+                }}
+              ></div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+        Veille <span className="text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text animate-gradient">Technologique</span>
+      </h2>
+      
+      <div className="flex items-center justify-center gap-6 mb-8">
+        <div className="w-32 h-1 bg-gradient-to-r from-cyan-500 to-transparent rounded-full"></div>
+        <div className="flex items-center gap-3">
+          <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
+          <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse delay-200"></div>
+          <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse delay-400"></div>
+        </div>
+        <div className="w-32 h-1 bg-gradient-to-r from-transparent to-purple-500 rounded-full"></div>
+      </div>
+      
+      {/* Introduction créative */}
+      <div className="max-w-4xl mx-auto mb-16">
+        <div className="relative">
+          <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-50"></div>
+          
+          <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm p-8 rounded-2xl border border-cyan-500/20">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="md:w-1/4">
+                <div className="inline-flex items-center gap-3 p-4 bg-gradient-to-br from-cyan-900/20 to-blue-900/20 rounded-xl border border-cyan-500/30">
+                  <Zap size={28} className="text-cyan-400 animate-pulse" />
+                  <span className="text-cyan-300 font-semibold">Innovation continue</span>
                 </div>
-                <p className="text-gray-400 mb-4 text-sm">
-                  {item.description}
+              </div>
+              
+              <div className="md:w-3/4">
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  Je maintiens une veille active sur les technologies émergentes pour anticiper 
+                  les <span className="text-cyan-400 font-semibold">tendances du marché</span> et 
+                  intégrer les <span className="text-blue-400 font-semibold">meilleures pratiques</span>. 
+                  Mon processus de veille inclut la surveillance des 
+                  <span className="text-purple-400 font-semibold"> nouvelles versions</span>, 
+                  l'étude des <span className="text-green-400 font-semibold">cas d'usage innovants</span> et 
+                  l'expérimentation des <span className="text-yellow-400 font-semibold">outils prometteurs</span>.
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  {item.topics.map((topic, i) => (
-                    <span 
-                      key={i}
-                      className="px-3 py-1 bg-gray-900/30 text-blue-300 text-xs rounded-full border border-gray-700/50"
-                    >
+              </div>
+            </div>
+            
+            {/* Indicateurs de veille */}
+            <div className="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-cyan-500/20">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-cyan-400 mb-2">24/7</div>
+                <div className="text-sm text-gray-400">Veille continue</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-blue-400 mb-2">50+</div>
+                <div className="text-sm text-gray-400">Sources suivies</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-purple-400 mb-2">100%</div>
+                <div className="text-sm text-gray-400">À jour</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Grille des technologies surveillées */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Carte IA */}
+      <div className="relative group" data-tech="ai">
+        <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+          {/* En-tête avec animation */}
+          <div className="p-6 border-b border-gray-700/50 bg-gradient-to-r from-cyan-900/20 to-blue-900/20">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-4">
+                <div className="relative">
+                  <div className="absolute -inset-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur opacity-20 animate-pulse"></div>
+                  <div className="relative text-3xl">🤖</div>
+                </div>
+                <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-400 group-hover:bg-clip-text transition-all duration-300">
+                  Intelligence Artificielle
+                </h3>
+              </div>
+              <div className="w-3 h-3 bg-cyan-400 rounded-full animate-ping"></div>
+            </div>
+            
+            <div className="w-full h-0.5 bg-gradient-to-r from-cyan-400/30 to-blue-400/30 rounded-full"></div>
+          </div>
+          
+          {/* Contenu */}
+          <div className="p-6">
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Suivi des avancées en IA et machine learning, modèles génératifs et applications pratiques.
+            </p>
+            
+            {/* Badges de technologies */}
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-400">Tendance actuelle</span>
+                <span className="text-sm font-bold text-cyan-400">🔥 Haute</span>
+              </div>
+              
+              <div className="flex flex-wrap gap-2">
+                {["ChatGPT & GPT-4", "AutoML", "Computer Vision", "LLMs", "Generative AI"].map((topic, i) => (
+                  <div 
+                    key={i}
+                    className="relative group/topic"
+                    style={{ animationDelay: `${i * 100}ms` }}
+                  >
+                    <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur opacity-0 group-hover/topic:opacity-100 transition-opacity"></div>
+                    <span className="relative px-4 py-2 bg-gray-900/50 text-cyan-300 text-xs rounded-full border border-cyan-500/30 group-hover/topic:border-cyan-400/50 group-hover/topic:bg-cyan-900/20 transition-all duration-300">
                       {topic}
                     </span>
-                  ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Indicateur de progression */}
+            <div className="mt-6 pt-6 border-t border-gray-700/50">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm text-gray-400">Niveau de suivi</span>
+                <span className="text-sm font-bold text-cyan-400">95%</span>
+              </div>
+              <div className="h-2 bg-gray-700/30 rounded-full overflow-hidden">
+                <div className="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full transition-all duration-1000 ease-out" style={{ width: '95%' }}>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" style={{ animationDuration: '2s' }}></div>
                 </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Éléments décoratifs */}
+          <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div className="w-8 h-8 border-2 border-cyan-500/30 rounded-full animate-spin-slow"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Carte Cloud Computing */}
+      <div className="relative group" data-tech="cloud">
+        <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-purple-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+          <div className="p-6 border-b border-gray-700/50 bg-gradient-to-r from-blue-900/20 to-indigo-900/20">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-4">
+                <div className="relative">
+                  <div className="absolute -inset-3 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full blur opacity-20 animate-pulse delay-300"></div>
+                  <div className="relative text-3xl">☁️</div>
+                </div>
+                <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-indigo-400 group-hover:bg-clip-text transition-all duration-300">
+                  Cloud Computing
+                </h3>
+              </div>
+              <div className="w-3 h-3 bg-blue-400 rounded-full animate-ping delay-200"></div>
+            </div>
+            <div className="w-full h-0.5 bg-gradient-to-r from-blue-400/30 to-indigo-400/30 rounded-full"></div>
+          </div>
+          
+          <div className="p-6">
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Évolution des services cloud, serverless, conteneurisation et architectures microservices.
+            </p>
+            
+            <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-3">
+                {["AWS", "Azure", "GCP", "Kubernetes"].map((provider, i) => (
+                  <div key={i} className="group/provider">
+                    <div className="flex items-center gap-2 p-3 bg-gray-900/30 rounded-lg hover:bg-gray-900/50 transition-all duration-300">
+                      <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full animate-pulse"></div>
+                      <span className="text-sm text-gray-300">{provider}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="pt-4 border-t border-gray-700/30">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-400">Expertise cloud</span>
+                  <div className="flex gap-1">
+                    {[...Array(3)].map((_, i) => (
+                      <div 
+                        key={i}
+                        className="w-2 h-2 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full animate-pulse"
+                        style={{ animationDelay: `${i * 0.3}s` }}
+                      ></div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Carte Web 3.0 & Blockchain */}
+      <div className="relative group" data-tech="blockchain">
+        <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/10 via-violet-500/10 to-fuchsia-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+          <div className="p-6 border-b border-gray-700/50 bg-gradient-to-r from-purple-900/20 to-violet-900/20">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-4">
+                <div className="relative">
+                  <div className="absolute -inset-3 bg-gradient-to-r from-purple-500 to-violet-500 rounded-full blur opacity-20 animate-pulse delay-600"></div>
+                  <div className="relative text-3xl">⛓️</div>
+                </div>
+                <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-violet-400 group-hover:bg-clip-text transition-all duration-300">
+                  Web 3.0 & Blockchain
+                </h3>
+              </div>
+              <div className="w-3 h-3 bg-purple-400 rounded-full animate-ping delay-400"></div>
+            </div>
+            <div className="w-full h-0.5 bg-gradient-to-r from-purple-400/30 to-violet-400/30 rounded-full"></div>
+          </div>
+          
+          <div className="p-6">
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Technologies décentralisées, smart contracts, DeFi et écosystème Web3.
+            </p>
+            
+            <div className="space-y-3">
+              {["Smart Contracts", "DeFi", "NFTs", "DAO", "dApps"].map((topic, i) => (
+                <div key={i} className="flex items-center gap-3 group/topic">
+                  <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full animate-pulse"></div>
+                  <span className="text-gray-300 flex-1">{topic}</span>
+                  <div className="text-xs text-purple-400 opacity-0 group-hover/topic:opacity-100 transition-opacity">
+                    → Étudié
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Indicateur d'adoption */}
+            <div className="mt-6">
+              <div className="text-sm text-gray-400 mb-2">Niveau d'intérêt</div>
+              <div className="flex items-center gap-2">
+                <div className="flex-1 h-2 bg-gray-700/30 rounded-full overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-purple-500 to-violet-500 rounded-full" style={{ width: '80%' }}></div>
+                </div>
+                <span className="text-sm font-bold text-purple-400">80%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Carte DevOps & CI/CD */}
+      <div className="relative group" data-tech="devops">
+        <div className="absolute -inset-4 bg-gradient-to-r from-green-500/10 via-emerald-500/10 to-teal-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-green-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+          <div className="p-6 border-b border-gray-700/50 bg-gradient-to-r from-green-900/20 to-emerald-900/20">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-4">
+                <div className="relative">
+                  <div className="absolute -inset-3 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full blur opacity-20 animate-pulse delay-900"></div>
+                  <div className="relative text-3xl">⚙️</div>
+                </div>
+                <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-green-400 group-hover:to-emerald-400 group-hover:bg-clip-text transition-all duration-300">
+                  DevOps & CI/CD
+                </h3>
+              </div>
+              <div className="w-3 h-3 bg-green-400 rounded-full animate-ping delay-600"></div>
+            </div>
+            <div className="w-full h-0.5 bg-gradient-to-r from-green-400/30 to-emerald-400/30 rounded-full"></div>
+          </div>
+          
+          <div className="p-6">
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Automatisation, pratiques DevOps, pipelines CI/CD et outils d'intégration continue.
+            </p>
+            
+            <div className="grid grid-cols-3 gap-3 mb-4">
+              {[
+                { tool: "Docker", level: 85, color: "from-blue-400 to-cyan-400" },
+                { tool: "GitHub Actions", level: 80, color: "from-gray-400 to-black-400" },
+                { tool: "Terraform", level: 70, color: "from-purple-400 to-pink-400" },
+              ].map((item, i) => (
+                <div key={i} className="text-center">
+                  <div className={`text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
+                    {item.level}%
+                  </div>
+                  <div className="text-xs text-gray-400">{item.tool}</div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Timeline d'adoption */}
+            <div className="pt-4 border-t border-gray-700/30">
+              <div className="text-sm text-gray-400 mb-2">Progression d'adoption</div>
+              <div className="h-1 bg-gray-700/30 rounded-full overflow-hidden">
+                <div className="h-full bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 rounded-full" style={{ width: '75%' }}></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Carte Mobile & PWA */}
+      <div className="relative group" data-tech="mobile">
+        <div className="absolute -inset-4 bg-gradient-to-r from-orange-500/10 via-amber-500/10 to-yellow-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-orange-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+          <div className="p-6 border-b border-gray-700/50 bg-gradient-to-r from-orange-900/20 to-amber-900/20">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-4">
+                <div className="relative">
+                  <div className="absolute -inset-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full blur opacity-20 animate-pulse delay-1200"></div>
+                  <div className="relative text-3xl">📱</div>
+                </div>
+                <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-amber-400 group-hover:bg-clip-text transition-all duration-300">
+                  Mobile & PWA
+                </h3>
+              </div>
+              <div className="w-3 h-3 bg-orange-400 rounded-full animate-ping delay-800"></div>
+            </div>
+            <div className="w-full h-0.5 bg-gradient-to-r from-orange-400/30 to-amber-400/30 rounded-full"></div>
+          </div>
+          
+          <div className="p-6">
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Développement mobile hybride, applications web progressives et expérience utilisateur.
+            </p>
+            
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full animate-pulse"></div>
+                  <span className="text-gray-300">Flutter</span>
+                </div>
+                <span className="text-sm text-orange-400">Maîtrise: 70%</span>
+              </div>
+              
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full animate-pulse delay-200"></div>
+                  <span className="text-gray-300">React Native</span>
+                </div>
+                <span className="text-sm text-orange-400">Maîtrise: 65%</span>
+              </div>
+              
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full animate-pulse delay-400"></div>
+                  <span className="text-gray-300">PWA</span>
+                </div>
+                <span className="text-sm text-orange-400">Maîtrise: 85%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Carte Cybersécurité */}
+      <div className="relative group" data-tech="security">
+        <div className="absolute -inset-4 bg-gradient-to-r from-red-500/10 via-rose-500/10 to-pink-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-red-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+          <div className="p-6 border-b border-gray-700/50 bg-gradient-to-r from-red-900/20 to-rose-900/20">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-4">
+                <div className="relative">
+                  <div className="absolute -inset-3 bg-gradient-to-r from-red-500 to-rose-500 rounded-full blur opacity-20 animate-pulse delay-1500"></div>
+                  <div className="relative text-3xl">🔒</div>
+                </div>
+                <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-red-400 group-hover:to-rose-400 group-hover:bg-clip-text transition-all duration-300">
+                  Cybersécurité
+                </h3>
+              </div>
+              <div className="w-3 h-3 bg-red-400 rounded-full animate-ping delay-1000"></div>
+            </div>
+            <div className="w-full h-0.5 bg-gradient-to-r from-red-400/30 to-rose-400/30 rounded-full"></div>
+          </div>
+          
+          <div className="p-6">
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Sécurité des applications, bonnes pratiques OWASP, authentification et protection des données.
+            </p>
+            
+            <div className="space-y-3">
+              {["OWASP Top 10", "JWT/Auth", "Security Headers", "Encryption", "Pen Testing"].map((topic, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <div className={`w-2 h-2 rounded-full bg-gradient-to-r from-red-400 to-rose-400 animate-pulse`} style={{ animationDelay: `${i * 0.2}s` }}></div>
+                  <span className="text-gray-300 text-sm">{topic}</span>
+                </div>
+              ))}
+            </div>
+            
+            {/* Indicateur d'importance */}
+            <div className="mt-6 pt-4 border-t border-gray-700/30">
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-400">Priorité de sécurité</span>
+                <span className="text-lg font-bold text-red-400">⚠️ Élevée</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Section Processus de Veille */}
+    <div className="mt-20">
+      <div className="relative bg-gradient-to-br from-gray-800/30 to-gray-900/30 backdrop-blur-sm rounded-3xl border border-gray-700/50 p-8 overflow-hidden">
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl"></div>
+        
+        <h3 className="text-3xl font-bold text-white text-center mb-8 relative">
+          <span className="text-transparent bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text">
+            Mon Processus de Veille
+          </span>
+        </h3>
+        
+        <div className="grid md:grid-cols-4 gap-6 relative">
+          {[
+            { step: "01", title: "Surveillance", desc: "Sources techniques et blogs", icon: "👁️", color: "from-cyan-400 to-blue-400" },
+            { step: "02", title: "Analyse", desc: "Évaluation des tendances", icon: "📊", color: "from-blue-400 to-purple-400" },
+            { step: "03", title: "Expérimentation", desc: "Tests et prototypes", icon: "🔬", color: "from-purple-400 to-pink-400" },
+            { step: "04", title: "Intégration", desc: "Mise en pratique", icon: "⚡", color: "from-pink-400 to-rose-400" },
+          ].map((item, index) => (
+            <div key={index} className="text-center">
+              <div className="relative inline-flex mb-4">
+                <div className={`absolute -inset-4 bg-gradient-to-r ${item.color} rounded-full blur opacity-20 animate-pulse`}></div>
+                <div className="relative w-16 h-16 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl flex items-center justify-center border border-gray-700/50">
+                  <div className="text-2xl">{item.icon}</div>
+                </div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center text-xs font-bold">
+                  {item.step}
+                </div>
+              </div>
+              
+              <h4 className="text-xl font-bold text-white mb-2">{item.title}</h4>
+              <p className="text-gray-400 text-sm">{item.desc}</p>
+              
+              <div className="mt-4 flex justify-center">
+                <div className="w-3 h-3 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-ping" style={{ animationDelay: `${index * 0.3}s` }}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        {/* Sources de veille */}
+        <div className="mt-12 pt-8 border-t border-gray-700/50">
+          <h4 className="text-2xl font-bold text-white text-center mb-6">
+            <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
+              Sources Principales
+            </span>
+          </h4>
+          
+          <div className="flex flex-wrap justify-center gap-4">
+            {["GitHub", "Medium", "Dev.to", "Reddit", "Twitter/X", "Hacker News", "TechCrunch", "Stack Overflow"].map((source, i) => (
+              <div 
+                key={i}
+                className="px-4 py-2 bg-gray-900/40 text-gray-300 rounded-full border border-gray-700/50 hover:border-blue-500/50 hover:text-blue-400 transition-all duration-300 hover:scale-105"
+              >
+                {source}
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">

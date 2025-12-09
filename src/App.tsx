@@ -851,284 +851,170 @@ function App() {
   ];
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100 transition-opacity duration-300 ${isTranslating ? 'opacity-50' : 'opacity-100'}`}>
-      {/* Bouton de traduction flottant créatif */}
-      <div className="fixed top-6 right-6 z-50">
-        <button
-          onClick={toggleLanguage}
-          className={`relative group transition-all duration-500 ${isTranslating ? 'scale-110 rotate-180' : ''}`}
-          disabled={isTranslating}
-        >
-          {/* Effet de halo */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-700"></div>
-          
-          {/* Cercle extérieur animé */}
-          <div className="absolute -inset-2 border-2 border-transparent border-t-blue-400 border-r-purple-400 border-b-pink-400 border-l-cyan-400 rounded-full animate-spin-slow opacity-0 group-hover:opacity-100"></div>
-          
-          {/* Bouton principal */}
-          <div className="relative flex items-center gap-2 px-4 py-3 bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm rounded-2xl border border-gray-700/50 group-hover:border-blue-500/50 transition-all duration-300 group-hover:scale-105 overflow-hidden">
-            {/* Effet de brillance */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-            
-            {/* Icône Globe avec animation */}
-            <div className="relative">
-              <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur opacity-0 group-hover:opacity-100"></div>
-              <GlobeIcon size={20} className="text-blue-400 group-hover:text-cyan-400 transition-colors" />
-              
-              {/* Animation de langue */}
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                <span className="text-[8px] font-bold text-white">
-                  {language === 'fr' ? 'FR' : 'EN'}
-                </span>
-              </div>
-            </div>
-            
-            {/* Texte */}
-            <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">
-              {language === 'fr' ? 'English' : 'Français'}
-            </span>
-            
-            {/* Flèche animée */}
-            <ChevronRight size={16} className="text-gray-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
-            
-            {/* Particules */}
-            <div className="absolute inset-0 overflow-hidden rounded-2xl">
-              {[...Array(3)].map((_, i) => (
-                <div 
-                  key={i}
-                  className="absolute w-1 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-0 group-hover:opacity-70 animate-float"
-                  style={{
-                    top: `${Math.random() * 100}%`,
-                    left: `${Math.random() * 100}%`,
-                    animationDelay: `${i * 0.2}s`,
-                    animationDuration: `${2 + Math.random() * 2}s`
-                  }}
-                ></div>
-              ))}
-            </div>
-          </div>
-          
-          {/* Tooltip */}
-          <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-900/90 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl">
-            {language === 'fr' ? 'Switch to English' : 'Passer au Français'}
-            <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900/90 rotate-45"></div>
-          </div>
-        </button>
-      </div>
+   <div className={`min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100 transition-opacity duration-300 ${isTranslating ? 'opacity-50' : 'opacity-100'}`}>
+ 
+  {/* Navigation  */}
+  <nav className="fixed w-full bg-gray-900/90 backdrop-blur-xl z-40 border-b border-gray-700/50 shadow-lg">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col lg:flex-row items-center justify-between py-3">
 
-      {/* Navigation avec logos créatifs dynamiques */}
-      <nav className="fixed w-full bg-gray-900/95 backdrop-blur-xl z-40 border-b border-gray-700/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between py-3">
-            {/* Logo Section */}
-            <div className="flex items-center gap-4 mb-3 lg:mb-0 w-full lg:w-auto justify-center lg:justify-start">
-              {/* Cercle avec initiales animé */}
-              <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg animate-spin-slow">
-                  <span className="text-white font-bold text-lg">MF</span>
-                </div>
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur opacity-30 -z-10 animate-pulse" />
-              </div>
-              
-              {/* Nom et titre avec séparateurs */}
-              <div className="text-center lg:text-left">
-                <div className="flex items-center justify-center lg:justify-start gap-3">
-                  <div className="w-8 h-0.5 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
-                  <h1 className="text-xl font-bold text-white tracking-wider">MOHAMED</h1>
-                  <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-purple-500 rounded-full" />
-                </div>
-                <div className="flex items-center justify-center lg:justify-start gap-2 mt-1">
-                  <div className="w-4 h-0.5 bg-blue-500 rounded-full animate-pulse" />
-                  <p className="text-xs text-gray-300 font-medium tracking-[0.3em]">FULL STACK DEVELOPER</p>
-                  <div className="w-4 h-0.5 bg-purple-500 rounded-full animate-pulse delay-300" />
-                </div>
-              </div>
+        {/* Logo Section */}
+        <div className="flex items-center gap-4 mb-3 lg:mb-0 w-full lg:w-auto justify-center lg:justify-start">
+          <div className="relative">
+            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg transition-transform duration-500 hover:scale-110">
+              <span className="text-white font-bold text-lg">MF</span>
             </div>
-            
-            {/* Desktop Navigation - Logos créatifs dynamiques */}
-            <div className="hidden lg:flex items-center gap-1 bg-gray-800/60 backdrop-blur-sm rounded-full px-1 py-1 border border-gray-700/50 shadow-lg">
-              {navItems.map((item) => {
-                const isActive = activeSection === item.id;
-                return (
-                  <a 
-                    key={item.id}
-                    href={`#${item.id}`}
-                    className={`flex items-center gap-2 px-5 py-2.5 rounded-full transition-all duration-300 relative group ${
-                      isActive 
-                        ? 'bg-gradient-to-r from-blue-900/40 to-purple-900/40 text-white shadow-inner' 
-                        : 'text-gray-300 hover:text-white hover:bg-gray-700/30'
-                    }`}
-                  >
-                    {/* Logo créatif avec animation circulaire */}
-                    <div className="relative">
-                      {/* Cercle extérieur qui tourne */}
-                      <div className={`absolute -inset-2 bg-gradient-to-r ${item.color} rounded-full blur opacity-0 group-hover:opacity-20 transition-all duration-500 ${isActive ? 'opacity-20' : ''} ${item.animation}`}></div>
-                      
-                      {/* Cercle intérieur avec effet de halo */}
-                      <div className={`relative w-8 h-8 rounded-full flex items-center justify-center bg-gradient-to-br ${item.color} bg-opacity-10 border ${
-                        isActive 
-                          ? 'border-blue-400/50 shadow-lg shadow-blue-500/20' 
-                          : 'border-gray-600/50 group-hover:border-blue-400/30'
-                      } transition-all duration-300`}>
-                        {/* Émoji/Logo principal */}
-                        <span className={`text-lg ${item.animation} ${isActive ? 'scale-110' : ''} group-hover:scale-110 transition-transform duration-300`}>
-                          {item.icon}
-                        </span>
-                        
-                        {/* Points orbitaux (seulement au hover ou actif) */}
-                        <div className="absolute inset-0">
-                          {[...Array(3)].map((_, i) => (
-                            <div 
-                              key={i}
-                              className={`absolute w-1.5 h-1.5 bg-gradient-to-r ${item.color} rounded-full opacity-0 ${
-                                isActive ? 'opacity-70' : 'group-hover:opacity-70'
-                              } transition-opacity duration-300`}
-                              style={{
-                                top: '50%',
-                                left: '50%',
-                                transform: `rotate(${i * 120}deg) translateX(16px) rotate(-${i * 120}deg)`,
-                                animation: `orbit 2s linear infinite`,
-                                animationDelay: `${i * 0.3}s`,
-                                animationPlayState: isActive ? 'running' : 'paused'
-                              }}
-                            ></div>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      {/* Traînée lumineuse circulaire */}
-                      <div className={`absolute -inset-3 rounded-full border-2 border-transparent border-t-gray-500/30 opacity-0 ${
-                        isActive ? 'opacity-100 animate-spin-slow' : 'group-hover:opacity-100'
-                      } transition-opacity duration-300`}></div>
-                    </div>
-                    
-                    {/* Texte */}
-                    <span className="text-sm font-medium tracking-wide">{item.label}</span>
-                    
-                    {/* Indicateur d'activité animé */}
-                    {isActive && (
-                      <>
-                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-ping" />
-                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse" />
-                      </>
-                    )}
-                    
-                    {/* Effet de hover avec particules */}
-                    <div className="absolute inset-0 rounded-full overflow-hidden">
-                      {/* Particules volantes */}
-                      {[...Array(5)].map((_, i) => (
-                        <div 
-                          key={i}
-                          className={`absolute w-0.5 h-0.5 bg-white rounded-full opacity-0 group-hover:opacity-40`}
-                          style={{
-                            top: `${Math.random() * 100}%`,
-                            left: `${Math.random() * 100}%`,
-                            animation: `floatParticle 3s ease-in-out infinite`,
-                            animationDelay: `${i * 0.6}s`,
-                            animationPlayState: 'paused'
-                          }}
-                        ></div>
-                      ))}
-                    </div>
-                  </a>
-                );
-              })}
-            </div>
-            
-            {/* Boutons droite */}
-            <div className="hidden lg:flex items-center gap-3">
-              {/* Bouton Contact - Style amélioré */}
-              <a 
-                href="#contact"
-                className="relative group"
-              >
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-                <div className="relative flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105">
-                  <Mail size={16} className="group-hover:animate-bounce" />
-                  <span className="text-sm font-medium">{t.hero.contact}</span>
-                </div>
-              </a>
-            </div>
-            
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden absolute right-4 top-1/2 transform -translate-y-1/2 p-2 rounded-lg hover:bg-gray-800/50 transition group"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              <div className="relative">
-                {isMenuOpen ? (
-                  <>
-                    <X size={24} className="text-blue-400 animate-spin-once" />
-                    <div className="absolute -inset-2 bg-blue-500/20 rounded-full blur animate-pulse"></div>
-                  </>
-                ) : (
-                  <>
-                    <Menu size={24} className="text-gray-300 group-hover:text-blue-400 transition-colors" />
-                    <div className="absolute -inset-2 bg-gray-500/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  </>
-                )}
-              </div>
-            </button>
+          </div>
+
+          <div className="text-center lg:text-left">
+            <h1 className="text-xl font-bold text-white tracking-wide">MOHAMED</h1>
+            <p className="text-xs text-gray-300 font-medium tracking-wider">FULL STACK DEVELOPER</p>
           </div>
         </div>
-        
-        {/* Mobile Menu avec logos créatifs */}
-        {isMenuOpen && (
-          <div className="lg:hidden bg-gray-800/95 backdrop-blur-xl border-t border-gray-700/50">
-            <div className="px-4 py-3">
-              {navItems.map((item) => {
-                const isActive = activeSection === item.id;
-                return (
-                  <a 
-                    key={item.id}
-                    href={`#${item.id}`}
-                    className={`flex items-center gap-3 py-3 px-4 rounded-lg transition font-medium group ${
-                      isActive
-                        ? 'bg-gradient-to-r from-blue-900/30 to-purple-900/30 text-white'
-                        : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {/* Logo mobile animé */}
-                    <div className="relative">
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-br ${item.color} bg-opacity-10 ${
-                        isActive ? 'animate-pulse' : ''
-                      }`}>
-                        <span className={`text-lg ${isActive ? 'scale-110' : ''} transition-transform duration-300`}>
-                          {item.icon}
-                        </span>
-                      </div>
-                      
-                      {/* Animation circulaire pour item actif */}
-                      {isActive && (
-                        <div className="absolute -inset-2 border-2 border-blue-500/30 rounded-full animate-ping"></div>
-                      )}
-                    </div>
-                    
-                    <span className="flex-1">{item.label}</span>
-                    
-                    {/* Indicateur de page actuelle */}
-                    {isActive && (
-                      <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"></div>
-                    )}
-                  </a>
-                );
-              })}
-              
-              <div className="pt-4 border-t border-gray-700/50">
-                <a 
-                  href="#contact"
-                  className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition group"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <Mail size={16} className="group-hover:animate-bounce" />
-                  <span>{t.hero.contact}</span>
-                </a>
+
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center gap-2 bg-gray-800/60 backdrop-blur-sm rounded-full px-2 py-1 border border-gray-700/50">
+          {navItems.map(item => {
+            const isActive = activeSection === item.id;
+            return (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 text-sm font-medium ${
+                  isActive
+                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                    : 'text-gray-300 hover:text-white hover:bg-gray-700/30'
+                }`}
+              >
+                <span className="text-lg">{item.icon}</span>
+                {item.label}
+              </a>
+            );
+          })}
+        </div>
+
+        {/* Boutons droite - AVEC TRADUCTION */}
+        <div className="hidden lg:flex items-center gap-3">
+          {/* Bouton Traduction - Intégré dans la navigation */}
+          <button
+            onClick={toggleLanguage}
+            className="relative group"
+            title={language === 'fr' ? 'Switch to English' : 'Passer au Français'}
+            disabled={isTranslating}
+          >
+            {/* Effet de halo */}
+            <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+            
+            {/* Bouton principal */}
+            <div className={`relative flex items-center gap-2 px-3 py-2 bg-gray-800/70 backdrop-blur-sm text-gray-300 rounded-xl font-medium border border-gray-700/50 hover:border-blue-500/50 hover:text-white transition-all duration-300 group-hover:scale-105 ${isTranslating ? 'opacity-50 cursor-not-allowed' : ''}`}>
+              {/* Icône Globe */}
+              <div className="relative">
+                <GlobeIcon size={18} className="text-blue-400 group-hover:text-cyan-400 transition-colors" />
+                {/* Badge de langue */}
+                <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                  <span className="text-[8px] font-bold text-white">
+                    {language === 'fr' ? 'FR' : 'EN'}
+                  </span>
+                </div>
               </div>
+              
+              {/* Texte */}
+              <span className="text-sm font-medium">
+                {language === 'fr' ? 'FR' : 'EN'}
+              </span>
+              
+              {/* Flèche animée */}
+              <ChevronRight size={14} className="text-gray-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
             </div>
-          </div>
-        )}
-      </nav>
+            
+            {/* Tooltip */}
+            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-900/90 backdrop-blur-sm text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap shadow-xl">
+              {language === 'fr' ? 'Switch to English' : 'Passer au Français'}
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900/90 rotate-45"></div>
+            </div>
+          </button>
+
+          {/* Bouton Contact */}
+          <a
+            href="#contact"
+            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium shadow-lg hover:scale-105 transition-transform duration-300"
+          >
+            <Mail size={16} />
+            {t.hero.contact}
+          </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="lg:hidden absolute right-4 top-1/2 transform -translate-y-1/2 p-2 rounded-lg hover:bg-gray-800/50 transition"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <X size={24} className="text-blue-400" /> : <Menu size={24} className="text-gray-300" />}
+        </button>
+      </div>
+    </div>
+
+    {/* Mobile Menu */}
+    {isMenuOpen && (
+      <div className="lg:hidden bg-gray-800/95 backdrop-blur-xl border-t border-gray-700/50">
+        {/* Bouton traduction mobile */}
+        <div className="px-4 py-3 border-b border-gray-700/50">
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center justify-between w-full p-3 bg-gray-700/30 rounded-lg hover:bg-gray-700/50 transition-all group"
+            disabled={isTranslating}
+          >
+            <div className="flex items-center gap-3">
+              <div className="relative">
+                <GlobeIcon size={20} className="text-blue-400" />
+                <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                  <span className="text-[8px] font-bold text-white">
+                    {language === 'fr' ? 'FR' : 'EN'}
+                  </span>
+                </div>
+              </div>
+              <span className="text-gray-300 font-medium">
+                {language === 'fr' ? 'Français' : 'English'}
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-blue-300 font-medium">
+                {language === 'fr' ? 'FR' : 'EN'}
+              </span>
+              <ChevronRight size={14} className="text-gray-500 group-hover:text-blue-400 transition-colors" />
+            </div>
+          </button>
+        </div>
+        
+        <div className="px-4 py-3 flex flex-col gap-2">
+          {navItems.map(item => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className={`flex items-center gap-3 py-3 px-4 rounded-lg font-medium transition ${
+                activeSection === item.id
+                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
+                  : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <span className="text-lg">{item.icon}</span>
+              {item.label}
+            </a>
+          ))}
+          <a
+            href="#contact"
+            className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <Mail size={16} />
+            {t.hero.contact}
+          </a>
+        </div>
+      </div>
+    )}
+  </nav>
+
 
       {/* Hero Section avec Carousel de Technologies */}
       <section id="accueil" className="pt-28 lg:pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">

@@ -729,30 +729,54 @@ function App() {
     position: language === 'fr' ? "Projet de Fin d'Études - Développeur Full Stack" : "Final Year Project - Full Stack Developer",
     period: language === 'fr' ? "Février 2025 - Juin 2025" : "February 2025 - June 2025",
     description: language === 'fr' 
-      ? "Développement d'une application complète pour la gestion médicale en suivant une architecture Clean Architecture avec ASP.NET Core et Vue.js. Conception et implémentation d'un système sécurisé avec authentification JWT et microservices."
-      : "Development of a complete medical management application following Clean Architecture with ASP.NET Core and Vue.js. Design and implementation of a secure system with JWT authentication and microservices.",
-    tech: ["ASP.NET Core", "Vue.js", ".NET MAUI", "SQL Server", "Entity Framework", "JWT", "REST API"],
+      ? "Conception et développement d'un système médical complet avec architecture 3 couches : Vue.js/.NET MAUI (Frontend), ASP.NET Core (Backend Clean Architecture), SQL Server (Base de données). Implémentation d'API REST sécurisées avec authentification JWT."
+      : "Design and development of a complete medical system with 3-layer architecture: Vue.js/.NET MAUI (Frontend), ASP.NET Core (Backend Clean Architecture), SQL Server (Database). Implementation of secure REST APIs with JWT authentication.",
+    tech: ["ASP.NET Core", "Vue.js", ".NET MAUI", "SQL Server", "Entity Framework Core", "JWT", "REST API", "SignalR"],
     location: "Sfax, Tunisie",
     logo: "🏢",
-    // 🔥 AJOUTEZ CES NOUVELLES LIGNES POUR L'ARCHITECTURE
-    architecture: language === 'fr' ? "Architecture Clean Architecture" : "Clean Architecture",
+    isPFE: true,
+    architecture: language === 'fr' ? "Architecture 3 couches Clean Architecture" : "3-layer Clean Architecture",
     layers: language === 'fr' 
-      ? ["Frontend (Vue.js/.NET MAUI)", "Backend (ASP.NET Core)", "Base de données (SQL Server)"]
-      : ["Frontend (Vue.js/.NET MAUI)", "Backend (ASP.NET Core)", "Database (SQL Server)"],
-    responsibilities: language === 'fr' 
       ? [
-          "Conception et développement selon l'architecture 3 couches (Frontend/Backend/BDD)",
-          "Implémentation de l'authentification sécurisée avec JWT",
-          "Développement des API REST avec ASP.NET Core",
-          "Interface responsive avec Vue.js et .NET MAUI",
-          "Gestion des données avec Entity Framework Core et SQL Server"
+          "Frontend (Vue.js + .NET MAUI MVVM)",
+          "Backend (ASP.NET Core Clean Architecture)",
+          "Base de données (SQL Server + EF Core)"
         ]
       : [
-          "Design and development using 3-layer architecture (Frontend/Backend/DB)",
-          "Implementation of secure authentication with JWT",
-          "REST API development with ASP.NET Core",
-          "Responsive interface with Vue.js and .NET MAUI",
-          "Data management with Entity Framework Core and SQL Server"
+          "Frontend (Vue.js + .NET MAUI MVVM)",
+          "Backend (ASP.NET Core Clean Architecture)",
+          "Database (SQL Server + EF Core)"
+        ],
+    responsibilities: language === 'fr' 
+      ? [
+          "Conception de l'architecture système en 3 couches séparées",
+          "Développement du backend avec Clean Architecture (4 couches internes)",
+          "Implémentation de l'authentification JWT et sécurisation des API",
+          "Création d'interfaces avec Vue.js (web) et .NET MAUI (mobile)",
+          "Optimisation des performances avec Entity Framework Core",
+          "Documentation technique et tests d'intégration"
+        ]
+      : [
+          "Design of 3-layer system architecture with clear separation",
+          "Backend development using Clean Architecture (4 internal layers)",
+          "JWT authentication implementation and API security",
+          "UI development with Vue.js (web) and .NET MAUI (mobile)",
+          "Performance optimization with Entity Framework Core",
+          "Technical documentation and integration testing"
+        ],
+    // 🔥 KEYPOINTS SPÉCIFIQUES POUR LE PFE
+    specificKeyPoints: language === 'fr' 
+      ? [
+          "Architecture 3 couches (Frontend/Backend/BDD)",
+          "Clean Architecture avec ASP.NET Core",
+          "Authentification JWT sécurisée",
+          "Développement Full Stack"
+        ]
+      : [
+          "3-layer architecture (Frontend/Backend/DB)",
+          "Clean Architecture with ASP.NET Core",
+          "Secure JWT authentication",
+          "Full Stack development"
         ]
   },
   {
@@ -760,28 +784,44 @@ function App() {
     position: language === 'fr' ? "Stage Développement Web" : "Web Development Internship",
     period: language === 'fr' ? "Juillet 2024 - Août 2024" : "July 2024 - Aug 2024",
     description: language === 'fr' 
-      ? "Développement d'application web pour la gestion des rapports de stage avec PHP et MySQL. Conception de l'interface utilisateur et mise en œuvre des fonctionnalités CRUD."
-      : "Development of web application for internship report management with PHP and MySQL. UI design and implementation of CRUD features.",
-    tech: ["PHP", "MySQL", "Laragon", "Bootstrap", "JavaScript"],
+      ? "Développement d'une application web de gestion des rapports de stage avec PHP et MySQL en suivant l'architecture MVC traditionnelle. Configuration de l'environnement avec XAMPP et développement des fonctionnalités CRUD."
+      : "Development of an internship report management web application with PHP and MySQL following traditional MVC architecture. Environment setup with XAMPP and CRUD features development.",
+    tech: ["PHP", "MySQL", "XAMPP/Laragon", "Bootstrap", "JavaScript", "HTML/CSS"],
     location: "Sfax, Tunisie",
     logo: "🎓",
-    // Pour le stage précédent
+    isPFE: false,
     architecture: language === 'fr' ? "Architecture MVC traditionnelle" : "Traditional MVC Architecture",
     layers: language === 'fr' 
-      ? ["Présentation (PHP/HTML)", "Logique métier (PHP)", "Base de données (MySQL)"]
-      : ["Presentation (PHP/HTML)", "Business Logic (PHP)", "Database (MySQL)"],
+      ? ["Présentation (PHP/HTML/CSS)", "Logique métier (PHP)", "Base de données (MySQL)"]
+      : ["Presentation (PHP/HTML/CSS)", "Business Logic (PHP)", "Database (MySQL)"],
     responsibilities: language === 'fr' 
       ? [
-          "Développement d'interface utilisateur avec Bootstrap",
-          "Implémentation des opérations CRUD",
-          "Conception de la base de données MySQL",
-          "Gestion de l'authentification utilisateur"
+          "Développement d'interfaces utilisateur responsives avec Bootstrap",
+          "Implémentation complète des opérations CRUD",
+          "Conception et optimisation de la base de données MySQL",
+          "Gestion de l'authentification et des sessions utilisateurs",
+          "Configuration de l'environnement de développement XAMPP"
         ]
       : [
-          "User interface development with Bootstrap",
-          "CRUD operations implementation",
-          "MySQL database design",
-          "User authentication management"
+          "Development of responsive user interfaces with Bootstrap",
+          "Full implementation of CRUD operations",
+          "MySQL database design and optimization",
+          "User authentication and session management",
+          "XAMPP development environment setup"
+        ],
+    // 🔥 KEYPOINTS SPÉCIFIQUES POUR LE STAGE WEB
+    specificKeyPoints: language === 'fr' 
+      ? [
+          "Développement Web avec PHP/MySQL",
+          "Architecture MVC traditionnelle",
+          "Interface Bootstrap responsive",
+          "Environnement XAMPP/Laragon"
+        ]
+      : [
+          "Web development with PHP/MySQL",
+          "Traditional MVC architecture",
+          "Responsive Bootstrap interface",
+          "XAMPP/Laragon environment"
         ]
   }
 ];
@@ -1761,308 +1801,431 @@ function App() {
         </div>
       </section>
 
-      {/* Experiences Section - DESIGN CRÉATIF ET DYNAMIQUE */}
-      <section id="experiences" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        {/* Arrière-plan animé */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900/10 to-blue-900/10"></div>
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+  {/* Experiences Section - DESIGN CRÉATIF ET DYNAMIQUE AVEC PFE */}
+<section id="experiences" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+  {/* Arrière-plan animé */}
+  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900/10 to-blue-900/10"></div>
+  <div className="absolute top-1/4 -left-32 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse"></div>
+  <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+  
+  <div className="max-w-6xl mx-auto relative">
+    {/* En-tête créatif */}
+    <div className="text-center mb-16">
+      <div className="inline-flex items-center justify-center relative mb-8">
+        {/* Effet de halo */}
+        <div className="absolute -inset-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-2xl opacity-20 animate-pulse-glow"></div>
         
-        <div className="max-w-6xl mx-auto relative">
-          {/* En-tête créatif */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center relative mb-8">
-              {/* Effet de halo */}
-              <div className="absolute -inset-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-2xl opacity-20 animate-pulse-glow"></div>
-              
-              <div className="relative p-5 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl border border-blue-500/30 backdrop-blur-sm">
-                <div className="relative">
-                  <BriefcaseIcon size={48} className="text-blue-400 animate-float" />
-                  {/* Étoiles tournantes */}
-                  <div className="absolute -top-3 -right-3 w-4 h-4 bg-yellow-400 rounded-full blur-sm animate-spin-slow"></div>
-                  <div className="absolute -bottom-3 -left-3 w-4 h-4 bg-cyan-400 rounded-full blur-sm animate-spin-slow reverse"></div>
-                </div>
-              </div>
-              
-              {/* Points décoratifs */}
-              <div className="absolute -top-2 -left-2 w-3 h-3 bg-purple-500 rounded-full animate-ping"></div>
-              <div className="absolute -bottom-2 -right-2 w-3 h-3 bg-blue-500 rounded-full animate-ping delay-300"></div>
-            </div>
-            
-            <h2 className="text-5xl font-bold text-white mb-4">
-              {t.experience.title}
-            </h2>
-            
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
-              <div className="flex gap-2">
-                <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse delay-150"></div>
-                <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse delay-300"></div>
-              </div>
-              <div className="w-24 h-1 bg-gradient-to-r from-transparent to-purple-500 rounded-full"></div>
-            </div>
-            
-            {/* Paragraphe d'introduction */}
-            <div className="max-w-3xl mx-auto mb-12">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl blur-xl"></div>
-                <div className="relative bg-gray-800/30 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50">
-                  <p className="text-gray-300 text-lg text-center leading-relaxed">
-                    {t.experience.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Timeline créative */}
+        <div className="relative p-5 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl border border-blue-500/30 backdrop-blur-sm">
           <div className="relative">
-            {/* Ligne de timeline principale avec animation */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 hidden lg:block">
-              <div className="absolute inset-0 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full animate-pulse"></div>
-              <div className="absolute inset-0 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full animate-shimmer" style={{ animationDuration: '3s' }}></div>
-              
-              {/* Points animés sur la timeline */}
-              {experiences.map((_, index) => {
-                const position = (index / (experiences.length - 1)) * 100;
-                return (
-                  <div 
-                    key={index}
-                    className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-gray-900 bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse"
-                    style={{ top: `${position}%` }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-ping"></div>
-                  </div>
-                );
-              })}
+            <BriefcaseIcon size={48} className="text-blue-400 animate-float" />
+            {/* Étoiles tournantes */}
+            <div className="absolute -top-3 -right-3 w-4 h-4 bg-yellow-400 rounded-full blur-sm animate-spin-slow"></div>
+            <div className="absolute -bottom-3 -left-3 w-4 h-4 bg-cyan-400 rounded-full blur-sm animate-spin-slow reverse"></div>
+          </div>
+        </div>
+        
+        {/* Points décoratifs */}
+        <div className="absolute -top-2 -left-2 w-3 h-3 bg-purple-500 rounded-full animate-ping"></div>
+        <div className="absolute -bottom-2 -right-2 w-3 h-3 bg-blue-500 rounded-full animate-ping delay-300"></div>
+      </div>
+      
+      <h2 className="text-5xl font-bold text-white mb-4">
+        {t.experience.title}
+      </h2>
+      
+      <div className="flex items-center justify-center gap-4 mb-6">
+        <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
+        <div className="flex gap-2">
+          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+          <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse delay-150"></div>
+          <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse delay-300"></div>
+        </div>
+        <div className="w-24 h-1 bg-gradient-to-r from-transparent to-purple-500 rounded-full"></div>
+      </div>
+      
+      {/* Paragraphe d'introduction */}
+      <div className="max-w-3xl mx-auto mb-12">
+        <div className="relative">
+          <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl blur-xl"></div>
+          <div className="relative bg-gray-800/30 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50">
+            <p className="text-gray-300 text-lg text-center leading-relaxed">
+              {t.experience.description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Timeline créative */}
+    <div className="relative">
+      {/* Ligne de timeline principale avec animation */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 hidden lg:block">
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full animate-pulse"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full animate-shimmer" style={{ animationDuration: '3s' }}></div>
+        
+        {/* Points animés sur la timeline */}
+        {experiences.map((_, index) => {
+          const position = (index / (experiences.length - 1)) * 100;
+          return (
+            <div 
+              key={index}
+              className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-gray-900 bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse"
+              style={{ top: `${position}%` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-ping"></div>
             </div>
-            
-            {/* Conteneur des expériences */}
-            <div className="space-y-16 lg:space-y-24">
-              {experiences.map((exp, index) => {
-                const isEven = index % 2 === 0;
+          );
+        })}
+      </div>
+      
+      {/* Conteneur des expériences */}
+      <div className="space-y-16 lg:space-y-24">
+        {experiences.map((exp, index) => {
+          const isEven = index % 2 === 0;
+          
+          return (
+            <div 
+              key={index}
+              className="relative group"
+              style={{ animationDelay: `${index * 200}ms` }}
+            >
+              {/* Carte d'expérience - Design créatif */}
+              <div className={`lg:w-5/6 mx-auto relative ${
+                isEven ? 'lg:ml-auto' : 'lg:mr-auto'
+              }`}>
+                {/* Effet de fond animé */}
+                <div className={`absolute -inset-6 bg-gradient-to-r ${
+                  isEven 
+                    ? 'from-blue-500/10 via-cyan-500/10 to-purple-500/10' 
+                    : 'from-purple-500/10 via-pink-500/10 to-blue-500/10'
+                } rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700`}></div>
                 
-                return (
-                  <div 
-                    key={index}
-                    className="relative group"
-                    style={{ animationDelay: `${index * 200}ms` }}
-                  >
-                    {/* Carte d'expérience - Design créatif */}
-                    <div className={`lg:w-5/6 mx-auto relative ${
-                      isEven ? 'lg:ml-auto' : 'lg:mr-auto'
-                    }`}>
-                      {/* Effet de fond animé */}
-                      <div className={`absolute -inset-6 bg-gradient-to-r ${
-                        isEven 
-                          ? 'from-blue-500/10 via-cyan-500/10 to-purple-500/10' 
-                          : 'from-purple-500/10 via-pink-500/10 to-blue-500/10'
-                      } rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700`}></div>
-                      
-                      {/* Carte principale */}
-                      <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-3xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
-                        {/* En-tête avec gradient animé */}
-                        <div className={`relative p-8 border-b border-gray-700/50 ${
-                          isEven 
-                            ? 'bg-gradient-to-r from-blue-900/20 to-purple-900/20' 
-                            : 'bg-gradient-to-r from-purple-900/20 to-pink-900/20'
-                        }`}>
-                          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                            <div className="flex-1">
-                              {/* Logo et titre */}
-                              <div className="flex items-center gap-4 mb-4">
-                                <div className="relative">
-                                  <div className="absolute -inset-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur opacity-20 animate-pulse"></div>
-                                  <div className="relative w-14 h-14 bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl flex items-center justify-center border border-gray-700/50 group-hover:border-blue-500/50 transition-colors">
-                                    <span className="text-3xl">{exp.logo}</span>
-                                  </div>
-                                </div>
-                                
-                                <div>
-                                  <h3 className="text-2xl lg:text-3xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text transition-all duration-300">
-                                    {exp.position}
-                                  </h3>
-                                  <p className="text-xl text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text font-semibold mt-1">
-                                    {exp.company}
-                                  </p>
-                                </div>
-                              </div>
-                              
-                              {/* Description */}
-                              <p className="text-gray-300 leading-relaxed">
-                                {exp.description}
-                              </p>
-                            </div>
-                            
-                            {/* Date et localisation */}
-                            <div className="flex flex-col items-start lg:items-end gap-3">
-                              <div className="relative">
-                                <div className="absolute -inset-3 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-full blur opacity-0 group-hover:opacity-50 transition-opacity"></div>
-                                <span className="relative px-5 py-2.5 bg-gradient-to-r from-blue-900/40 to-purple-900/40 text-blue-300 rounded-full text-sm font-semibold border border-blue-700/30">
-                                  {exp.period}
-                                </span>
-                              </div>
-                              
-                              <div className="flex items-center gap-2 text-gray-400">
-                                <MapPin size={16} className="text-purple-400" />
-                                <span className="text-sm">{exp.location}</span>
-                              </div>
-                            </div>
-                          </div>
+                {/* Carte principale */}
+                <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-3xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+                  {/* Badge PFE */}
+                  {exp.isPFE && (
+                    <div className="absolute -top-3 -left-3 z-10 transform rotate-12">
+                      <div className="relative">
+                        <div className="absolute -inset-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur opacity-30 animate-pulse-glow"></div>
+                        <div className="relative px-4 py-1.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs font-bold rounded-full border border-blue-400/50 flex items-center gap-1 shadow-lg">
+                          <Award size={10} className="text-yellow-300" />
+                          <span>{language === 'fr' ? 'PROJET PFE' : 'FINAL YEAR PROJECT'}</span>
                         </div>
-                        
-                        {/* Contenu principal */}
-                        <div className="p-8">
-                          {/* Technologies utilisées */}
-                          <div className="mb-8">
-                            <div className="flex items-center gap-3 mb-6">
-                              <Code2 size={24} className="text-cyan-400" />
-                              <h4 className="text-xl font-bold text-gray-300">{t.experience.technologies}</h4>
-                            </div>
-                            
-                            <div className="flex flex-wrap gap-3">
-                              {exp.tech.map((tech, i) => (
-                                <div 
-                                  key={i}
-                                  className="relative group/tech"
-                                  style={{ animationDelay: `${i * 100}ms` }}
-                                >
-                                  <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover/tech:opacity-100 transition-opacity"></div>
-                                  <span className="relative px-5 py-2.5 bg-gray-900/50 text-gray-300 rounded-xl text-sm font-medium border border-gray-700/50 group-hover/tech:border-purple-500/50 group-hover/tech:text-purple-300 transition-all duration-300 group-hover/tech:scale-105">
-                                    {tech}
-                                  </span>
-                                </div>
-                              ))}
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* En-tête avec gradient animé */}
+                  <div className={`relative p-8 border-b border-gray-700/50 ${
+                    isEven 
+                      ? 'bg-gradient-to-r from-blue-900/20 to-purple-900/20' 
+                      : 'bg-gradient-to-r from-purple-900/20 to-pink-900/20'
+                  }`}>
+                    <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                      <div className="flex-1">
+                        {/* Logo et titre */}
+                        <div className="flex items-center gap-4 mb-4">
+                          <div className="relative">
+                            <div className="absolute -inset-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur opacity-20 animate-pulse"></div>
+                            <div className="relative w-14 h-14 bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl flex items-center justify-center border border-gray-700/50 group-hover:border-blue-500/50 transition-colors">
+                              <span className="text-3xl">{exp.logo}</span>
                             </div>
                           </div>
                           
-                          {/* Points clés (ajout dynamique) */}
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="space-y-3">
-                              <div className="flex items-center gap-3">
-                                <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full animate-pulse"></div>
-                                <span className="text-gray-300 font-medium">{t.experience.keyPoints[0]}</span>
-                              </div>
-                              <div className="flex items-center gap-3">
-                                <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse delay-200"></div>
-                                <span className="text-gray-300 font-medium">{t.experience.keyPoints[1]}</span>
-                              </div>
-                            </div>
-                            <div className="space-y-3">
-                              <div className="flex items-center gap-3">
-                                <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-pulse delay-400"></div>
-                                <span className="text-gray-300 font-medium">{t.experience.keyPoints[2]}</span>
-                              </div>
-                              <div className="flex items-center gap-3">
-                                <div className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-pulse delay-600"></div>
-                                <span className="text-gray-300 font-medium">{t.experience.keyPoints[3]}</span>
-                              </div>
-                            </div>
+                          <div>
+                            <h3 className="text-2xl lg:text-3xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text transition-all duration-300">
+                              {exp.position}
+                            </h3>
+                            <p className="text-xl text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text font-semibold mt-1">
+                              {exp.company}
+                            </p>
                           </div>
                         </div>
                         
-                        {/* Barre de progression animée */}
-                        <div className="px-8 pb-8">
-                          <div className="flex items-center justify-between mb-3">
-                            <span className="text-sm text-gray-400">{language === 'fr' ? 'Niveau d\'implication' : 'Involvement level'}</span>
-                            <span className="text-sm font-bold text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
-                              {index === 0 ? '100%' : '95%'}
-                            </span>
-                          </div>
-                          <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                            <div 
-                              className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full transition-all duration-1000 ease-out"
-                              style={{ width: index === 0 ? '100%' : '95%' }}
-                            >
-                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" style={{ animationDuration: '2s' }}></div>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        {/* Éléments décoratifs */}
-                        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                          <div className="w-8 h-8 border-2 border-purple-500/30 rounded-full animate-spin-slow"></div>
-                        </div>
-                        
-                        <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300">
-                          <div className="w-6 h-6 border-2 border-blue-500/30 rounded-full animate-spin-slow reverse"></div>
-                        </div>
+                        {/* Description */}
+                        <p className="text-gray-300 leading-relaxed">
+                          {exp.description}
+                        </p>
                       </div>
                       
-                      {/* Connecteur de timeline pour mobile */}
-                      <div className="lg:hidden absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center border-4 border-gray-900">
-                          <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                      {/* Date et localisation */}
+                      <div className="flex flex-col items-start lg:items-end gap-3">
+                        <div className="relative">
+                          <div className="absolute -inset-3 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-full blur opacity-0 group-hover:opacity-50 transition-opacity"></div>
+                          <span className="relative px-5 py-2.5 bg-gradient-to-r from-blue-900/40 to-purple-900/40 text-blue-300 rounded-full text-sm font-semibold border border-blue-700/30">
+                            {exp.period}
+                          </span>
                         </div>
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 border-2 border-blue-500/30 rounded-full animate-ping"></div>
+                        
+                        <div className="flex items-center gap-2 text-gray-400">
+                          <MapPin size={16} className="text-purple-400" />
+                          <span className="text-sm">{exp.location}</span>
+                        </div>
                       </div>
                     </div>
-                    
-                    {/* Année décorative */}
-                    <div className={`hidden lg:flex absolute top-1/2 transform -translate-y-1/2 items-center gap-4 ${
-                      isEven ? 'left-0 -translate-x-full' : 'right-0 translate-x-full'
-                    }`}>
-                      {isEven ? (
-                        <>
-                          <div className="text-6xl font-bold text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text opacity-20">
-                            {exp.period.split(' ')[2]}
-                          </div>
-                          <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
-                        </>
-                      ) : (
-                        <>
-                          <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-                          <div className="text-6xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text opacity-20">
-                            {exp.period.split(' ')[2]}
-                          </div>
-                        </>
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          
-          {/* Statistiques en bas de section */}
-          <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { value: "2+", label: t.experience.stats.years, color: "from-blue-400 to-cyan-400" },
-              { value: "10+", label: t.experience.stats.projects, color: "from-purple-400 to-pink-400" },
-              { value: "15+", label: t.experience.stats.technologies, color: "from-green-400 to-emerald-400" },
-              { value: "100%", label: t.experience.stats.satisfaction, color: "from-yellow-400 to-orange-400" },
-            ].map((stat, index) => (
-              <div 
-                key={index}
-                className="relative group"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <div className={`absolute -inset-3 bg-gradient-to-r ${stat.color} rounded-xl blur opacity-0 group-hover:opacity-20 transition-opacity`}></div>
-                <div className="relative bg-gray-800/40 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50 text-center group-hover:border-transparent transition-all duration-300 group-hover:scale-105">
-                  <div className={`text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-gray-400 font-medium">
-                    {stat.label}
                   </div>
                   
-                  {/* Points décoratifs */}
-                  <div className="flex justify-center gap-1 mt-4">
-                    {[...Array(3)].map((_, i) => (
+                  {/* Contenu principal */}
+                  <div className="p-8">
+                    {/* Technologies utilisées */}
+                    <div className="mb-8">
+                      <div className="flex items-center gap-3 mb-6">
+                        <Code2 size={24} className="text-cyan-400" />
+                        <h4 className="text-xl font-bold text-gray-300">{t.experience.technologies}</h4>
+                      </div>
+                      
+                      <div className="flex flex-wrap gap-3">
+                        {exp.tech.map((tech, i) => (
+                          <div 
+                            key={i}
+                            className="relative group/tech"
+                            style={{ animationDelay: `${i * 100}ms` }}
+                          >
+                            <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover/tech:opacity-100 transition-opacity"></div>
+                            <span className="relative px-5 py-2.5 bg-gray-900/50 text-gray-300 rounded-xl text-sm font-medium border border-gray-700/50 group-hover/tech:border-purple-500/50 group-hover/tech:text-purple-300 transition-all duration-300 group-hover/tech:scale-105">
+                              {tech}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* 🔥 NOUVELLE SECTION : Architecture du projet PFE */}
+                    {exp.isPFE && (
+                      <div className="mb-8 p-6 bg-gradient-to-br from-blue-900/10 to-purple-900/10 rounded-2xl border border-blue-500/20">
+                        <div className="flex items-center gap-3 mb-6">
+                          <Layers size={24} className="text-blue-400" />
+                          <h4 className="text-xl font-bold text-white">
+                            {language === 'fr' ? '🏗️ Architecture du Système PFE' : '🏗️ PFE System Architecture'}
+                          </h4>
+                        </div>
+                        
+                        {/* Badge d'architecture */}
+                        <div className="mb-4">
+                          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full border border-blue-500/30">
+                            <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                            <span className="text-sm font-bold text-blue-300">{exp.architecture}</span>
+                          </div>
+                        </div>
+                        
+                        {/* Diagramme simplifié des couches */}
+                        <div className="grid grid-cols-3 gap-4 mb-6">
+                          {exp.layers.map((layer, i) => (
+                            <div key={i} className="text-center">
+                              <div className={`p-4 rounded-xl border-2 ${
+                                i === 0 ? 'border-blue-500/30 bg-blue-900/10' : 
+                                i === 1 ? 'border-purple-500/30 bg-purple-900/10' : 
+                                'border-green-500/30 bg-green-900/10'
+                              }`}>
+                                <div className="text-2xl mb-2">
+                                  {i === 0 ? '🎨' : i === 1 ? '⚙️' : '🗄️'}
+                                </div>
+                                <div className="text-sm font-semibold text-gray-300">
+                                  {layer.split('(')[0]}
+                                </div>
+                                <div className="text-xs text-gray-500 mt-1">
+                                  {layer.includes('(') ? layer.split('(')[1].replace(')', '') : ''}
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        
+                        {/* Description de l'architecture */}
+                        <div className="space-y-3">
+                          <div className="flex items-start gap-3">
+                            <div className="mt-1.5">
+                              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                            </div>
+                            <p className="text-gray-300 text-sm">
+                              {language === 'fr' 
+                                ? "Frontend : Vue.js pour la partie web, .NET MAUI (MVVM) pour la partie mobile"
+                                : "Frontend: Vue.js for web part, .NET MAUI (MVVM) for mobile part"}
+                            </p>
+                          </div>
+                          <div className="flex items-start gap-3">
+                            <div className="mt-1.5">
+                              <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse delay-200"></div>
+                            </div>
+                            <p className="text-gray-300 text-sm">
+                              {language === 'fr' 
+                                ? "Backend : Clean Architecture avec 4 couches (Présentation, Application, Domaine, Infrastructure)"
+                                : "Backend: Clean Architecture with 4 layers (Presentation, Application, Domain, Infrastructure)"}
+                            </p>
+                          </div>
+                          <div className="flex items-start gap-3">
+                            <div className="mt-1.5">
+                              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse delay-400"></div>
+                            </div>
+                            <p className="text-gray-300 text-sm">
+                              {language === 'fr' 
+                                ? "Base de données : SQL Server avec ORM Entity Framework Core"
+                                : "Database: SQL Server with Entity Framework Core ORM"}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Responsabilités principales */}
+                    <div className="mb-8">
+                      <div className="flex items-center gap-3 mb-6">
+                        <Target size={24} className="text-green-400" />
+                        <h4 className="text-xl font-bold text-gray-300">
+                          {language === 'fr' ? 'Responsabilités principales' : 'Main Responsibilities'}
+                        </h4>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        {exp.responsibilities.map((resp, i) => (
+                          <div key={i} className="flex items-start gap-3 group/resp">
+                            <div className="mt-1.5">
+                              <div 
+                                className="w-2 h-2 rounded-full animate-pulse"
+                                style={{ 
+                                  backgroundColor: exp.isPFE 
+                                    ? ['#3b82f6', '#8b5cf6', '#10b981'][i % 3]
+                                    : '#6b7280',
+                                  animationDelay: `${i * 0.2}s`
+                                }}
+                              ></div>
+                            </div>
+                            <div className="flex-1">
+                              <span className="text-gray-300 group-hover/resp:text-white transition-colors">
+                                {resp}
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                   {/* Points clés SPÉCIFIQUES À CHAQUE EXPÉRIENCE */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div className="space-y-3">
+    <div className="flex items-center gap-3">
+      <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full animate-pulse"></div>
+      <span className="text-gray-300 font-medium">{exp.specificKeyPoints[0]}</span>
+    </div>
+    <div className="flex items-center gap-3">
+      <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse delay-200"></div>
+      <span className="text-gray-300 font-medium">{exp.specificKeyPoints[1]}</span>
+    </div>
+  </div>
+  <div className="space-y-3">
+    <div className="flex items-center gap-3">
+      <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-pulse delay-400"></div>
+      <span className="text-gray-300 font-medium">{exp.specificKeyPoints[2]}</span>
+    </div>
+    <div className="flex items-center gap-3">
+      <div className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-pulse delay-600"></div>
+      <span className="text-gray-300 font-medium">{exp.specificKeyPoints[3]}</span>
+    </div>
+  </div>
+</div>
+                  </div>
+                  
+                  {/* Barre de progression animée */}
+                  <div className="px-8 pb-8">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-sm text-gray-400">{language === 'fr' ? 'Niveau d\'implication' : 'Involvement level'}</span>
+                      <span className="text-sm font-bold text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
+                        {index === 0 ? '100%' : '95%'}
+                      </span>
+                    </div>
+                    <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
                       <div 
-                        key={i}
-                        className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-70"
-                        style={{ animationDelay: `${i * 0.2}s` }}
-                      ></div>
-                    ))}
+                        className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full transition-all duration-1000 ease-out"
+                        style={{ width: index === 0 ? '100%' : '95%' }}
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" style={{ animationDuration: '2s' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Éléments décoratifs */}
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="w-8 h-8 border-2 border-purple-500/30 rounded-full animate-spin-slow"></div>
+                  </div>
+                  
+                  <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300">
+                    <div className="w-6 h-6 border-2 border-blue-500/30 rounded-full animate-spin-slow reverse"></div>
                   </div>
                 </div>
+                
+                {/* Connecteur de timeline pour mobile */}
+                <div className="lg:hidden absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center border-4 border-gray-900">
+                    <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                  </div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 border-2 border-blue-500/30 rounded-full animate-ping"></div>
+                </div>
               </div>
-            ))}
+              
+              {/* Année décorative */}
+              <div className={`hidden lg:flex absolute top-1/2 transform -translate-y-1/2 items-center gap-4 ${
+                isEven ? 'left-0 -translate-x-full' : 'right-0 translate-x-full'
+              }`}>
+                {isEven ? (
+                  <>
+                    <div className="text-6xl font-bold text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text opacity-20">
+                      {exp.period.split(' ')[2]}
+                    </div>
+                    <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
+                  </>
+                ) : (
+                  <>
+                    <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                    <div className="text-6xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text opacity-20">
+                      {exp.period.split(' ')[2]}
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+    
+    {/* Statistiques en bas de section */}
+    <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-6">
+      {[
+        { value: "2+", label: t.experience.stats.years, color: "from-blue-400 to-cyan-400" },
+        { value: "10+", label: t.experience.stats.projects, color: "from-purple-400 to-pink-400" },
+        { value: "15+", label: t.experience.stats.technologies, color: "from-green-400 to-emerald-400" },
+        { value: "100%", label: t.experience.stats.satisfaction, color: "from-yellow-400 to-orange-400" },
+      ].map((stat, index) => (
+        <div 
+          key={index}
+          className="relative group"
+          style={{ animationDelay: `${index * 150}ms` }}
+        >
+          <div className={`absolute -inset-3 bg-gradient-to-r ${stat.color} rounded-xl blur opacity-0 group-hover:opacity-20 transition-opacity`}></div>
+          <div className="relative bg-gray-800/40 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50 text-center group-hover:border-transparent transition-all duration-300 group-hover:scale-105">
+            <div className={`text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
+              {stat.value}
+            </div>
+            <div className="text-sm text-gray-400 font-medium">
+              {stat.label}
+            </div>
+            
+            {/* Points décoratifs */}
+            <div className="flex justify-center gap-1 mt-4">
+              {[...Array(3)].map((_, i) => (
+                <div 
+                  key={i}
+                  className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-70"
+                  style={{ animationDelay: `${i * 0.2}s` }}
+                ></div>
+              ))}
+            </div>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Projets Section - DESIGN CRÉATIF ET DYNAMIQUE */}
       <section id="projets" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">

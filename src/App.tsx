@@ -723,25 +723,68 @@ function App() {
   ];
 
   const experiences = [
-    {
-      company: "SOPAL",
-      position: language === 'fr' ? "Stage de fin d'études" : "End of Studies Internship",
-      period: language === 'fr' ? "Fév 2025 - Juin 2025" : "Feb 2025 - Jun 2025",
-      description: language === 'fr' ? "Développement d'application web/mobile pour la gestion optimisée des livraisons" : "Development of web/mobile application for optimized delivery management",
-      tech: ["ASP.NET Core", "Vue.js", ".NET MAUI", "SignalR"],
-      location: "Sfax, Tunisie",
-      logo: "🏢"
-    },
-    {
-      company: "Institut International de Technologie",
-      position: language === 'fr' ? "Stage Développement Web" : "Web Development Internship",
-      period: language === 'fr' ? "Juillet 2024 - Août 2024" : "July 2024 - Aug 2024",
-      description: language === 'fr' ? "Développement d'application web pour la gestion des rapports de stage" : "Development of web application for internship report management",
-      tech: ["PHP", "MySQL", "Laragon", "Bootstrap"],
-      location: "Sfax, Tunisie",
-      logo: "🎓"
-    }
-  ];
+  {
+    company: "SOPAL",
+    position: language === 'fr' ? "Projet de Fin d'Études - Développeur Full Stack" : "Final Year Project - Full Stack Developer",
+    period: language === 'fr' ? "Février 2025 - Juin 2025" : "February 2025 - June 2025",
+    description: language === 'fr' 
+      ? "Développement d'une application complète pour la gestion médicale en suivant une architecture Clean Architecture avec ASP.NET Core et Vue.js. Conception et implémentation d'un système sécurisé avec authentification JWT et microservices."
+      : "Development of a complete medical management application following Clean Architecture with ASP.NET Core and Vue.js. Design and implementation of a secure system with JWT authentication and microservices.",
+    tech: ["ASP.NET Core", "Vue.js", ".NET MAUI", "SQL Server", "Entity Framework", "JWT", "REST API"],
+    location: "Sfax, Tunisie",
+    logo: "🏢",
+    // 🔥 AJOUTEZ CES NOUVELLES LIGNES POUR L'ARCHITECTURE
+    architecture: language === 'fr' ? "Architecture Clean Architecture" : "Clean Architecture",
+    layers: language === 'fr' 
+      ? ["Frontend (Vue.js/.NET MAUI)", "Backend (ASP.NET Core)", "Base de données (SQL Server)"]
+      : ["Frontend (Vue.js/.NET MAUI)", "Backend (ASP.NET Core)", "Database (SQL Server)"],
+    responsibilities: language === 'fr' 
+      ? [
+          "Conception et développement selon l'architecture 3 couches (Frontend/Backend/BDD)",
+          "Implémentation de l'authentification sécurisée avec JWT",
+          "Développement des API REST avec ASP.NET Core",
+          "Interface responsive avec Vue.js et .NET MAUI",
+          "Gestion des données avec Entity Framework Core et SQL Server"
+        ]
+      : [
+          "Design and development using 3-layer architecture (Frontend/Backend/DB)",
+          "Implementation of secure authentication with JWT",
+          "REST API development with ASP.NET Core",
+          "Responsive interface with Vue.js and .NET MAUI",
+          "Data management with Entity Framework Core and SQL Server"
+        ]
+  },
+  {
+    company: "Institut International de Technologie",
+    position: language === 'fr' ? "Stage Développement Web" : "Web Development Internship",
+    period: language === 'fr' ? "Juillet 2024 - Août 2024" : "July 2024 - Aug 2024",
+    description: language === 'fr' 
+      ? "Développement d'application web pour la gestion des rapports de stage avec PHP et MySQL. Conception de l'interface utilisateur et mise en œuvre des fonctionnalités CRUD."
+      : "Development of web application for internship report management with PHP and MySQL. UI design and implementation of CRUD features.",
+    tech: ["PHP", "MySQL", "Laragon", "Bootstrap", "JavaScript"],
+    location: "Sfax, Tunisie",
+    logo: "🎓",
+    // Pour le stage précédent
+    architecture: language === 'fr' ? "Architecture MVC traditionnelle" : "Traditional MVC Architecture",
+    layers: language === 'fr' 
+      ? ["Présentation (PHP/HTML)", "Logique métier (PHP)", "Base de données (MySQL)"]
+      : ["Presentation (PHP/HTML)", "Business Logic (PHP)", "Database (MySQL)"],
+    responsibilities: language === 'fr' 
+      ? [
+          "Développement d'interface utilisateur avec Bootstrap",
+          "Implémentation des opérations CRUD",
+          "Conception de la base de données MySQL",
+          "Gestion de l'authentification utilisateur"
+        ]
+      : [
+          "User interface development with Bootstrap",
+          "CRUD operations implementation",
+          "MySQL database design",
+          "User authentication management"
+        ]
+  }
+];
+
 
   const skills = [
     { 

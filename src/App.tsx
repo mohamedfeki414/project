@@ -290,11 +290,11 @@ const translations: Translations = {
         "Mon parcours professionnel reflète ma passion pour l'innovation et mon engagement à relever des défis techniques. Chaque expérience a contribué à forger mon expertise et ma vision du développement moderne.",
       technologies: "Technologies utilisées :",
       keyPoints: [
-        "Développement Full Stack",
-        "Architecture moderne",
-        "Méthodologie Agile",
-        "Collaboration d'équipe",
-      ],
+  "Architecture 3 couches (Frontend/Backend/BDD)",
+  "Clean Architecture avec ASP.NET Core",
+  "Authentification JWT sécurisée",
+  "Développement Full Stack"
+],
       stats: {
         years: "Années d'expérience",
         projects: "Projets réalisés",
@@ -411,6 +411,7 @@ const translations: Translations = {
       builtWith: "Construit avec",
       thanks: "Merci de votre visite !",
     },
+    
 
     // 🔥 Ajout pour le sélecteur de langue
     languages: {
@@ -464,12 +465,12 @@ const translations: Translations = {
       description:
         "My professional journey reflects my passion for innovation and commitment to solving technical challenges. Each experience strengthened my expertise and vision of modern development.",
       technologies: "Technologies used:",
-      keyPoints: [
-        "Full Stack Development",
-        "Modern Architecture",
-        "Agile Methodology",
-        "Team Collaboration",
-      ],
+     keyPoints: [
+  "3-layer architecture (Frontend/Backend/DB)",
+  "Clean Architecture with ASP.NET Core",
+  "Secure JWT authentication",
+  "Full Stack development"
+],
       stats: {
         years: "Years of experience",
         projects: "Projects completed",

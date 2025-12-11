@@ -611,14 +611,18 @@ function App() {
   };
 
   // Fonction pour télécharger le CV
-  const handleDownloadCV = () => {
-    const link = document.createElement('a');
-    link.href = '/CV_Feki_Mohamed.pdf';
-    link.download = language === 'fr' ? 'CV_Mohamed_Feki.pdf' : 'CV_Mohamed_Feki_English.pdf';
+ const handleDownloadCV = () => {
+    const link = document.createElement('a'); 
+    // Déterminer le fichier source selon la langue
+    const filePath = language === 'fr' ? '/CV_Feki_Mohamed.pdf' : '/CV_Mohamed_Feki_English.pdf';
+    // Déterminer le nom du fichier téléchargé
+    const fileName = language === 'fr' ? 'CV_Mohamed_Feki.pdf' : 'CV_Mohamed_Feki_English.pdf';
+    link.href = filePath;
+    link.download = fileName;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  };
+};
 
   // Navigation items with creative dynamic icons
   const navItems = [

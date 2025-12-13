@@ -111,6 +111,15 @@ interface Translations {
       phone: string;
       location: string;
     };
+     // AJOUTEZ CETTE SECTION
+    sections: {
+      about: "À Propos",
+      experience: "Expériences Professionnelles",
+      projects: "Mes Projets",
+      skills: "Mes Compétences",
+      techWatch: "Veille Technologique",
+      contact: "Travaillons Ensemble"
+    },
     about: {
       title: string;
       intro1: string;
@@ -265,6 +274,15 @@ const translations: Translations = {
       contact: "Contact",
       phone: "Téléphone",
       location: "Localisation",
+    },
+     // AJOUTEZ CETTE SECTION
+    sections: {
+      about: "À Propos",
+      experience: "Expériences Professionnelles",
+      projects: "Mes Projets",
+      skills: "Mes Compétences",
+      techWatch: "Veille Technologique",
+      contact: "Travaillons Ensemble"
     },
     about: {
       title: "À Propos",
@@ -441,6 +459,15 @@ const translations: Translations = {
       contact: "Contact",
       phone: "Phone",
       location: "Location",
+    },
+     // AJOUTEZ CETTE SECTION
+    sections: {
+      about: "À Propos",
+      experience: "Expériences Professionnelles",
+      projects: "Mes Projets",
+      skills: "Mes Compétences",
+      techWatch: "Veille Technologique",
+      contact: "Travaillons Ensemble"
     },
     about: {
       title: "About Me",
@@ -2231,520 +2258,376 @@ function App() {
   </div>
 </section>
 
-      {/* Projets Section - DESIGN CRÉATIF ET DYNAMIQUE */}
-      <section id="projets" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        {/* Arrière-plan animé */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900/10 via-purple-900/10 to-cyan-900/10"></div>
-        
-        {/* Éléments de fond décoratifs */}
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        
-        {/* Grid de particules */}
-        <div className="absolute inset-0">
-          {[...Array(16)].map((_, i) => (
-            <div 
-              key={i}
-              className="absolute w-1 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-20 animate-pulse"
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${i * 0.3}s`,
-                animationDuration: `${2 + Math.random() * 3}s`
-              }}
-            ></div>
-          ))}
+   {/* Projets Section */}
+<section id="projets" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+  {/* Arrière-plan animé */}
+  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900/10 via-purple-900/10 to-cyan-900/10"></div>
+  <div className="absolute top-1/4 -left-32 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
+  <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+  
+  <div className="max-w-7xl mx-auto relative">
+    {/* En-tête */}
+    <div className="text-center mb-20">
+      <div className="inline-flex items-center justify-center relative mb-10">
+        <div className="absolute -inset-12">
+          <div className="absolute inset-0 border-2 border-blue-500/20 rounded-full animate-ping"></div>
+          <div className="absolute inset-4 border-2 border-purple-500/20 rounded-full animate-ping delay-300"></div>
+          <div className="absolute inset-8 border-2 border-cyan-500/20 rounded-full animate-ping delay-600"></div>
         </div>
         
-        <div className="max-w-7xl mx-auto relative">
-          {/* En-tête créatif */}
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center justify-center relative mb-10">
-              {/* Animation de halo */}
-              <div className="absolute -inset-12">
-                <div className="absolute inset-0 border-2 border-blue-500/20 rounded-full animate-ping"></div>
-                <div className="absolute inset-4 border-2 border-purple-500/20 rounded-full animate-ping delay-300"></div>
-                <div className="absolute inset-8 border-2 border-cyan-500/20 rounded-full animate-ping delay-600"></div>
-              </div>
-              
-              {/* Icône centrale interactive */}
+        <div className="relative">
+          <div className="absolute -inset-8 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-full blur-2xl opacity-20 animate-pulse-glow"></div>
+          
+          <div className="relative p-6 bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-3xl border border-blue-500/30 group hover:border-purple-500/50 transition-all duration-500">
+            <Folder size={52} className="text-blue-400 group-hover:text-purple-400 transition-colors duration-300" />
+          </div>
+        </div>
+      </div>
+      
+      <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+        {t.sections.projects}
+      </h2>
+      
+      <div className="flex items-center justify-center gap-6 mb-8">
+        <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
+        <div className="flex items-center gap-3">
+          <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+          <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse delay-150"></div>
+          <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse delay-300"></div>
+        </div>
+        <div className="w-32 h-1 bg-gradient-to-r from-transparent to-purple-500 rounded-full"></div>
+      </div>
+    </div>
+    
+    {/* Grille des projets */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Projet 1: CRUD E-commerce */}
+      <div className="relative group" data-project="crud-ecommerce">
+        <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-cyan-600/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+          {/* En-tête du projet */}
+          <div className="h-56 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/30 via-blue-900/30 to-purple-900/30 animate-gradient"></div>
+            
+            {/* Badge de date */}
+            <div className="absolute top-4 right-4">
               <div className="relative">
-                <div className="absolute -inset-8 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-full blur-2xl opacity-20 animate-pulse-glow"></div>
-                
-                <div className="relative p-6 bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-3xl border border-blue-500/30 group hover:border-purple-500/50 transition-all duration-500">
-                  <Folder size={52} className="text-blue-400 group-hover:text-purple-400 transition-colors duration-300" />
-                  
-                  {/* Animation de dossier qui s'ouvre */}
-                  <div className="absolute -top-3 -right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center animate-pulse">
-                      <ExternalLink size={16} className="text-white" />
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Points orbitaux */}
-                <div className="absolute -inset-6">
-                  {[...Array(6)].map((_, i) => (
-                    <div 
-                      key={i}
-                      className="absolute w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-0 group-hover:opacity-70 transition-opacity"
-                      style={{
-                        top: '50%',
-                        left: '50%',
-                        transform: `rotate(${i * 60}deg) translateX(48px) rotate(-${i * 60}deg)`,
-                        animation: `orbit 3s linear infinite ${i * 0.2}s`,
-                        animationPlayState: 'paused'
-                      }}
-                    ></div>
-                  ))}
-                </div>
+                <div className="absolute -inset-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur opacity-20 animate-pulse"></div>
+                <span className="relative bg-gray-900/90 backdrop-blur-sm text-cyan-300 text-xs font-bold px-4 py-2 rounded-full border border-cyan-500/30">
+                  2024
+                </span>
               </div>
             </div>
             
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              {t.projects.title}
-            </h2>
+            {/* Icône et titre */}
+            <div className="absolute bottom-4 left-4 right-4">
+              <div className="flex items-center gap-4">
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur opacity-20"></div>
+                  <div className="relative text-4xl">🛒</div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-white mb-1">CRUD E-commerce</h3>
+                  <p className="text-sm text-cyan-300">
+                    {language === 'fr' ? 'Gestion complète de produits' : 'Complete product management'}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Contenu du projet */}
+          <div className="p-6">
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              {language === 'fr' 
+                ? 'Application frontend ReactJS pour gérer un système e-commerce avec fonctionnalités CRUD complètes pour catégories, sous-catégories et articles.'
+                : 'ReactJS frontend application to manage an e-commerce system with complete CRUD functionalities for categories, subcategories, and products.'}
+            </p>
             
-            <div className="flex items-center justify-center gap-6 mb-8">
-              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
+            {/* Technologies utilisées */}
+            <div className="mb-8">
+              <div className="flex items-center gap-3 mb-4">
+                <Layers size={20} className="text-blue-400" />
+                <h4 className="text-lg font-semibold text-gray-300">
+                  {language === 'fr' ? 'Stack technique :' : 'Tech stack:'}
+                </h4>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {["ReactJS", "Material-React-Table", "Axios", "React Router", "Bootstrap", "Material UI"].map((tech, i) => (
+                  <div key={i} className="relative group/tech">
+                    <span className="relative px-3 py-1.5 bg-gray-900/50 text-cyan-300 text-xs rounded-lg border border-cyan-500/30 group-hover/tech:border-blue-500/50 group-hover/tech:text-blue-300 transition-all duration-300">
+                      {tech}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Fonctionnalités */}
+            <div className="space-y-3 mb-6">
               <div className="flex items-center gap-3">
-                <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
-                <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse delay-150"></div>
-                <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse delay-300"></div>
+                <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-pulse"></div>
+                <span className="text-sm text-gray-300">
+                  {language === 'fr' ? 'CRUD complet (Créer, Lire, Mettre à jour, Supprimer)' : 'Full CRUD operations (Create, Read, Update, Delete)'}
+                </span>
               </div>
-              <div className="w-32 h-1 bg-gradient-to-r from-transparent to-purple-500 rounded-full"></div>
-            </div>
-            
-            {/* Introduction créative */}
-            <div className="max-w-3xl mx-auto mb-16">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-2xl blur-xl opacity-50"></div>
-                
-                <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50">
-                  <div className="flex flex-col md:flex-row items-center gap-8">
-                    <div className="md:w-1/4">
-                      <div className="inline-flex items-center gap-3 p-4 bg-gradient-to-br from-blue-900/20 to-cyan-900/20 rounded-xl border border-blue-500/30">
-                        <Layers size={28} className="text-blue-400 animate-float-slow" />
-                        <span className="text-blue-300 font-semibold">{language === 'fr' ? 'Réalisations concrètes' : 'Concrete achievements'}</span>
-                      </div>
-                    </div>
-                    
-                    <div className="md:w-3/4">
-                      <p className="text-lg text-gray-300 leading-relaxed">
-                        {t.projects.description}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  {/* Statistiques */}
-                  <div className="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-blue-500/20">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-blue-400 mb-2">10+</div>
-                      <div className="text-sm text-gray-400">{t.projects.stats.completed}</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-purple-400 mb-2">100%</div>
-                      <div className="text-sm text-gray-400">{t.projects.stats.functional}</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-cyan-400 mb-2">95%</div>
-                      <div className="text-sm text-gray-400">{t.projects.stats.satisfaction}</div>
-                    </div>
-                  </div>
-                </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-pulse delay-200"></div>
+                <span className="text-sm text-gray-300">
+                  {language === 'fr' ? 'Tableaux interactifs Material-React-Table' : 'Interactive Material-React-Table tables'}
+                </span>
               </div>
-            </div>
-          </div>
-          
-          {/* Grille des projets */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Projet 1: PROJET */}
-            <div className="relative group" data-project="projet">
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-blue-600/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              
-              <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
-                {/* En-tête du projet avec gradient */}
-                <div className="h-56 relative overflow-hidden">
-                  {/* Gradient animé */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-purple-900/30 to-cyan-900/30 animate-gradient"></div>
-                  
-                  {/* Effet de particules */}
-                  <div className="absolute inset-0">
-                    {[...Array(8)].map((_, i) => (
-                      <div 
-                        key={i}
-                        className="absolute w-1 h-1 bg-white rounded-full opacity-20 animate-float"
-                        style={{
-                          top: `${Math.random() * 100}%`,
-                          left: `${Math.random() * 100}%`,
-                          animationDelay: `${i * 0.3}s`,
-                          animationDuration: `${3 + Math.random() * 2}s`
-                        }}
-                      ></div>
-                    ))}
-                  </div>
-                  
-                  {/* Badge de date */}
-                  <div className="absolute top-4 right-4">
-                    <div className="relative">
-                      <div className="absolute -inset-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur opacity-20 animate-pulse"></div>
-                      <span className="relative bg-gray-900/90 backdrop-blur-sm text-blue-300 text-xs font-bold px-4 py-2 rounded-full border border-blue-500/30">
-                        {projects[0]?.date || "2024"}
-                      </span>
-                    </div>
-                  </div>
-                  
-                  {/* Icône et titre */}
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="flex items-center gap-4">
-                      <div className="relative">
-                        <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur opacity-20"></div>
-                        <div className="relative text-4xl">🛒</div>
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-white mb-1">{projects[0].title}</h3>
-                        <p className="text-sm text-blue-300">{language === 'fr' ? 'Plateforme complète Full Stack' : 'Complete Full Stack Platform'}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Contenu du projet */}
-                <div className="p-6">
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    {projects[0].description}
-                  </p>
-                  
-                  {/* Technologies utilisées */}
-                  <div className="mb-8">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Code2 size={20} className="text-cyan-400" />
-                      <h4 className="text-lg font-semibold text-gray-300">{t.projects.project1.stack}</h4>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {["Spring Boot", "React", "Java", "MySQL", "REST API", "JWT"].map((tech, i) => (
-                        <div key={i} className="relative group/tech">
-                          <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-lg blur opacity-0 group-hover/tech:opacity-100 transition-opacity"></div>
-                          <span className="relative px-3 py-1.5 bg-gray-900/50 text-blue-300 text-xs rounded-lg border border-blue-500/30 group-hover/tech:border-cyan-500/50 group-hover/tech:text-cyan-300 transition-all duration-300">
-                            {tech}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  {/* Points clés */}
-                  <div className="space-y-3 mb-6">
-                    {t.projects.project1.features.map((feature, index) => (
-                      <div key={index} className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full animate-pulse" style={{ animationDelay: `${index * 200}ms` }}></div>
-                        <span className="text-sm text-gray-300">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  {/* Boutons d'action */}
-                  <div className="flex items-center justify-between pt-6 border-t border-gray-700/50">
-                    <a 
-                      href="https://mohamedfeki414.github.io/PROJET/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative group/link"
-                    >
-                      <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-lg blur opacity-0 group-hover/link:opacity-100 transition-opacity"></div>
-                      <div className="relative flex items-center gap-2 text-blue-400 hover:text-cyan-300 font-semibold text-sm transition-colors">
-                        <span>{language === 'fr' ? 'Voir la démo live' : 'View live demo'}</span>
-                        <ExternalLink size={16} className="group-hover/link:translate-x-1 group-hover/link:rotate-12 transition-all" />
-                      </div>
-                    </a>
-                    
-                    <a 
-                      href="https://github.com/mohamedfeki414/PROJET"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative group/github"
-                    >
-                      <div className="absolute -inset-2 bg-gray-800/50 rounded-full blur opacity-0 group-hover/github:opacity-100 transition-opacity"></div>
-                      <div className="relative p-2 rounded-lg bg-gray-900/30 text-gray-400 hover:text-white hover:bg-gray-800/50 transition-all duration-300 group-hover/github:scale-110">
-                        <Github size={18} />
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                
-                {/* Éléments décoratifs */}
-                <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="w-6 h-6 border-2 border-blue-500/30 rounded-full animate-spin-slow"></div>
-                </div>
-              </div>
-            </div>
-
-            {/* Projet 2: MOGAMES */}
-            <div className="relative group" data-project="mogames">
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-purple-600/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              
-              <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
-                <div className="h-56 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-pink-900/30 to-rose-900/30 animate-gradient" style={{ animationDuration: '4s' }}></div>
-                  
-                  {/* Effet de jeu */}
-                  <div className="absolute inset-0">
-                    {[...Array(6)].map((_, i) => (
-                      <div 
-                        key={i}
-                        className="absolute w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-30 animate-float"
-                        style={{
-                          top: `${Math.random() * 100}%`,
-                          left: `${Math.random() * 100}%`,
-                          animationDelay: `${i * 0.4}s`,
-                          animationDuration: `${2 + Math.random() * 2}s`
-                        }}
-                      ></div>
-                    ))}
-                  </div>
-                  
-                  <div className="absolute top-4 right-4">
-                    <div className="relative">
-                      <div className="absolute -inset-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur opacity-20 animate-pulse delay-300"></div>
-                      <span className="relative bg-gray-900/90 backdrop-blur-sm text-purple-300 text-xs font-bold px-4 py-2 rounded-full border border-purple-500/30">
-                        {projects[1]?.date || "2024"}
-                      </span>
-                    </div>
-                  </div>
-                  
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="flex items-center gap-4">
-                      <div className="relative">
-                        <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur opacity-20"></div>
-                        <div className="relative text-4xl">🎮</div>
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-white mb-1">{projects[1].title}</h3>
-                        <p className="text-sm text-purple-300">{language === 'fr' ? 'Plateforme de jeux interactifs' : 'Interactive games platform'}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    {projects[1].description}
-                  </p>
-                  
-                  <div className="mb-8">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Gamepad2 size={20} className="text-pink-400" />
-                      <h4 className="text-lg font-semibold text-gray-300">{t.projects.project2.technologies}</h4>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {["JavaScript", "HTML5", "CSS3", "Canvas API", "Web Audio", "Animations"].map((tech, i) => (
-                        <div key={i} className="relative group/tech">
-                          <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg blur opacity-0 group-hover/tech:opacity-100 transition-opacity"></div>
-                          <span className="relative px-3 py-1.5 bg-gray-900/50 text-purple-300 text-xs rounded-lg border border-purple-500/30 group-hover/tech:border-pink-500/50 group-hover/tech:text-pink-300 transition-all duration-300">
-                            {tech}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-3 mb-6">
-                    {t.projects.project2.features.map((feature, index) => (
-                      <div key={index} className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse" style={{ animationDelay: `${index * 200}ms` }}></div>
-                        <span className="text-sm text-gray-300">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <div className="flex items-center justify-between pt-6 border-t border-gray-700/50">
-                    <a 
-                      href="https://mohamedfeki414.github.io/MOGAMES/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative group/link"
-                    >
-                      <div className="absolute -inset-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg blur opacity-0 group-hover/link:opacity-100 transition-opacity"></div>
-                      <div className="relative flex items-center gap-2 text-purple-400 hover:text-pink-300 font-semibold text-sm transition-colors">
-                        <span>{language === 'fr' ? 'Jouer maintenant' : 'Play now'}</span>
-                        <ExternalLink size={16} className="group-hover/link:translate-x-1 group-hover/link:rotate-12 transition-all" />
-                      </div>
-                    </a>
-                    
-                    <a 
-                      href="https://github.com/mohamedfeki414/MOGAMES"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative group/github"
-                    >
-                      <div className="absolute -inset-2 bg-gray-800/50 rounded-full blur opacity-0 group-hover/github:opacity-100 transition-opacity"></div>
-                      <div className="relative p-2 rounded-lg bg-gray-900/30 text-gray-400 hover:text-white hover:bg-gray-800/50 transition-all duration-300 group-hover/github:scale-110">
-                        <Github size={18} />
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300">
-                  <div className="w-6 h-6 border-2 border-purple-500/30 rounded-full animate-spin-slow reverse"></div>
-                </div>
-              </div>
-            </div>
-
-            {/* Projet 3: Système Médical */}
-            <div className="relative group" data-project="medical">
-              <div className="absolute -inset-4 bg-gradient-to-r from-green-500/10 via-emerald-500/10 to-green-600/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              
-              <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-green-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
-                <div className="h-56 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-900/30 via-emerald-900/30 to-teal-900/30 animate-gradient" style={{ animationDuration: '5s' }}></div>
-                  
-                  {/* Effet médical */}
-                  <div className="absolute inset-0">
-                    <div className="absolute top-1/4 left-1/4 w-8 h-8 border-2 border-green-500/30 rounded-full animate-ping"></div>
-                    <div className="absolute bottom-1/4 right-1/4 w-6 h-6 border-2 border-emerald-500/30 rounded-full animate-ping delay-300"></div>
-                  </div>
-                  
-                  <div className="absolute top-4 right-4">
-                    <div className="relative">
-                      <div className="absolute -inset-3 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full blur opacity-20 animate-pulse delay-600"></div>
-                      <span className="relative bg-gray-900/90 backdrop-blur-sm text-green-300 text-xs font-bold px-4 py-2 rounded-full border border-green-500/30">
-                        {projects[2]?.date || "2024"}
-                      </span>
-                    </div>
-                  </div>
-                  
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="flex items-center gap-4">
-                      <div className="relative">
-                        <div className="absolute -inset-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full blur opacity-20"></div>
-                        <div className="relative text-4xl">🏥</div>
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-white mb-1">{projects[2].title}</h3>
-                        <p className="text-sm text-green-300">{language === 'fr' ? 'Gestion de prescriptions' : 'Prescription management'}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    {projects[2].description}
-                  </p>
-                  
-                  <div className="mb-8">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Database size={20} className="text-emerald-400" />
-                      <h4 className="text-lg font-semibold text-gray-300">{t.projects.project3.technologies}</h4>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {["ASP.NET Core", "C#", "SQL Server", "Entity Framework", "React", "JWT"].map((tech, i) => (
-                        <div key={i} className="relative group/tech">
-                          <div className="absolute -inset-1 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-lg blur opacity-0 group-hover/tech:opacity-100 transition-opacity"></div>
-                          <span className="relative px-3 py-1.5 bg-gray-900/50 text-green-300 text-xs rounded-lg border border-green-500/30 group-hover/tech:border-emerald-500/50 group-hover/tech:text-emerald-300 transition-all duration-300">
-                            {tech}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-3 mb-6">
-                    {t.projects.project3.features.map((feature, index) => (
-                      <div key={index} className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-pulse" style={{ animationDelay: `${index * 200}ms` }}></div>
-                        <span className="text-sm text-gray-300">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <div className="flex items-center justify-between pt-6 border-t border-gray-700/50">
-                    <a 
-                      href="#"
-                      className="relative group/link"
-                    >
-                      <div className="absolute -inset-2 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-lg blur opacity-0 group-hover/link:opacity-100 transition-opacity"></div>
-                      <div className="relative flex items-center gap-2 text-green-400 hover:text-emerald-300 font-semibold text-sm transition-colors">
-                        <span>{language === 'fr' ? 'Détails du projet' : 'Project details'}</span>
-                        <ChevronRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
-                      </div>
-                    </a>
-                    
-                    <a 
-                      href="#"
-                      className="relative group/github"
-                    >
-                      <div className="absolute -inset-2 bg-gray-800/50 rounded-full blur opacity-0 group-hover/github:opacity-100 transition-opacity"></div>
-                      <div className="relative p-2 rounded-lg bg-gray-900/30 text-gray-400 hover:text-white hover:bg-gray-800/50 transition-all duration-300 group-hover/github:scale-110">
-                        <Github size={18} />
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-600">
-                  <div className="w-6 h-6 border-2 border-green-500/30 rounded-full animate-spin-slow"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* CTA pour plus de projets */}
-          <div className="mt-20 text-center">
-            <div className="relative inline-block">
-              <div className="absolute -inset-6 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-3xl blur-xl"></div>
-              
-              <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50">
-                <h3 className="text-3xl font-bold text-white mb-4">
-                  {t.projects.cta.title}
-                </h3>
-                <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-                  {t.projects.cta.description}
-                </p>
-                
-                <a 
-                  href="#contact"
-                  className="relative group inline-flex"
-                >
-                  <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-700"></div>
-                  
-                  <div className="relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold flex items-center gap-3 group-hover:from-blue-700 group-hover:to-purple-700 transition-all duration-500 group-hover:scale-105">
-                    <span>{t.projects.cta.button}</span>
-                    <ChevronRight size={20} className="group-hover:translate-x-2 transition-transform" />
-                    
-                    {/* Animation */}
-                    <div className="absolute -top-2 -right-2 w-4 h-4 bg-cyan-400 rounded-full animate-ping"></div>
-                  </div>
-                </a>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-pulse delay-400"></div>
+                <span className="text-sm text-gray-300">
+                  {language === 'fr' ? 'Design responsive avec Bootstrap/MUI' : 'Responsive design with Bootstrap/MUI'}
+                </span>
               </div>
             </div>
             
-            {/* Indicateur GitHub */}
-            <div className="mt-12 flex items-center justify-center gap-4">
-              <div className="flex items-center gap-2">
-                <Github size={20} className="text-gray-400" />
-                <span className="text-gray-400">{t.projects.cta.github}</span>
-                <a 
-                  href="https://github.com/mohamedfeki414"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 hover:text-purple-400 font-semibold transition-colors"
-                >
-                  GitHub
-                </a>
-              </div>
+            {/* Boutons d'action */}
+            <div className="flex items-center justify-between pt-6 border-t border-gray-700/50">
+              <a 
+                href="https://frontend-ecommerce-henna.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative group/link"
+              >
+                <div className="relative flex items-center gap-2 text-cyan-400 hover:text-blue-300 font-semibold text-sm transition-colors">
+                  <span>{language === 'fr' ? 'Voir la démo live' : 'View live demo'}</span>
+                  <ExternalLink size={16} className="group-hover/link:translate-x-1 group-hover/link:rotate-12 transition-all" />
+                </div>
+              </a>
               
-              <div className="w-1 h-1 bg-gray-700 rounded-full"></div>
-              
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-gray-400">{t.projects.cta.active}</span>
-              </div>
+              <a 
+                href="https://github.com/mohamedfeki414/CRUD-E-commerce"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative group/github"
+              >
+                <div className="relative p-2 rounded-lg bg-gray-900/30 text-gray-400 hover:text-white hover:bg-gray-800/50 transition-all duration-300 group-hover/github:scale-110">
+                  <Github size={18} />
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          {/* Badge "Déployé sur Vercel" */}
+          <div className="absolute top-4 left-4">
+            <div className="relative">
+              <div className="absolute -inset-2 bg-gradient-to-r from-black to-gray-800 rounded-full blur opacity-20"></div>
+              <span className="relative px-3 py-1 bg-black text-white text-xs font-bold rounded-full border border-gray-700 flex items-center gap-1">
+                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                Vercel
+              </span>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Projet 2: Application E-commerce Full Stack */}
+      <div className="relative group" data-project="ecommerce-fullstack">
+        <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-blue-600/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+          <div className="h-56 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-purple-900/30 to-cyan-900/30 animate-gradient"></div>
+            
+            <div className="absolute top-4 right-4">
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur opacity-20 animate-pulse"></div>
+                <span className="relative bg-gray-900/90 backdrop-blur-sm text-blue-300 text-xs font-bold px-4 py-2 rounded-full border border-blue-500/30">
+                  2024
+                </span>
+              </div>
+            </div>
+            
+            <div className="absolute bottom-4 left-4 right-4">
+              <div className="flex items-center gap-4">
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur opacity-20"></div>
+                  <div className="relative text-4xl">⚡</div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-white mb-1">
+                    {language === 'fr' ? 'E-commerce Full Stack' : 'Full Stack E-commerce'}
+                  </h3>
+                  <p className="text-sm text-blue-300">
+                    {language === 'fr' ? 'Plateforme complète' : 'Complete platform'}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="p-6">
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              {language === 'fr' 
+                ? 'Plateforme de e-commerce complète avec système de panier, paiement sécurisé, dashboard administrateur et gestion des utilisateurs.'
+                : 'Complete e-commerce platform with shopping cart, secure payment, admin dashboard and user management.'}
+            </p>
+            
+            <div className="mb-8">
+              <div className="flex items-center gap-3 mb-4">
+                <Code2 size={20} className="text-cyan-400" />
+                <h4 className="text-lg font-semibold text-gray-300">
+                  {language === 'fr' ? 'Stack technique :' : 'Tech stack:'}
+                </h4>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {["Spring Boot", "React", "Java", "MySQL", "REST API", "JWT"].map((tech, i) => (
+                  <div key={i} className="relative group/tech">
+                    <span className="relative px-3 py-1.5 bg-gray-900/50 text-blue-300 text-xs rounded-lg border border-blue-500/30 group-hover/tech:border-cyan-500/50 group-hover/tech:text-cyan-300 transition-all duration-300">
+                      {tech}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="flex items-center justify-between pt-6 border-t border-gray-700/50">
+              <a 
+                href="#"
+                className="relative group/link"
+              >
+                <div className="relative flex items-center gap-2 text-blue-400 hover:text-cyan-300 font-semibold text-sm transition-colors">
+                  <span>{language === 'fr' ? 'Détails du projet' : 'Project details'}</span>
+                  <ChevronRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
+                </div>
+              </a>
+              
+              <a 
+                href="#"
+                className="relative group/github"
+              >
+                <div className="relative p-2 rounded-lg bg-gray-900/30 text-gray-400 hover:text-white hover:bg-gray-800/50 transition-all duration-300 group-hover/github:scale-110">
+                  <Github size={18} />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Projet 3: MOGAMES */}
+      <div className="relative group" data-project="mogames">
+        <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-purple-600/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+          <div className="h-56 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-pink-900/30 to-rose-900/30 animate-gradient" style={{ animationDuration: '4s' }}></div>
+            
+            <div className="absolute top-4 right-4">
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur opacity-20 animate-pulse delay-300"></div>
+                <span className="relative bg-gray-900/90 backdrop-blur-sm text-purple-300 text-xs font-bold px-4 py-2 rounded-full border border-purple-500/30">
+                  2024
+                </span>
+              </div>
+            </div>
+            
+            <div className="absolute bottom-4 left-4 right-4">
+              <div className="flex items-center gap-4">
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur opacity-20"></div>
+                  <div className="relative text-4xl">🎮</div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-white mb-1">MOGAMES</h3>
+                  <p className="text-sm text-purple-300">
+                    {language === 'fr' ? 'Plateforme de jeux' : 'Gaming platform'}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="p-6">
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              {language === 'fr' 
+                ? 'Collection de jeux éducatifs et divertissants développés avec des technologies web modernes pour une expérience utilisateur immersive.'
+                : 'Collection of educational and entertaining games developed with modern web technologies for an immersive user experience.'}
+            </p>
+            
+            <div className="mb-8">
+              <div className="flex items-center gap-3 mb-4">
+                <Gamepad2 size={20} className="text-pink-400" />
+                <h4 className="text-lg font-semibold text-gray-300">
+                  {language === 'fr' ? 'Technologies :' : 'Technologies:'}
+                </h4>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {["JavaScript", "HTML5", "CSS3", "Canvas API", "Web Audio", "Animations"].map((tech, i) => (
+                  <div key={i} className="relative group/tech">
+                    <span className="relative px-3 py-1.5 bg-gray-900/50 text-purple-300 text-xs rounded-lg border border-purple-500/30 group-hover/tech:border-pink-500/50 group-hover/tech:text-pink-300 transition-all duration-300">
+                      {tech}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="flex items-center justify-between pt-6 border-t border-gray-700/50">
+              <a 
+                href="https://mohamedfeki414.github.io/MOGAMES/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative group/link"
+              >
+                <div className="relative flex items-center gap-2 text-purple-400 hover:text-pink-300 font-semibold text-sm transition-colors">
+                  <span>{language === 'fr' ? 'Jouer maintenant' : 'Play now'}</span>
+                  <ExternalLink size={16} className="group-hover/link:translate-x-1 group-hover/link:rotate-12 transition-all" />
+                </div>
+              </a>
+              
+              <a 
+                href="https://github.com/mohamedfeki414/MOGAMES"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative group/github"
+              >
+                <div className="relative p-2 rounded-lg bg-gray-900/30 text-gray-400 hover:text-white hover:bg-gray-800/50 transition-all duration-300 group-hover/github:scale-110">
+                  <Github size={18} />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* CTA pour plus de projets */}
+    <div className="mt-20 text-center">
+      <div className="relative inline-block">
+        <div className="absolute -inset-6 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-3xl blur-xl"></div>
+        
+        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50">
+          <h3 className="text-3xl font-bold text-white mb-4">
+            {language === 'fr' ? 'Vous avez un ' : 'Do you have a '}
+            <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">projet</span>
+            {language === 'fr' ? ' en tête ?' : ' in mind?'}
+          </h3>
+          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+            {language === 'fr' 
+              ? "Je suis toujours ouvert à de nouveaux défis et collaborations. Discutons de votre idée et voyons comment je peux vous aider à la concrétiser."
+              : "I am always open to new challenges and collaborations. Let's discuss your idea and see how I can help you bring it to life."}
+          </p>
+          
+          <a 
+            href="#contact"
+            className="relative group inline-flex"
+          >
+            <div className="relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold flex items-center gap-3 group-hover:from-blue-700 group-hover:to-purple-700 transition-all duration-500 group-hover:scale-105">
+              <span>{language === 'fr' ? 'Discutons de votre projet' : "Let's discuss your project"}</span>
+              <ChevronRight size={20} className="group-hover:translate-x-2 transition-transform" />
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Compétences Section - DESIGN CRÉATIF ET DYNAMIQUE */}
       <section id="compétences" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">

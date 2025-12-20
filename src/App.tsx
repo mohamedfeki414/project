@@ -2426,89 +2426,125 @@ function App() {
         </div>
       </div>
 
-      {/* Projet 2: Application E-commerce Full Stack */}
-      <div className="relative group" data-project="ecommerce-fullstack">
-        <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-blue-600/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+     {/* PROJET REMPLACÉ: Gestionnaire de Bibliothèque */}
+  <div className="relative group" data-project="library-management">
+    <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/10 via-green-500/10 to-teal-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+    
+    <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-emerald-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
+      <div className="h-56 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/30 via-green-900/30 to-teal-900/30 animate-gradient"></div>
         
-        <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500 group-hover:scale-[1.02] overflow-hidden">
-          <div className="h-56 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-purple-900/30 to-cyan-900/30 animate-gradient"></div>
-            
-            <div className="absolute top-4 right-4">
-              <div className="relative">
-                <div className="absolute -inset-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur opacity-20 animate-pulse"></div>
-                <span className="relative bg-gray-900/90 backdrop-blur-sm text-blue-300 text-xs font-bold px-4 py-2 rounded-full border border-blue-500/30">
-                  2024
-                </span>
-              </div>
-            </div>
-            
-            <div className="absolute bottom-4 left-4 right-4">
-              <div className="flex items-center gap-4">
-                <div className="relative">
-                  <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur opacity-20"></div>
-                  <div className="relative text-4xl">⚡</div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-white mb-1">
-                    {language === 'fr' ? 'E-commerce Full Stack' : 'Full Stack E-commerce'}
-                  </h3>
-                  <p className="text-sm text-blue-300">
-                    {language === 'fr' ? 'Plateforme complète' : 'Complete platform'}
-                  </p>
-                </div>
-              </div>
-            </div>
+        <div className="absolute top-4 right-4">
+          <div className="relative">
+            <div className="absolute -inset-3 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full blur opacity-20 animate-pulse"></div>
+            <span className="relative bg-gray-900/90 backdrop-blur-sm text-emerald-300 text-xs font-bold px-4 py-2 rounded-full border border-emerald-500/30">
+              2024
+            </span>
           </div>
-          
-          <div className="p-6">
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              {language === 'fr' 
-                ? 'Plateforme de e-commerce complète avec système de panier, paiement sécurisé, dashboard administrateur et gestion des utilisateurs.'
-                : 'Complete e-commerce platform with shopping cart, secure payment, admin dashboard and user management.'}
-            </p>
-            
-            <div className="mb-8">
-              <div className="flex items-center gap-3 mb-4">
-                <Code2 size={20} className="text-cyan-400" />
-                <h4 className="text-lg font-semibold text-gray-300">
-                  {language === 'fr' ? 'Stack technique :' : 'Tech stack:'}
-                </h4>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {["Spring Boot", "React", "Java", "MySQL", "REST API", "JWT"].map((tech, i) => (
-                  <div key={i} className="relative group/tech">
-                    <span className="relative px-3 py-1.5 bg-gray-900/50 text-blue-300 text-xs rounded-lg border border-blue-500/30 group-hover/tech:border-cyan-500/50 group-hover/tech:text-cyan-300 transition-all duration-300">
-                      {tech}
-                    </span>
-                  </div>
-                ))}
-              </div>
+        </div>
+        
+        <div className="absolute bottom-4 left-4 right-4">
+          <div className="flex items-center gap-4">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full blur opacity-20"></div>
+              <div className="relative text-4xl">📚</div>
             </div>
-            
-            <div className="flex items-center justify-between pt-6 border-t border-gray-700/50">
-              <a 
-                href="#"
-                className="relative group/link"
-              >
-                <div className="relative flex items-center gap-2 text-blue-400 hover:text-cyan-300 font-semibold text-sm transition-colors">
-                  <span>{language === 'fr' ? 'Détails du projet' : 'Project details'}</span>
-                  <ChevronRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
-                </div>
-              </a>
-              
-              <a 
-                href="#"
-                className="relative group/github"
-              >
-                <div className="relative p-2 rounded-lg bg-gray-900/30 text-gray-400 hover:text-white hover:bg-gray-800/50 transition-all duration-300 group-hover/github:scale-110">
-                  <Github size={18} />
-                </div>
-              </a>
+            <div className="flex-1">
+              <h3 className="text-2xl font-bold text-white mb-1">
+                {language === 'fr' ? 'Gestionnaire de Bibliothèque' : 'Library Management System'}
+              </h3>
+              <p className="text-sm text-emerald-300">
+                {language === 'fr' ? 'Application complète' : 'Complete application'}
+              </p>
             </div>
           </div>
         </div>
       </div>
+      
+      <div className="p-6">
+        <p className="text-gray-300 mb-6 leading-relaxed">
+          {language === 'fr' 
+            ? 'Application de gestion de bibliothèque complète avec frontend React (Vite), animations GSAP, Material-React-Table, backend Node.js et base de données MongoDB.'
+            : 'Complete library management application with React (Vite) frontend, GSAP animations, Material-React-Table, Node.js backend and MongoDB database.'}
+        </p>
+        
+        <div className="mb-8">
+          <div className="flex items-center gap-3 mb-4">
+            <Code2 size={20} className="text-green-400" />
+            <h4 className="text-lg font-semibold text-gray-300">
+              {language === 'fr' ? 'Stack technique :' : 'Tech stack:'}
+            </h4>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {["React + Vite", "Material-React-Table", "Node.js", "MongoDB", "GSAP Animations", "Express"].map((tech, i) => (
+              <div key={i} className="relative group/tech">
+                <span className="relative px-3 py-1.5 bg-gray-900/50 text-emerald-300 text-xs rounded-lg border border-emerald-500/30 group-hover/tech:border-green-500/50 group-hover/tech:text-green-300 transition-all duration-300">
+                  {tech}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="space-y-3 mb-6">
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full animate-pulse"></div>
+            <span className="text-sm text-gray-300">
+              {language === 'fr' ? 'Frontend React avec Vite et animations GSAP' : 'React frontend with Vite and GSAP animations'}
+            </span>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full animate-pulse delay-200"></div>
+            <span className="text-sm text-gray-300">
+              {language === 'fr' ? 'Tables interactives Material-React-Table' : 'Interactive Material-React-Table tables'}
+            </span>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full animate-pulse delay-400"></div>
+            <span className="text-sm text-gray-300">
+              {language === 'fr' ? 'Backend Node.js avec base MongoDB' : 'Node.js backend with MongoDB database'}
+            </span>
+          </div>
+        </div>
+        
+        <div className="flex items-center justify-between pt-6 border-t border-gray-700/50">
+          <a 
+            href="https://bibliotheque-frontend-main.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative group/link"
+          >
+            <div className="relative flex items-center gap-2 text-emerald-400 hover:text-green-300 font-semibold text-sm transition-colors">
+              <span>{language === 'fr' ? 'Voir l\'application' : 'View application'}</span>
+              <ExternalLink size={16} className="group-hover/link:translate-x-1 group-hover/link:rotate-12 transition-all" />
+            </div>
+          </a>
+          
+          <a 
+            href="https://github.com/mohamedfeki414/BIBLIOTHEQUE-FRONTEND-main"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative group/github"
+          >
+            <div className="relative p-2 rounded-lg bg-gray-900/30 text-gray-400 hover:text-white hover:bg-gray-800/50 transition-all duration-300 group-hover/github:scale-110">
+              <Github size={18} />
+            </div>
+          </a>
+        </div>
+      </div>
+      
+      <div className="absolute top-4 left-4">
+        <div className="relative">
+          <div className="absolute -inset-2 bg-gradient-to-r from-black to-gray-800 rounded-full blur opacity-20"></div>
+          <span className="relative px-3 py-1 bg-black text-white text-xs font-bold rounded-full border border-gray-700 flex items-center gap-1">
+            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            Vercel
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
       {/* Projet 3: MOGAMES */}
       <div className="relative group" data-project="mogames">
